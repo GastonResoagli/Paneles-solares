@@ -55,7 +55,7 @@
             this.label2.Location = new System.Drawing.Point(253, 31);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 15);
+            this.label2.Size = new System.Drawing.Size(144, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Numero Documento";
             // 
@@ -65,7 +65,7 @@
             this.label3.Location = new System.Drawing.Point(253, 88);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 15);
+            this.label3.Size = new System.Drawing.Size(85, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña";
             // 
@@ -74,7 +74,7 @@
             this.txtDocumento.Location = new System.Drawing.Point(257, 50);
             this.txtDocumento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(154, 21);
+            this.txtDocumento.Size = new System.Drawing.Size(154, 24);
             this.txtDocumento.TabIndex = 3;
             // 
             // txtClave
@@ -83,7 +83,7 @@
             this.txtClave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
-            this.txtClave.Size = new System.Drawing.Size(154, 21);
+            this.txtClave.Size = new System.Drawing.Size(154, 24);
             this.txtClave.TabIndex = 4;
             // 
             // iconPictureBox1
@@ -101,6 +101,7 @@
             this.iconPictureBox1.Size = new System.Drawing.Size(136, 143);
             this.iconPictureBox1.TabIndex = 7;
             this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
             // btnCancelar
             // 
@@ -142,7 +143,7 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(520, 223);
             this.Controls.Add(this.iconPictureBox1);
@@ -159,6 +160,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
