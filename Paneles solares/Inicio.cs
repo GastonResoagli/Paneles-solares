@@ -16,5 +16,10 @@ namespace Paneles_solares
         {
             InitializeComponent();
         }
+
+        private void panelLogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

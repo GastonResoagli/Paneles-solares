@@ -27,6 +27,7 @@ namespace Paneles_solares
 
             Usuario ousuario = new CN_Usuario().Listar().Where(u => u.DNI == txtDocumento.Text && u.Clave == txtClave.Text).FirstOrDefault();
 
+            //
 
             if(ousuario != null)
             {
@@ -58,6 +59,16 @@ namespace Paneles_solares
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
