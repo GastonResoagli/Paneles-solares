@@ -27,13 +27,23 @@ namespace Paneles_solares
 
             Usuario ousuario = new CN_Usuario().Listar().Where(u => u.DNI == txtDocumento.Text && u.Clave == txtClave.Text).FirstOrDefault();
 
-            Inicio form = new Inicio();
+
+            if(ousuario != null)
+            {
+                Inicio form = new Inicio();
 
 
-            form.Show();
-            this.Hide();
+                form.Show();
+                this.Hide();
 
-            form.FormClosing += frm_clossing;
+                form.FormClosing += frm_clossing;
+            }
+            else
+            {
+                MessageBox.Show("no se encontro el usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+        
         }
 
         private void frm_clossing(object sender, FormClosingEventArgs e)
