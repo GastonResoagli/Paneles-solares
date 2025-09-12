@@ -11,6 +11,7 @@ using FontAwesome.Sharp;
 
 
 using CapaEntidad;
+using CapaNegocio;
 
 namespace Paneles_solares
 {
@@ -27,6 +28,21 @@ namespace Paneles_solares
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            List<Permiso> listaPermisos = new CN_Permiso().Listar(usuarioActual.idUsuario);
+
+            foreach (Control ctrl in panel1.Controls)
+            {
+                if (ctrl is Button boton)
+                {
+                    bool encontrado = listaPermisos.Any(p => p.NombreMenu == boton.Name);
+                    if (!encontrado)
+                    {
+                        boton.Visible = false;
+                    }
+                }
+            }
+
+
             lblusuario.Text = usuarioActual.NombreCompleto;
         }
 
@@ -119,14 +135,34 @@ namespace Paneles_solares
             formulario.Show();
         }
 
-        private void btnUsuarios_Click(object sender, EventArgs e)
+        private void btnUsuarios_Click_1(object sender, EventArgs e)
         {
             abrirFormulario(null, new frmUsuarios());
         }
 
-        private void contenedor_Paint(object sender, PaintEventArgs e)
+        private void btnProductos_Click_1(object sender, EventArgs e)
         {
+            abrirFormulario(null, new frmProductos());
+        }
 
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(null, new frmClientes());
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(null, new frmVentas());
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(null, new frmReportes());
+        }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(null, new frmConfig());
         }
     }
 }
