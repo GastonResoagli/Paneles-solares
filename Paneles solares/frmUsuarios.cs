@@ -31,5 +31,10 @@ namespace Paneles_solares
         {
 
         }
+
+        private void frmUsuarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
