@@ -15,23 +15,29 @@ using CapaNegocio;
 
 namespace Paneles_solares
 {
-    public partial class Inicio : Form
+    public partial class inicio : Form
     {
+        //colores fields
+        private Button currentButton;
+        private Random random;
+        private int tempIndex;
+        //user
         private static Usuario usuarioActual;
         private static IconMenuItem menuActivo = null;
         private static Form FormularioActivo = null;
-        public Inicio(Usuario objusuario)
+        public inicio(Usuario objusuario)
         {
 
             usuarioActual = objusuario;
             InitializeComponent();
+            random = new Random();
         }
 
         private void Inicio_Load(object sender, EventArgs e)
         {
             List<Permiso> listaPermisos = new CN_Permiso().Listar(usuarioActual.idUsuario);
 
-            foreach (Control ctrl in panel1.Controls)
+            foreach (Control ctrl in panelMenu.Controls)
             {
                 if (ctrl is Button boton)
                 {
@@ -52,25 +58,7 @@ namespace Paneles_solares
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnProductos_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         /*
         private void abrirFormulario(IconMenuItem menu, Form formulario)
@@ -104,18 +92,10 @@ namespace Paneles_solares
             formulario.Show();
         } */
 
-        private void abrirFormulario(IconMenuItem menu, Form formulario)
+        private void abrirFormulario(object sender, Form formulario)
         {
-            if (menuActivo != null)
-            {
-                menuActivo.BackColor = Color.White;
-            }
 
-            if (menu != null)
-            {
-                menu.BackColor = Color.Silver;
-                menuActivo = menu;
-            }
+            ActivateButton(sender);
 
             if (FormularioActivo != null)
             {
@@ -135,35 +115,91 @@ namespace Paneles_solares
 
             formulario.Show();
         }
+        //colores de los botones
+
+        private Color SelectThemeColor()
+        {
+            int index = random.Next(ThemeColor.ColorList.Count);
+            while (tempIndex == index)
+            {
+                index = random.Next(ThemeColor.ColorList.Count);
+            }
+            tempIndex = index;
+            string color = ThemeColor.ColorList[index];
+            return ColorTranslator.FromHtml(color);
+        }
+
+        private void ActivateButton(object btnSender)
+        {
+            if (btnSender != null)
+            {
+                if (currentButton != (Button)btnSender)
+                {
+                    DisabledButton();
+                    Color color = SelectThemeColor();
+                    currentButton = (Button)btnSender;
+                    currentButton.BackColor = color;
+                    currentButton.ForeColor = Color.White;
+                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+            }
+        }
+
+        private void DisabledButton()
+        {
+            foreach (Control previousBtn in panelMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+            }
+        }
 
         private void btnUsuarios_Click_1(object sender, EventArgs e)
         {
-            abrirFormulario(null, new frmUsuarios());
+            abrirFormulario(sender, new frmUsuarios());
         }
 
         private void btnProductos_Click_1(object sender, EventArgs e)
         {
-            abrirFormulario(null, new frmProductos());
+            
+            abrirFormulario(sender, new frmProductos());
+           
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            abrirFormulario(null, new frmClientes());
+          
+            abrirFormulario(sender, new frmClientes());
+            
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            abrirFormulario(null, new frmVentas());
+           
+            abrirFormulario(sender, new frmVentas());
+           
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            abrirFormulario(null, new frmReportes());
+          
+            abrirFormulario(sender, new frmReportes());
+           
         }
 
         private void btnConfig_Click(object sender, EventArgs e)
         {
-            abrirFormulario(null, new frmConfig());
+
+            abrirFormulario(sender, new frmConfig());
+            
         }
+
+
+       
+       
     }
 }
