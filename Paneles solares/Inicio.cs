@@ -119,6 +119,7 @@ namespace Paneles_solares
 
         private Color SelectThemeColor()
         {
+            /*
             int index = random.Next(ThemeColor.ColorList.Count);
             while (tempIndex == index)
             {
@@ -126,6 +127,9 @@ namespace Paneles_solares
             }
             tempIndex = index;
             string color = ThemeColor.ColorList[index];
+            return ColorTranslator.FromHtml(color);*/
+
+            string color = "#78CFE9";
             return ColorTranslator.FromHtml(color);
         }
 

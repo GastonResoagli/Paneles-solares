@@ -31,7 +31,7 @@ namespace Paneles_solares
 
             if(ousuario != null)
             {
-                contenedor form = new contenedor(ousuario);
+               inicio form = new inicio(ousuario);
 
 
                 form.Show();
