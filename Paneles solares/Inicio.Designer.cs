@@ -58,7 +58,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(225, 648);
+            this.panelMenu.Size = new System.Drawing.Size(225, 664);
             this.panelMenu.TabIndex = 0;
             // 
             // lblusuario
@@ -212,14 +212,14 @@
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(225, 0);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(888, 648);
+            this.contenedor.Size = new System.Drawing.Size(1013, 664);
             this.contenedor.TabIndex = 2;
             // 
             // inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1113, 648);
+            this.ClientSize = new System.Drawing.Size(1238, 664);
             this.Controls.Add(this.contenedor);
             this.Controls.Add(this.panelMenu);
             this.Name = "inicio";
