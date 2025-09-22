@@ -263,5 +263,10 @@ namespace Paneles_solares
                 row.Visible = true;
             }
         }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
     }
 }
