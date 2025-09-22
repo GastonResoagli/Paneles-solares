@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Paneles_solares
 {
-    public partial class frmReportes : Form
+    public partial class frmProductos : Form
     {
-        public frmReportes()
+        public frmProductos()
         {
             InitializeComponent();
         }
 
-        private void frmReportes_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
