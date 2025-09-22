@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
+    //tabla Rol
     public class Rol
     {
         public int IdRol { get; set; }

@@ -14,8 +14,10 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
+    
     public class CD_Usuario
     {
+        //Lista usuario con su rol
         public List<Usuario> Listar() {
 
             List<Usuario> lista = new List<Usuario>();
@@ -24,6 +26,7 @@ namespace CapaDatos
             {
                 try
                 {
+                    //consulta sql para traer usuarios con su rol
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("select u.idUsuario,u.DNI,u.NombreCompleto,u.Correo,u.Clave,u.Estado,r.idRol,r.Descripcion from usuario u ");
                     query.AppendLine("inner join ROL r on r .idRol  = u.idRol");
@@ -36,6 +39,7 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
+                            //se crea objetos usuario a partir de cada fila leida
                             lista.Add(new Usuario()
                             {
                                 idUsuario = Convert.ToInt32(dr["idUsuario"]),
@@ -51,6 +55,7 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
+                    //si hay error la devuelve vacia
                     lista = new List<Usuario>();
 
                 }
@@ -59,6 +64,7 @@ namespace CapaDatos
         }
 
 
+        //metodo para registrar usuario
         public int Registrar (Usuario obj, out String Mensaje)
         {
             int idusuariogenerado = 0;
@@ -69,6 +75,7 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("SP_REGISTRARUSUARIO", oconexion);
+                    //parametros de entrada
                     cmd.Parameters.AddWithValue("DNI", obj.DNI);
                     cmd.Parameters.AddWithValue("NombreCompleto", obj.NombreCompleto);
                     cmd.Parameters.AddWithValue("Correo", obj.Correo);
@@ -76,7 +83,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("IdRol", obj.oRol.IdRol);
                     //cmd.Parameters.Add("Estado", SqlDbType.Bit).Value = obj.Estado;
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
-
+                    //parametros de salida
                     cmd.Parameters.Add("idUsuarioResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
@@ -85,7 +92,7 @@ namespace CapaDatos
                     oconexion.Open();
 
                     cmd.ExecuteNonQuery();
-
+                    //se obtienen los valores de los parametros de salida
                     idusuariogenerado = Convert.ToInt32(cmd.Parameters["idUsuarioResultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 
@@ -100,7 +107,7 @@ namespace CapaDatos
             return idusuariogenerado;
         }
 
-
+        //metodo para editar usuario
         public bool Editar(Usuario obj, out String Mensaje)
         {
             bool respuesta = false;
@@ -111,6 +118,7 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("SP_EDITARUSUARIO", oconexion);
+                    //parametros de entrada
                     cmd.Parameters.AddWithValue("idUsuario", obj.idUsuario);
                     cmd.Parameters.AddWithValue("DNI", obj.DNI);
                     cmd.Parameters.AddWithValue("NombreCompleto", obj.NombreCompleto);
@@ -118,7 +126,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Clave", obj.Clave);
                     cmd.Parameters.AddWithValue("IdRol", obj.oRol.IdRol);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
-
+                    //parametros de salida
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
@@ -127,7 +135,7 @@ namespace CapaDatos
                     oconexion.Open();
 
                     cmd.ExecuteNonQuery();
-
+                    // se obtiene valores de salida
                     respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 
@@ -142,7 +150,7 @@ namespace CapaDatos
             return respuesta;
         }
 
-
+        //metodo para eliminar usuario
         public bool Eliminar(Usuario obj, out String Mensaje)
         {
             bool respuesta = false;
@@ -154,7 +162,7 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("SP_ELIMINARUSUARIO", oconexion);
                     cmd.Parameters.AddWithValue("idUsuario", obj.idUsuario);
-
+                    //parametros de salida
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
@@ -163,7 +171,7 @@ namespace CapaDatos
                     oconexion.Open();
 
                     cmd.ExecuteNonQuery();
-
+                    //se obtiene valores de salida
                     respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 

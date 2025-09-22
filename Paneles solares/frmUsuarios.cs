@@ -26,12 +26,14 @@ namespace Paneles_solares
 
         }
 
+        //evento para insertar y editar usuarios
         private void btnguardar_Click(object sender, EventArgs e)
         {
             string mensaje = string.Empty;
 
             Usuario objusuario = new Usuario()
             {
+                // se arma un objeto de tipo usuario con los datos ingresados
                 idUsuario = Convert.ToInt32(txtid.Text),
                 DNI = txtdocumento.Text,
                 NombreCompleto = txtnombrecompleto.Text,
@@ -41,31 +43,34 @@ namespace Paneles_solares
                 Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
             };
 
+            //si la id es 0 Registra nuevo 
             if (objusuario.idUsuario == 0)
             {
                 int IdUsuarioGenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
 
-                if (IdUsuarioGenerado != 0)
+                if (IdUsuarioGenerado != 0) //registro exitoso
                 {
-                    dgvdata.Rows.Add(new object[] { "", IdUsuarioGenerado, txtdocumento.Text, txtnombrecompleto.Text, txtcorreo.Text, txtclave.Text,
+                    //se agrega el usuario al datagrid
+                dgvdata.Rows.Add(new object[] { "", IdUsuarioGenerado, txtdocumento.Text, txtnombrecompleto.Text, txtcorreo.Text, txtclave.Text,
                 ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
-               ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
+                ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cboestado.SelectedItem).Texto.ToString(),
                 });
                     limpiar();
                 }
-                else
+                else //si hay error
                 {
                     MessageBox.Show(mensaje);
                 }
             }
-            else
+            else //si la id es diferente de 0 Edita el usuario
             {
                 bool resultado = new CN_Usuario().Editar(objusuario, out mensaje);
 
-                if (resultado)
+                if (resultado) //edicion exitosa
                 {
+                    //se actualiza la fila del datagrid
                     DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)]; //indice? o id?
                     row.Cells["idUsuario"].Value = txtid.Text;
                     row.Cells["DNI"].Value = txtdocumento.Text;
@@ -79,14 +84,14 @@ namespace Paneles_solares
 
                     limpiar();
                 }
-                else
+                else //error
                 {
                     MessageBox.Show(mensaje);
                 }
 
             }
         }
-
+        //limpia los campos del formulario
                 private void limpiar()
                 {
                     txtindice.Text = "-1";
@@ -105,25 +110,27 @@ namespace Paneles_solares
 
         }
 
+        //evento para cargar el formulario
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
+            // Se cargan las opciones de ESTADO
             cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
             cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
             cboestado.DisplayMember = "Texto";
             cboestado.ValueMember = "Valor";
             cboestado.SelectedIndex = 0;
 
+            // Se cargan los roles desde la capa de negocio
             List<Rol> listaRol = new CN_Rol().Listar();
-
             foreach (Rol item in listaRol) {
                 cborol.Items.Add(new OpcionCombo() { Valor = item.IdRol, Texto = item.Descripcion});
             }
             cborol.DisplayMember = "Texto";
             cborol.ValueMember = "Valor";
             cborol.SelectedIndex = 0;
-            
 
-            foreach(DataGridViewColumn columna in dgvdata.Columns) {
+            // Se cargan las columnas disponibles para busqueda
+            foreach (DataGridViewColumn columna in dgvdata.Columns) {
             if(columna.Visible == true && columna.Name != "btnseleccionar")
                 {
                     cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
@@ -155,6 +162,7 @@ namespace Paneles_solares
 
         }
 
+        //dibuja un icono en el datagrid
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -172,7 +180,7 @@ namespace Paneles_solares
                 e.Handled = true;
             }
         }
-
+        //evento para la columna seleccionar del datagrid
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvdata.Columns[e.ColumnIndex].Name == "btnseleccionar")
@@ -181,6 +189,7 @@ namespace Paneles_solares
 
                 if(indice >= 0)
                 {
+                    // Se cargan los valores de la fila seleccionada en los campos de edicion
                     txtindice.Text = indice.ToString();
                     txtid.Text = dgvdata.Rows[indice].Cells["idUsuario"].Value.ToString();
                     txtdocumento.Text = dgvdata.Rows[indice].Cells["DNI"].Value.ToString();
@@ -189,7 +198,7 @@ namespace Paneles_solares
                     txtclave.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
                     txtconfclave.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
 
-
+                    // Selecciona el rol correcto en el combo
                     foreach (OpcionCombo oc in cborol.Items)
                     {
                         if (Convert.ToInt32 (oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["idRol"].Value))
@@ -199,8 +208,8 @@ namespace Paneles_solares
                             break;
                         }
                     }
-
-                   foreach (OpcionCombo oc in cboestado.Items)
+                    // Selecciona el estado correcto en el combo
+                    foreach (OpcionCombo oc in cboestado.Items)
                     {
                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["Estado"].Value))
                         {
@@ -214,7 +223,7 @@ namespace Paneles_solares
                 }
             }
         }
-
+        //evento para eliminar usuario
         private void btneliminar_Click(object sender, EventArgs e)
         {
             if(Convert.ToInt32(txtid.Text) != 0)
@@ -239,7 +248,7 @@ namespace Paneles_solares
                 }
             }
         }
-
+        //boton buscar en el datagrid
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
@@ -254,7 +263,7 @@ namespace Paneles_solares
                 }
             }
         }
-
+        //limpia el buscador del datagrid
         private void btnlimpiarbuscador_Click(object sender, EventArgs e)
         {
             txtbusqueda.Text = "";
@@ -263,7 +272,7 @@ namespace Paneles_solares
                 row.Visible = true;
             }
         }
-
+        //limpia los campos del formulario
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
             limpiar();

@@ -7,6 +7,7 @@ using System.Configuration;
 
 namespace CapaDatos
 {
+    //conexion a la base de datos
     public class Conexion
     {
         public static string cadena = ConfigurationManager.ConnectionStrings["cadena_conexion"].ToString();

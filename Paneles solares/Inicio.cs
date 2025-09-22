@@ -17,11 +17,11 @@ namespace Paneles_solares
 {
     public partial class inicio : Form
     {
-        //colores fields
+        //colores fields para hacerlo random
         private Button currentButton;
         private Random random;
         private int tempIndex;
-        //user
+        //user 
         private static Usuario usuarioActual;
         private static IconMenuItem menuActivo = null;
         private static Form FormularioActivo = null;
@@ -33,81 +33,52 @@ namespace Paneles_solares
             random = new Random();
         }
 
+        //se ejecuta cuando carga el formulario principal
         private void Inicio_Load(object sender, EventArgs e)
         {
+            //obtener la lista de permisos desde la capa negocio 
             List<Permiso> listaPermisos = new CN_Permiso().Listar(usuarioActual.idUsuario);
 
+            //recorre los controles dentro del panel del menu 
             foreach (Control ctrl in panelMenu.Controls)
             {
                 if (ctrl is Button boton)
                 {
+                    //verifica si el boton tiene permiso asociado en la lista de permiso
                     bool encontrado = listaPermisos.Any(p => p.NombreMenu == boton.Name);
                     if (!encontrado)
                     {
+                        //si no esta lo oculta
                         boton.Visible = false;
                     }
                 }
             }
 
-
+            //usuario que inicio sesion 
             lblusuario.Text = usuarioActual.NombreCompleto;
         }
 
-        private void panelLogo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-      
-
-        /*
-        private void abrirFormulario(IconMenuItem menu, Form formulario)
-        {
-            if(menuActivo != null)
-            {
-                menuActivo.BackColor = Color.White;
-            }
-
-            if (menu != null)  // Evita error cuando es un Button
-            {
-                menu.BackColor = Color.Silver;
-                menuActivo = menu;
-            }
-
-            menu.BackColor = Color.Silver;
-            menuActivo = menu; 
-
-            if(FormularioActivo != null)
-            {
-                FormularioActivo.Close();
-            }
-
-            FormularioActivo = formulario;
-            formulario.TopLevel = false;
-            formulario.FormBorderStyle = FormBorderStyle.None;
-            formulario.Dock = DockStyle.Fill;
-            formulario.BackColor = Color.SteelBlue;
-
-            contenedor.Controls.Add(formulario);
-            formulario.Show();
-        } */
-
+      //abre el formulario hijo dentro del contenedor principal 
         private void abrirFormulario(object sender, Form formulario)
         {
-
+            //activa el boton seleccionado 
             ActivateButton(sender);
 
+            //si hay un formulario abierto lo cierra 
             if (FormularioActivo != null)
             {
                 FormularioActivo.Close();
             }
 
-            FormularioActivo = formulario;
-            formulario.TopLevel = false;
-            formulario.FormBorderStyle = FormBorderStyle.None;
-            formulario.Dock = DockStyle.Fill;
-            formulario.BackColor = Color.SteelBlue;
 
+            //pone el nuevo fomulario como activo
+            FormularioActivo = formulario;
+            formulario.TopLevel = false;  //evita que sea independiente
+            formulario.FormBorderStyle = FormBorderStyle.None; //saca los bordes
+            formulario.Dock = DockStyle.Fill; // ocupa el contenededor entero
+            formulario.BackColor = Color.SteelBlue; //color de fondo
+
+            //agrega al contenedor si existe o al formulario principal 
             if (contenedor != null)
                 contenedor.Controls.Add(formulario);
             else
@@ -115,6 +86,7 @@ namespace Paneles_solares
 
             formulario.Show();
         }
+
         //colores de los botones
 
         private Color SelectThemeColor()
@@ -132,7 +104,7 @@ namespace Paneles_solares
             string color = "#78CFE9";
             return ColorTranslator.FromHtml(color);
         }
-
+        //cambia un boton al ser seleccionado 
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
@@ -149,6 +121,7 @@ namespace Paneles_solares
             }
         }
 
+        //Restaura el estilo visual de los botones cuando no estan activos 
         private void DisabledButton()
         {
             foreach (Control previousBtn in panelMenu.Controls)
@@ -162,6 +135,8 @@ namespace Paneles_solares
             }
         }
 
+
+        //metodos para abrir los formularios hijos
         private void btnUsuarios_Click_1(object sender, EventArgs e)
         {
             abrirFormulario(sender, new frmUsuarios());
