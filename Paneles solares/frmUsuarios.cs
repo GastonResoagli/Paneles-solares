@@ -28,14 +28,33 @@ namespace Paneles_solares
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            dgvdata.Rows.Add(new object[] { "", txtid.Text, txtdocumento.Text, txtnombrecompleto.Text, txtcorreo.Text, txtclave.Text,
-            ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
-            ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
-           ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
-            ((OpcionCombo)cboestado.SelectedItem).Texto.ToString(),
-            });
+            string mensaje = string.Empty;
+            Usuario objusuario = new Usuario()
+            {
+                DNI = txtdocumento.Text,
+                NombreCompleto = txtnombrecompleto.Text,
+                Correo = txtcorreo.Text,
+                Clave = txtclave.Text,
+                oRol = new Rol() { IdRol = Convert.ToInt32( ((OpcionCombo)cborol.SelectedItem).Valor) },
+                Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
+            };
 
-            limpiar();
+            int IdUsuarioGenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
+
+            if (IdUsuarioGenerado != 0)
+            {
+                dgvdata.Rows.Add(new object[] { "", IdUsuarioGenerado, txtdocumento.Text, txtnombrecompleto.Text, txtcorreo.Text, txtclave.Text,
+                ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
+                ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
+               ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
+                ((OpcionCombo)cboestado.SelectedItem).Texto.ToString(),
+                });
+                limpiar();
+            }
+            else
+            {
+                MessageBox.Show(mensaje);
+            }
         }
 
         private void limpiar()
