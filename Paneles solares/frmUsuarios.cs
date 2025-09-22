@@ -31,9 +31,34 @@ namespace Paneles_solares
         {
             string mensaje = string.Empty;
 
+            // Validar que la contraseña no esté vacia y tenga mas de 4 caracteres
+            if (string.IsNullOrWhiteSpace(txtclave.Text) || txtclave.Text.Length < 4)
+            {
+                MessageBox.Show("La contraseña debe tener al menos 4 caracteres", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtclave.Focus();
+                return;
+            }
+
+            // Validar que coincidan las contraseñas
+            if (txtclave.Text != txtconfclave.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtconfclave.Focus();
+                return;
+            }
+
+            // Validar otros campos obligatorios
+            if (string.IsNullOrWhiteSpace(txtdocumento.Text) ||
+                string.IsNullOrWhiteSpace(txtnombrecompleto.Text) ||
+                string.IsNullOrWhiteSpace(txtcorreo.Text))
+            {
+                MessageBox.Show("Todos los campos son obligatorios", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Armar el objeto usuario
             Usuario objusuario = new Usuario()
             {
-                // se arma un objeto de tipo usuario con los datos ingresados
                 idUsuario = Convert.ToInt32(txtid.Text),
                 DNI = txtdocumento.Text,
                 NombreCompleto = txtnombrecompleto.Text,
@@ -43,35 +68,34 @@ namespace Paneles_solares
                 Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
             };
 
-            //si la id es 0 Registra nuevo 
+            // 5. Insertar o editar segun corresponda
             if (objusuario.idUsuario == 0)
             {
                 int IdUsuarioGenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
 
-                if (IdUsuarioGenerado != 0) //registro exitoso
+                if (IdUsuarioGenerado != 0)
                 {
-                    //se agrega el usuario al datagrid
-                dgvdata.Rows.Add(new object[] { "", IdUsuarioGenerado, txtdocumento.Text, txtnombrecompleto.Text, txtcorreo.Text, txtclave.Text,
+                    dgvdata.Rows.Add(new object[] {
+                "", IdUsuarioGenerado, txtdocumento.Text, txtnombrecompleto.Text, txtcorreo.Text, txtclave.Text,
                 ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
                 ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cboestado.SelectedItem).Texto.ToString(),
-                });
+            });
                     limpiar();
                 }
-                else //si hay error
+                else
                 {
                     MessageBox.Show(mensaje);
                 }
             }
-            else //si la id es diferente de 0 Edita el usuario
+            else
             {
                 bool resultado = new CN_Usuario().Editar(objusuario, out mensaje);
 
-                if (resultado) //edicion exitosa
+                if (resultado)
                 {
-                    //se actualiza la fila del datagrid
-                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)]; 
+                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)];
                     row.Cells["idUsuario"].Value = txtid.Text;
                     row.Cells["DNI"].Value = txtdocumento.Text;
                     row.Cells["NombreCompleto"].Value = txtnombrecompleto.Text;
@@ -84,13 +108,14 @@ namespace Paneles_solares
 
                     limpiar();
                 }
-                else //error
+                else
                 {
                     MessageBox.Show(mensaje);
                 }
-
             }
         }
+        
+        
         //limpia los campos del formulario
                 private void limpiar()
                 {
@@ -153,7 +178,6 @@ namespace Paneles_solares
                     item.Estado == true ? "Activo" : "No Activo"
             });
             }
-
 
         }
 
@@ -276,6 +300,36 @@ namespace Paneles_solares
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        private void txtdocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; 
+            }
+        }
+
+        private void txtcorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+
+            // Permitir control (ej. borrar, tab, enter)
+            if (char.IsControl(c))
+            {
+                e.Handled = false;
+                return;
+            }
+
+            // Permitir letras, números y caracteres especiales tipicos del correo
+            if (char.IsLetterOrDigit(c) || c == '@' || c == '.' || c == '_' || c == '-')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true; // Bloquea todo lo demas
+            }
         }
     }
 }

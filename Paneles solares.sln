@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36408.4 d17.14
+VisualStudioVersion = 17.14.36408.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paneles solares", "Paneles solares\Paneles solares.csproj", "{15FDE4DE-C0CE-45C4-A319-E924F762D40E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaPresentacion", "Paneles solares\CapaPresentacion.csproj", "{15FDE4DE-C0CE-45C4-A319-E924F762D40E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\CapaDatos.csproj", "{310535AA-C39A-4471-BADF-04FDC228DFC7}"
 EndProject

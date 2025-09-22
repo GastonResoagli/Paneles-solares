@@ -191,7 +191,7 @@ namespace Paneles_solares
             // 
             // contenedor
             // 
-            this.contenedor.BackgroundImage = global::Paneles_solares.Properties.Resources.logo;
+            this.contenedor.BackgroundImage = global::Paneles_solares.Properties.Resources.logo2;
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(300, 0);
             this.contenedor.Name = "contenedor";
