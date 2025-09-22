@@ -92,7 +92,7 @@ namespace Paneles_solares
                 dgvdata.Rows.Add(new object[] { "", item.idUsuario,item.DNI,item.NombreCompleto, item.Correo, item.Clave,
                     item.oRol.IdRol,
                     item.oRol.Descripcion,
-               
+                    item.Estado == true ? 1 : 0,
                     item.Estado == true ? "Activo" : "No Activo"
             });
             }
@@ -137,25 +137,25 @@ namespace Paneles_solares
                     txtcorreo.Text = dgvdata.Rows[indice].Cells["Correo"].Value.ToString();
                     txtclave.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
 
-                    //foreach (OpcionCombo oc in cborol.Items)
-                    //{
-                    //    if (Convert.ToInt32 (oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["idRol"].Value))
-                    //    {
-                    //        int indice_combo = cborol.Items.IndexOf(oc);
-                    //        cborol.SelectedIndex = indice_combo;
-                    //        break;
-                    //    }
-                    //}
+                    foreach (OpcionCombo oc in cborol.Items)
+                    {
+                        if (Convert.ToInt32 (oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["idRol"].Value))
+                        {
+                            int indice_combo = cborol.Items.IndexOf(oc);
+                            cborol.SelectedIndex = indice_combo;
+                            break;
+                        }
+                    }
 
-                    //foreach (OpcionCombo oc in cboestado.Items)
-                    //{
-                    //    if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
-                    //    {
-                    //        int indice_combo = cboestado.Items.IndexOf(oc);
-                    //        cboestado.SelectedIndex = indice_combo;
-                    //        break;
-                    //    }
-                    //}
+                   foreach (OpcionCombo oc in cboestado.Items)
+                    {
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["Estado"].Value))
+                        {
+                            int indice_combo = cboestado.Items.IndexOf(oc);
+                            cboestado.SelectedIndex = indice_combo;
+                            break;
+                        }
+                    }
 
 
                 }
