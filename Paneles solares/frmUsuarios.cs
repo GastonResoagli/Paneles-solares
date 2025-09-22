@@ -66,7 +66,7 @@ namespace Paneles_solares
 
                 if (resultado)
                 {
-                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtid.Text)]; //indice? o id?
+                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)]; //indice? o id?
                     row.Cells["idUsuario"].Value = txtid.Text;
                     row.Cells["DNI"].Value = txtdocumento.Text;
                     row.Cells["NombreCompleto"].Value = txtnombrecompleto.Text;
@@ -89,6 +89,7 @@ namespace Paneles_solares
 
                 private void limpiar()
                 {
+                    txtindice.Text = "-1";
                     txtid.Text = "";
                     txtdocumento.Text = "";
                     txtnombrecompleto.Text = "";
@@ -180,11 +181,14 @@ namespace Paneles_solares
 
                 if(indice >= 0)
                 {
+                    txtindice.Text = indice.ToString();
                     txtid.Text = dgvdata.Rows[indice].Cells["idUsuario"].Value.ToString();
                     txtdocumento.Text = dgvdata.Rows[indice].Cells["DNI"].Value.ToString();
                     txtnombrecompleto.Text = dgvdata.Rows[indice].Cells["NombreCompleto"].Value.ToString();
                     txtcorreo.Text = dgvdata.Rows[indice].Cells["Correo"].Value.ToString();
                     txtclave.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
+                    txtconfclave.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
+
 
                     foreach (OpcionCombo oc in cborol.Items)
                     {
