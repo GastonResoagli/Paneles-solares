@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,7 +52,6 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +59,7 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btneliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -68,6 +67,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -75,19 +75,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(108, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(836, 574);
-            this.label1.TabIndex = 1;
-            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(124, 39);
+            this.label2.Location = new System.Drawing.Point(28, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 29);
             this.label2.TabIndex = 2;
@@ -100,7 +92,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cbobusqueda);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(111, 90);
+            this.groupBox1.Location = new System.Drawing.Point(15, 69);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(405, 71);
             this.groupBox1.TabIndex = 3;
@@ -150,7 +142,7 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Location = new System.Drawing.Point(515, 90);
+            this.groupBox2.Location = new System.Drawing.Point(419, 69);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(429, 71);
             this.groupBox2.TabIndex = 4;
@@ -221,7 +213,7 @@
             this.groupBox3.Controls.Add(this.iconButton1);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Location = new System.Drawing.Point(111, 156);
+            this.groupBox3.Location = new System.Drawing.Point(15, 135);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(702, 96);
             this.groupBox3.TabIndex = 5;
@@ -326,15 +318,6 @@
             this.textBox4.Size = new System.Drawing.Size(122, 20);
             this.textBox4.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(819, 163);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 85);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -346,7 +329,7 @@
             this.Cantidad,
             this.SubTotal,
             this.btneliminar});
-            this.dataGridView1.Location = new System.Drawing.Point(114, 250);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 229);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(699, 344);
             this.dataGridView1.TabIndex = 7;
@@ -381,9 +364,18 @@
             this.btneliminar.HeaderText = "";
             this.btneliminar.Name = "btneliminar";
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(836, 574);
+            this.label1.TabIndex = 1;
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(823, 519);
+            this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button2.Location = new System.Drawing.Point(727, 498);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(108, 37);
             this.button2.TabIndex = 41;
@@ -392,7 +384,7 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(823, 457);
+            this.textBox10.Location = new System.Drawing.Point(727, 436);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(108, 20);
             this.textBox10.TabIndex = 39;
@@ -401,7 +393,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(838, 441);
+            this.label14.Location = new System.Drawing.Point(742, 420);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(45, 13);
             this.label14.TabIndex = 40;
@@ -409,7 +401,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(823, 380);
+            this.textBox9.Location = new System.Drawing.Point(727, 359);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(108, 20);
             this.textBox9.TabIndex = 37;
@@ -418,7 +410,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label13.Location = new System.Drawing.Point(838, 364);
+            this.label13.Location = new System.Drawing.Point(742, 343);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 13);
             this.label13.TabIndex = 38;
@@ -426,7 +418,7 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(823, 310);
+            this.textBox8.Location = new System.Drawing.Point(727, 289);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(108, 20);
             this.textBox8.TabIndex = 35;
@@ -435,17 +427,27 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(838, 294);
+            this.label12.Location = new System.Drawing.Point(742, 273);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(74, 13);
             this.label12.TabIndex = 36;
             this.label12.Text = "Total a Pagar:";
             // 
+            // button1
+            // 
+            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button1.Location = new System.Drawing.Point(742, 158);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 73);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 624);
+            this.ClientSize = new System.Drawing.Size(861, 598);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.label14);
@@ -460,7 +462,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmVentas";
             this.Text = "frmVentas";
             this.groupBox1.ResumeLayout(false);
@@ -477,8 +479,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
@@ -503,7 +503,6 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
@@ -511,6 +510,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridViewButtonColumn btneliminar;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label14;
@@ -518,5 +518,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button1;
     }
 }

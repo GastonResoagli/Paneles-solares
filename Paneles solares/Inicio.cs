@@ -195,12 +195,6 @@ namespace Paneles_solares
            
         }
 
-        private void btnConfig_Click(object sender, EventArgs e)
-        {
-
-            abrirFormulario(sender, new frmConfig());
-            
-        }
 
 
        

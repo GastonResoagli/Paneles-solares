@@ -30,7 +30,6 @@
         {
             this.panelMenu = new System.Windows.Forms.Panel();
             this.lblusuario = new System.Windows.Forms.Label();
-            this.btnConfig = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
@@ -48,7 +47,6 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(75)))));
             this.panelMenu.Controls.Add(this.lblusuario);
-            this.panelMenu.Controls.Add(this.btnConfig);
             this.panelMenu.Controls.Add(this.btnReportes);
             this.panelMenu.Controls.Add(this.btnVentas);
             this.panelMenu.Controls.Add(this.btnUsuarios);
@@ -65,31 +63,12 @@
             // 
             this.lblusuario.AutoSize = true;
             this.lblusuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblusuario.Location = new System.Drawing.Point(69, 579);
+            this.lblusuario.Location = new System.Drawing.Point(69, 544);
             this.lblusuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(51, 13);
             this.lblusuario.TabIndex = 8;
             this.lblusuario.Text = "lblusuario";
-            // 
-            // btnConfig
-            // 
-            this.btnConfig.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConfig.FlatAppearance.BorderSize = 0;
-            this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfig.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnConfig.Image = global::Paneles_solares.Properties.Resources.avatar_de_usuario;
-            this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfig.Location = new System.Drawing.Point(0, 465);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(225, 79);
-            this.btnConfig.TabIndex = 6;
-            this.btnConfig.Text = "Config";
-            this.btnConfig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnConfig.UseVisualStyleBackColor = true;
-            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // btnReportes
             // 
@@ -237,7 +216,6 @@
 
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Button btnConfig;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnUsuarios;
