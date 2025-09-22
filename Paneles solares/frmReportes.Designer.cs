@@ -158,7 +158,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(9, 105);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1150, 510);
+            this.label5.Size = new System.Drawing.Size(1150, 527);
             this.label5.TabIndex = 63;
             // 
             // btnlimpiarbuscador
@@ -259,7 +259,7 @@
             this.Rol,
             this.Estado,
             this.EstadoValor});
-            this.dgvdata.Location = new System.Drawing.Point(27, 150);
+            this.dgvdata.Location = new System.Drawing.Point(27, 170);
             this.dgvdata.Margin = new System.Windows.Forms.Padding(4);
             this.dgvdata.MultiSelect = false;
             this.dgvdata.Name = "dgvdata";

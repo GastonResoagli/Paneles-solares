@@ -1,4 +1,6 @@
-﻿namespace Paneles_solares
+﻿using System.Windows.Forms;
+
+namespace Paneles_solares
 {
     partial class inicio
     {
@@ -30,16 +32,15 @@
         {
             this.panelMenu = new System.Windows.Forms.Panel();
             this.lblusuario = new System.Windows.Forms.Label();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.contenedor = new System.Windows.Forms.Panel();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.contenedor = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
-            this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,32 +72,6 @@
             this.lblusuario.Text = "lblusuario";
             this.lblusuario.Click += new System.EventHandler(this.lblusuario_Click);
             // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(58)))));
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(300, 86);
-            this.panelLogo.TabIndex = 0;
-            this.panelLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLogo_Paint);
-            // 
-            // contenedor
-            // 
-            this.contenedor.AutoSize = true;
-            this.contenedor.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.contenedor.BackgroundImage = global::Paneles_solares.Properties.Resources.logo21;
-            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedor.Enabled = false;
-            this.contenedor.Location = new System.Drawing.Point(300, 0);
-            this.contenedor.Margin = new System.Windows.Forms.Padding(4);
-            this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1351, 884);
-            this.contenedor.TabIndex = 2;
-            this.contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.contenedor_Paint);
-            // 
             // btnReportes
             // 
             this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
@@ -106,7 +81,7 @@
             this.btnReportes.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnReportes.Image = global::Paneles_solares.Properties.Resources.grafico_de_barras;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 474);
+            this.btnReportes.Location = new System.Drawing.Point(0, 388);
             this.btnReportes.Margin = new System.Windows.Forms.Padding(4);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(300, 97);
@@ -126,7 +101,7 @@
             this.btnVentas.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnVentas.Image = global::Paneles_solares.Properties.Resources.carrito_de_compras;
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 377);
+            this.btnVentas.Location = new System.Drawing.Point(0, 291);
             this.btnVentas.Margin = new System.Windows.Forms.Padding(4);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(300, 97);
@@ -146,7 +121,7 @@
             this.btnUsuarios.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnUsuarios.Image = global::Paneles_solares.Properties.Resources.avatar;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 280);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 194);
             this.btnUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(300, 97);
@@ -166,7 +141,7 @@
             this.btnClientes.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnClientes.Image = global::Paneles_solares.Properties.Resources.agregar_usuario;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 183);
+            this.btnClientes.Location = new System.Drawing.Point(0, 97);
             this.btnClientes.Margin = new System.Windows.Forms.Padding(4);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(300, 97);
@@ -186,7 +161,7 @@
             this.btnProductos.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnProductos.Image = global::Paneles_solares.Properties.Resources.panel_solar;
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.Location = new System.Drawing.Point(0, 86);
+            this.btnProductos.Location = new System.Drawing.Point(0, 0);
             this.btnProductos.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(300, 97);
@@ -197,6 +172,13 @@
             this.btnProductos.UseVisualStyleBackColor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click_1);
             // 
+            // panelLogo
+            // 
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(200, 100);
+            this.panelLogo.TabIndex = 9;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Paneles_solares.Properties.Resources.logo2;
@@ -206,6 +188,15 @@
             this.pictureBox1.Size = new System.Drawing.Size(345, 86);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // contenedor
+            // 
+            this.contenedor.BackgroundImage = global::Paneles_solares.Properties.Resources.logo;
+            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contenedor.Location = new System.Drawing.Point(300, 0);
+            this.contenedor.Name = "contenedor";
+            this.contenedor.Size = new System.Drawing.Size(1351, 884);
+            this.contenedor.TabIndex = 1;
             // 
             // inicio
             // 
@@ -220,10 +211,8 @@
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
-            this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -238,7 +227,8 @@
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblusuario;
-        private System.Windows.Forms.Panel contenedor;
+        private readonly PaintEventHandler panelLogo_Paint;
+        private Panel contenedor;
     }
 }
 

@@ -81,7 +81,6 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("Clave", obj.Clave);
                     cmd.Parameters.AddWithValue("IdRol", obj.oRol.IdRol);
-                    //cmd.Parameters.Add("Estado", SqlDbType.Bit).Value = obj.Estado;
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
                     //parametros de salida
                     cmd.Parameters.Add("idUsuarioResultado", SqlDbType.Int).Direction = ParameterDirection.Output;

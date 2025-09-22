@@ -71,7 +71,7 @@ namespace Paneles_solares
                 if (resultado) //edicion exitosa
                 {
                     //se actualiza la fila del datagrid
-                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)]; //indice? o id?
+                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)]; 
                     row.Cells["idUsuario"].Value = txtid.Text;
                     row.Cells["DNI"].Value = txtdocumento.Text;
                     row.Cells["NombreCompleto"].Value = txtnombrecompleto.Text;
