@@ -436,7 +436,7 @@
             // button1
             // 
             this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.Location = new System.Drawing.Point(742, 158);
+            this.button1.Location = new System.Drawing.Point(727, 158);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 73);
             this.button1.TabIndex = 6;
