@@ -170,9 +170,14 @@ namespace Paneles_solares
            
         }
 
+        private void lblusuario_Click(object sender, EventArgs e)
+        {
 
+        }
 
-       
-       
+        private void contenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

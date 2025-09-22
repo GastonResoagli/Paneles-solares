@@ -30,14 +30,14 @@
         {
             this.panelMenu = new System.Windows.Forms.Panel();
             this.lblusuario = new System.Windows.Forms.Label();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.contenedor = new System.Windows.Forms.Panel();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
-            this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.contenedor = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,20 +55,47 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(225, 664);
+            this.panelMenu.Size = new System.Drawing.Size(300, 884);
             this.panelMenu.TabIndex = 0;
             // 
             // lblusuario
             // 
             this.lblusuario.AutoSize = true;
             this.lblusuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblusuario.Location = new System.Drawing.Point(69, 544);
-            this.lblusuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblusuario.Location = new System.Drawing.Point(92, 670);
             this.lblusuario.Name = "lblusuario";
-            this.lblusuario.Size = new System.Drawing.Size(51, 13);
+            this.lblusuario.Size = new System.Drawing.Size(65, 16);
             this.lblusuario.TabIndex = 8;
             this.lblusuario.Text = "lblusuario";
+            this.lblusuario.Click += new System.EventHandler(this.lblusuario_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(58)))));
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(300, 86);
+            this.panelLogo.TabIndex = 0;
+            this.panelLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLogo_Paint);
+            // 
+            // contenedor
+            // 
+            this.contenedor.AutoSize = true;
+            this.contenedor.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.contenedor.BackgroundImage = global::Paneles_solares.Properties.Resources.logo21;
+            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contenedor.Enabled = false;
+            this.contenedor.Location = new System.Drawing.Point(300, 0);
+            this.contenedor.Margin = new System.Windows.Forms.Padding(4);
+            this.contenedor.Name = "contenedor";
+            this.contenedor.Size = new System.Drawing.Size(1351, 884);
+            this.contenedor.TabIndex = 2;
+            this.contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.contenedor_Paint);
             // 
             // btnReportes
             // 
@@ -79,9 +106,10 @@
             this.btnReportes.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnReportes.Image = global::Paneles_solares.Properties.Resources.grafico_de_barras;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 386);
+            this.btnReportes.Location = new System.Drawing.Point(0, 474);
+            this.btnReportes.Margin = new System.Windows.Forms.Padding(4);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(225, 79);
+            this.btnReportes.Size = new System.Drawing.Size(300, 97);
             this.btnReportes.TabIndex = 5;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -98,9 +126,10 @@
             this.btnVentas.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnVentas.Image = global::Paneles_solares.Properties.Resources.carrito_de_compras;
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 307);
+            this.btnVentas.Location = new System.Drawing.Point(0, 377);
+            this.btnVentas.Margin = new System.Windows.Forms.Padding(4);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(225, 79);
+            this.btnVentas.Size = new System.Drawing.Size(300, 97);
             this.btnVentas.TabIndex = 4;
             this.btnVentas.Text = "Ventas";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -117,9 +146,10 @@
             this.btnUsuarios.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnUsuarios.Image = global::Paneles_solares.Properties.Resources.avatar;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 228);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 280);
+            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(225, 79);
+            this.btnUsuarios.Size = new System.Drawing.Size(300, 97);
             this.btnUsuarios.TabIndex = 3;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -136,9 +166,10 @@
             this.btnClientes.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnClientes.Image = global::Paneles_solares.Properties.Resources.agregar_usuario;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 149);
+            this.btnClientes.Location = new System.Drawing.Point(0, 183);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(4);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(225, 79);
+            this.btnClientes.Size = new System.Drawing.Size(300, 97);
             this.btnClientes.TabIndex = 2;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -155,9 +186,10 @@
             this.btnProductos.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnProductos.Image = global::Paneles_solares.Properties.Resources.panel_solar;
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.Location = new System.Drawing.Point(0, 70);
+            this.btnProductos.Location = new System.Drawing.Point(0, 86);
+            this.btnProductos.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(225, 79);
+            this.btnProductos.Size = new System.Drawing.Size(300, 97);
             this.btnProductos.TabIndex = 1;
             this.btnProductos.Text = "Productos";
             this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -165,42 +197,24 @@
             this.btnProductos.UseVisualStyleBackColor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click_1);
             // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(58)))));
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(225, 70);
-            this.panelLogo.TabIndex = 0;
-            this.panelLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLogo_Paint);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Paneles_solares.Properties.Resources.logo2;
-            this.pictureBox1.Location = new System.Drawing.Point(-33, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(-44, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(259, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(345, 86);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // contenedor
-            // 
-            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedor.Location = new System.Drawing.Point(225, 0);
-            this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1013, 664);
-            this.contenedor.TabIndex = 2;
-            // 
             // inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 664);
+            this.ClientSize = new System.Drawing.Size(1651, 884);
             this.Controls.Add(this.contenedor);
             this.Controls.Add(this.panelMenu);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "inicio";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Inicio_Load);
@@ -209,6 +223,7 @@
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

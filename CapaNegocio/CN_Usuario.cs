@@ -1,5 +1,5 @@
-﻿using CapaDatos;
-using CapaEntidad;
+﻿using CapaDatos; //para conectar con la capa de datos CD_Usuario
+using CapaEntidad; //para usar la entidad Usuario 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +10,13 @@ using CapaEntidad;
 
 namespace CapaNegocio
 {
+    //clase de la capa negocio que maneja los usuarios
     public class CN_Usuario
     {
+        //objeto de la capa datos que se conecta a la base de datos
         private CD_Usuario objcd_usuario = new CD_Usuario();
 
+        //metodo que lista los usuarios
         public List<Usuario> Listar()
         {
             return objcd_usuario.Listar();
@@ -44,6 +47,7 @@ namespace CapaNegocio
             }
             else
             {
+                //llama a la capa datos para registrar el usuario en la bd
                 return objcd_usuario.Registrar(obj, out Mensaje);
             }
 
