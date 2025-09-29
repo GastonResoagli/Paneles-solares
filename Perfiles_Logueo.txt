@@ -1,0 +1,16 @@
+Perfiles
+
+administrador:
+	documento: 1001001
+	clave: 1234
+
+	documento:4004004
+	clave:4004
+
+
+Empleado:
+	documento: 2002002
+	clave: 1234
+
+	documento: 40047945
+	clave: 4004
