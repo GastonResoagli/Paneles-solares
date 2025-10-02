@@ -23,7 +23,7 @@ namespace CapaDatos
                 {
                     //consulta sql para traer Clientes con su rol
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT idCliente, DNI, Nombre, Correo, Telefono, Estado");  
+                    query.AppendLine("SELECT idCliente, DNI, Nombre, Correo, Telefono, Estado FROM Cliente");  
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;

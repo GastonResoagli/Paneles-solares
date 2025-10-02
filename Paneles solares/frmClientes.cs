@@ -34,9 +34,6 @@ namespace Paneles_solares
             cboestado.ValueMember = "Valor";
             cboestado.SelectedIndex = 0;
 
-            // Se cargan los roles desde la capa de negocio
-            List<Rol> listaRol = new CN_Rol().Listar();
-
             // Se cargan las columnas disponibles para busqueda
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
@@ -170,15 +167,13 @@ namespace Paneles_solares
                     // Selecciona el estado correcto en el combo
                     foreach (OpcionCombo oc in cboestado.Items)
                     {
-                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["Estado"].Value))
+                        if ((oc.Texto == dgvdata.Rows[indice].Cells["EstadoValor"].Value.ToString()))
                         {
                             int indice_combo = cboestado.Items.IndexOf(oc);
                             cboestado.SelectedIndex = indice_combo;
                             break;
                         }
                     }
-
-
                 }
             }
         }
