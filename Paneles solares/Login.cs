@@ -110,5 +110,10 @@ namespace Paneles_solares
                 e.Handled = true; 
             }
         }
+
+        private void txtDocumento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

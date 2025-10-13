@@ -71,7 +71,7 @@ namespace Paneles_solares
                     item.oCategoria.idCategoria,
                     item.oCategoria.Descripcion,
                     item.Stock,
-                    item.PrecioCompra,
+                  //  item.PrecioCompra,
                     item.PrecioVenta,
                     item.Estado == true ? 1 : 0,
                     item.Estado == true ? "Activo" : "No Activo"
@@ -129,16 +129,17 @@ namespace Paneles_solares
                 if (resultado)
                 {
                     DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)];
-                    row.Cells["id"].Value = txtid.Text;
+                    row.Cells["idProducto"].Value = txtid.Text;
                     row.Cells["Codigo"].Value = txtcodigo.Text;
                     row.Cells["Nombre"].Value = txtnombre.Text;
-                    row.Cells["Descipcion"].Value = txtdescripcion.Text;
+                    row.Cells["Descripcion"].Value = txtdescripcion.Text;
 
                     row.Cells["idCategoria"].Value = ((OpcionCombo)cbocategoria.SelectedItem).Valor.ToString();
                     row.Cells["Categoria"].Value = ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString();
 
-                    row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
-                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
+                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
+                    row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
+
 
                     limpiar();
                 }
@@ -152,7 +153,7 @@ namespace Paneles_solares
         private void limpiar()
         {
             txtindice.Text = "-1";
-            txtid.Text = "";
+            txtid.Text = "0";
             txtcodigo.Text = "";
             txtnombre.Text = "";
             txtdescripcion.Text = "";
@@ -189,7 +190,7 @@ namespace Paneles_solares
                 {
                     // Se cargan los valores de la fila seleccionada en los campos de edicion
                     txtindice.Text = indice.ToString();
-                    txtid.Text = dgvdata.Rows[indice].Cells["idUsuario"].Value.ToString();
+                    txtid.Text = dgvdata.Rows[indice].Cells["idProducto"].Value.ToString();
                     txtcodigo.Text = dgvdata.Rows[indice].Cells["Codigo"].Value.ToString();
                     txtnombre.Text = dgvdata.Rows[indice].Cells["Nombre"].Value.ToString();
                     txtdescripcion.Text = dgvdata.Rows[indice].Cells["Descripcion"].Value.ToString();
@@ -207,15 +208,13 @@ namespace Paneles_solares
                     // Selecciona el estado correcto en el combo
                     foreach (OpcionCombo oc in cboestado.Items)
                     {
-                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["Estado"].Value))
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
                         {
                             int indice_combo = cboestado.Items.IndexOf(oc);
                             cboestado.SelectedIndex = indice_combo;
                             break;
                         }
                     }
-
-
                 }
             }
         }

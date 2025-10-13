@@ -3,21 +3,25 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CapaDatos
 {
     public class CD_Producto
     {
-        // Listar productos con su categoría
         public List<Producto> Listar()
         {
+
             List<Producto> lista = new List<Producto>();
 
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
+                    //consulta sql para traer Productos con su rol
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("SELECT p.idProducto, p.Codigo, p.Nombre, p.Descripcion,");
                     query.AppendLine("c.idCategoria, c.Descripcion AS DesCategoria,");
@@ -31,143 +35,175 @@ namespace CapaDatos
 
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        while (dr.Read())
+                        /*while (dr.Read())
                         {
+                            //se crea objetos Producto a partir de cada fila leida
                             lista.Add(new Producto()
                             {
                                 idProducto = Convert.ToInt32(dr["idProducto"]),
                                 Codigo = dr["Codigo"].ToString(),
                                 Nombre = dr["Nombre"].ToString(),
                                 Descripcion = dr["Descripcion"].ToString(),
+                                //oCategoria = new Categoria() { idCategoria = Convert.ToInt32(dr["idCategoria"]), Descripcion = dr["Categoria"].ToString() },
+                                Stock = Convert.ToInt32(dr["Stock"].ToString()),
+                                PrecioVenta = Convert.ToDecimal(dr["PrecioVenta"].ToString()),
+                                Estado = Convert.ToBoolean(dr["Estado"]),
+                            });
+                        }
+                        */
+
+                        while (dr.Read())
+                        {
+                            lista.Add(new Producto()
+                            {
+                                idProducto = Convert.ToInt32(dr["idProducto"]),
+                                Codigo = dr["Codigo"] != DBNull.Value ? dr["Codigo"].ToString() : "",
+                                Nombre = dr["Nombre"].ToString(),
+                                Descripcion = dr["Descripcion"] != DBNull.Value ? dr["Descripcion"].ToString() : "",
                                 oCategoria = new Categoria()
                                 {
                                     idCategoria = Convert.ToInt32(dr["idCategoria"]),
                                     Descripcion = dr["DesCategoria"].ToString()
                                 },
-                                Stock = Convert.ToInt32(dr["Stock"]),
-                                PrecioVenta = Convert.ToDecimal(dr["PrecioVenta"]),
+                                Stock = dr["Stock"] != DBNull.Value ? Convert.ToInt32(dr["Stock"]) : 0,
+                                PrecioVenta = dr["PrecioVenta"] != DBNull.Value ? Convert.ToDecimal(dr["PrecioVenta"]) : 0,
                                 Estado = Convert.ToBoolean(dr["Estado"])
                             });
                         }
+
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    //si hay error la devuelve vacia
                     lista = new List<Producto>();
+
                 }
             }
             return lista;
         }
 
-        // Registrar producto (usa SP_REGISTRARPRODUCTO)
+
+        //metodo para registrar Producto
         public int Registrar(Producto obj, out string Mensaje)
         {
-            int idProductoGenerado = 0;
+            int idProductogenerado = 0;
             Mensaje = string.Empty;
 
             try
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_REGISTRARPRODUCTO", oconexion);
+                    SqlCommand cmd = new SqlCommand("SP_RegistrarProducto", oconexion);
+
+                    // Parámetros de entrada
                     cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
-                    cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("idCategoria", obj.oCategoria.idCategoria);
-                    cmd.Parameters.AddWithValue("Stock", obj.Stock);
-                    cmd.Parameters.AddWithValue("PrecioVenta", obj.PrecioVenta);
+                    cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
-                    // parámetros de salida
-                    cmd.Parameters.Add("idProductoResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                    // Parámetros de salida
+                    cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     oconexion.Open();
                     cmd.ExecuteNonQuery();
 
-                    idProductoGenerado = Convert.ToInt32(cmd.Parameters["idProductoResultado"].Value);
+                    // Se obtienen los valores de salida
+                    idProductogenerado = Convert.ToInt32(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
-                idProductoGenerado = 0;
+                idProductogenerado = 0;
                 Mensaje = ex.Message;
             }
 
-            return idProductoGenerado;
+            return idProductogenerado;
         }
 
-        // Editar producto (usa SP_EDITARPRODUCTO)
+
+        //metodo para editar Producto
         public bool Editar(Producto obj, out string Mensaje)
         {
-            bool resultado = false;
+            bool respuesta = false;
             Mensaje = string.Empty;
 
             try
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_EDITARPRODUCTO", oconexion);
+                    SqlCommand cmd = new SqlCommand("SP_ModificarProducto", oconexion);
+
+                    // Parámetros de entrada
                     cmd.Parameters.AddWithValue("idProducto", obj.idProducto);
                     cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
-                    cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("idCategoria", obj.oCategoria.idCategoria);
-                    cmd.Parameters.AddWithValue("Stock", obj.Stock);
-                    cmd.Parameters.AddWithValue("PrecioVenta", obj.PrecioVenta);
+                    cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
-                    // salida
-                    cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                    // Parámetros de salida
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     oconexion.Open();
                     cmd.ExecuteNonQuery();
 
-                    resultado = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    // Obtener los valores de salida
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
-                resultado = false;
+                respuesta = false;
                 Mensaje = ex.Message;
             }
 
-            return resultado;
+            return respuesta;
         }
 
-        // Eliminar producto (usa SP_ELIMINARPRODUCTO)
+
+        //metodo para eliminar Producto
         public bool Eliminar(Producto obj, out string Mensaje)
         {
-            bool resultado = false;
+            bool respuesta = false;
             Mensaje = string.Empty;
 
             try
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_ELIMINARPRODUCTO", oconexion);
+                    SqlCommand cmd = new SqlCommand("SP_EliminarProducto", oconexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Parámetros de entrada
                     cmd.Parameters.AddWithValue("idProducto", obj.idProducto);
-                    cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                    // Parámetros de salida
+                    cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
-                    cmd.CommandType = CommandType.StoredProcedure;
                     oconexion.Open();
                     cmd.ExecuteNonQuery();
 
-                    resultado = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    // Obtener resultados
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
-                resultado = false;
+                respuesta = false;
                 Mensaje = ex.Message;
             }
 
-            return resultado;
+            return respuesta;
         }
     }
 }
