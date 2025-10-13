@@ -120,13 +120,12 @@ namespace Paneles_solares
         private void limpiar()
         {
             txtindice.Text = "-1";
-            txtid.Text = "";
+            txtid.Text = "0";
             txtdni.Text = "";
             txtnombre.Text = "";
             txtcorreo.Text = "";
             txttelefono.Text = "";
             cboestado.SelectedIndex = 0;
-
             txtdni.Select();
         }
 

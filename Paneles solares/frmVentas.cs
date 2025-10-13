@@ -16,5 +16,6 @@ namespace Paneles_solares
         {
             InitializeComponent();
         }
+
     }
 }
