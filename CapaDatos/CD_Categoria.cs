@@ -9,7 +9,7 @@ namespace CapaDatos
 {
     public class CD_Categoria
     {
-        // 🔹 Listar categorías
+        // Listar categorías
         public List<Categoria> Listar()
         {
             List<Categoria> lista = new List<Categoria>();
@@ -47,7 +47,7 @@ namespace CapaDatos
             return lista;
         }
 
-        // 🔹 Registrar categoría
+        // Registrar categoría
         public int Registrar(Categoria obj, out string Mensaje)
         {
             int idGenerado = 0;
@@ -79,7 +79,7 @@ namespace CapaDatos
             return idGenerado;
         }
 
-        // 🔹 Editar categoría
+        // Editar categoría
         public bool Editar(Categoria obj, out string Mensaje)
         {
             bool resultado = false;
@@ -112,7 +112,7 @@ namespace CapaDatos
             return resultado;
         }
 
-        // 🔹 Eliminar categoría
+        // Eliminar categoría
         public bool Eliminar(Categoria obj, out string Mensaje)
         {
             bool resultado = false;

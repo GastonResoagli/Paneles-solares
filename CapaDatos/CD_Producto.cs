@@ -9,7 +9,7 @@ namespace CapaDatos
 {
     public class CD_Producto
     {
-        // 🔹 Listar productos con su categoría
+        // Listar productos con su categoría
         public List<Producto> Listar()
         {
             List<Producto> lista = new List<Producto>();
@@ -59,7 +59,7 @@ namespace CapaDatos
             return lista;
         }
 
-        // 🔹 Registrar producto (usa SP_REGISTRARPRODUCTO)
+        // Registrar producto (usa SP_REGISTRARPRODUCTO)
         public int Registrar(Producto obj, out string Mensaje)
         {
             int idProductoGenerado = 0;
@@ -98,7 +98,7 @@ namespace CapaDatos
             return idProductoGenerado;
         }
 
-        // 🔹 Editar producto (usa SP_EDITARPRODUCTO)
+        // Editar producto (usa SP_EDITARPRODUCTO)
         public bool Editar(Producto obj, out string Mensaje)
         {
             bool resultado = false;
@@ -138,7 +138,7 @@ namespace CapaDatos
             return resultado;
         }
 
-        // 🔹 Eliminar producto (usa SP_ELIMINARPRODUCTO)
+        // Eliminar producto (usa SP_ELIMINARPRODUCTO)
         public bool Eliminar(Producto obj, out string Mensaje)
         {
             bool resultado = false;
