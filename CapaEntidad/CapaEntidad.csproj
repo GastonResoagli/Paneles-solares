@@ -49,7 +49,7 @@
     <Compile Include="Rol.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Venta.cs" />
-    <Compile Include="Ventda_Detalle.cs" />
+    <Compile Include="Venta_Detalle.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
