@@ -159,7 +159,7 @@ namespace Paneles_solares
         private void btnVentas_Click(object sender, EventArgs e)
         {
            
-            abrirFormulario(sender, new frmVentas());
+            abrirFormulario(sender, new frmVentas(usuarioActual));
            
         }
 
