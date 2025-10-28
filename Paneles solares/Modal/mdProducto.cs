@@ -64,7 +64,7 @@ namespace Paneles_solares.Modal
 
                 _Producto = new Producto()
                 {
-                    idProducto = Convert.ToInt32(dgvdata.Rows[iRow].Cells["Id"].Value.ToString()),
+                    idProducto = Convert.ToInt32(dgvdata.Rows[iRow].Cells["idProducto"].Value.ToString()),
                     Codigo = dgvdata.Rows[iRow].Cells["Codigo"].Value.ToString(),
                     Nombre = dgvdata.Rows[iRow].Cells["Nombre"].Value.ToString(),
                     Stock = Convert.ToInt32(dgvdata.Rows[iRow].Cells["Stock"].Value.ToString()),

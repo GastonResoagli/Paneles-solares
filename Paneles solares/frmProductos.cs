@@ -43,7 +43,7 @@ namespace Paneles_solares
             }
             cbocategoria.DisplayMember = "Texto";
             cbocategoria.ValueMember = "Valor";
-            cbocategoria.SelectedIndex = 0;
+           
 
             // Se cargan las columnas disponibles para busqueda
             foreach (DataGridViewColumn columna in dgvdata.Columns)
@@ -83,6 +83,18 @@ namespace Paneles_solares
         {
             string mensaje = string.Empty;
 
+            int stock;
+            decimal precioVenta;
+
+            if (!int.TryParse(txtstock.Text, out stock))
+            {
+                MessageBox.Show("Stock inválido"); return;
+            }
+            if (!decimal.TryParse(txtprecioventa.Text, out precioVenta))
+            {
+                MessageBox.Show("Precio de venta inválido"); return;
+            }
+
             // Armar el objeto usuario
             Producto obj = new Producto()
             {
@@ -90,8 +102,9 @@ namespace Paneles_solares
                 Codigo = txtcodigo.Text,
                 Nombre = txtnombre.Text,
                 Descripcion = txtdescripcion.Text,
-                
                 oCategoria = new Categoria() { idCategoria = Convert.ToInt32(((OpcionCombo)cbocategoria.SelectedItem).Valor) },
+                Stock = Convert.ToInt32(txtstock.Text),
+                PrecioVenta = Convert.ToInt32(txtprecioventa.Text),
                 Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
             };
 
@@ -110,8 +123,8 @@ namespace Paneles_solares
                 txtdescripcion.Text,
                 ((OpcionCombo)cbocategoria.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString(),
-                "0",
-                "0.00",
+                txtstock.Text,
+                txtprecioventa.Text,
                 ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cboestado.SelectedItem).Texto.ToString(),
             });
@@ -137,6 +150,9 @@ namespace Paneles_solares
                     row.Cells["idCategoria"].Value = ((OpcionCombo)cbocategoria.SelectedItem).Valor.ToString();
                     row.Cells["Categoria"].Value = ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString();
 
+                    row.Cells["Stock"].Value = txtstock.Text;
+                    row.Cells["PrecioVenta"].Value = txtprecioventa.Text;
+
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
                     row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
 
@@ -157,6 +173,9 @@ namespace Paneles_solares
             txtcodigo.Text = "";
             txtnombre.Text = "";
             txtdescripcion.Text = "";
+            
+            txtstock.Clear();
+            txtprecioventa.Clear();
 
             cbocategoria.SelectedIndex = 0;
             cbocategoria.SelectedIndex = 0;
@@ -194,6 +213,9 @@ namespace Paneles_solares
                     txtcodigo.Text = dgvdata.Rows[indice].Cells["Codigo"].Value.ToString();
                     txtnombre.Text = dgvdata.Rows[indice].Cells["Nombre"].Value.ToString();
                     txtdescripcion.Text = dgvdata.Rows[indice].Cells["Descripcion"].Value.ToString();
+                    txtstock.Text = dgvdata.Rows[indice].Cells["Stock"].Value.ToString();
+                    txtprecioventa.Text = dgvdata.Rows[indice].Cells["PrecioVenta"].Value.ToString();
+
 
                     // Selecciona el rol correcto en el combo
                     foreach (OpcionCombo oc in cbocategoria.Items)

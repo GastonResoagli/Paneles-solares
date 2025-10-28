@@ -99,8 +99,10 @@ namespace CapaDatos
                     // Parámetros de entrada
                     cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
-                    cmd.Parameters.AddWithValue("idCategoria", obj.oCategoria.idCategoria);
                     cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("idCategoria", obj.oCategoria.idCategoria);
+                    cmd.Parameters.AddWithValue("Stock", obj.Stock);
+                    cmd.Parameters.AddWithValue("PrecioVenta", obj.PrecioVenta);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
 
                     // Parámetros de salida
@@ -142,8 +144,10 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("idProducto", obj.idProducto);
                     cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
-                    cmd.Parameters.AddWithValue("idCategoria", obj.oCategoria.idCategoria);
                     cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("idCategoria", obj.oCategoria.idCategoria);
+                    cmd.Parameters.AddWithValue("Stock", obj.Stock);
+                    cmd.Parameters.AddWithValue("PrecioVenta", obj.PrecioVenta);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
 
                     // Parámetros de salida
