@@ -38,6 +38,8 @@ namespace Paneles_solares
             txtpagocon.Text = "";
             txtcambio.Text = "";
             txttotalpagar.Text = "0";
+
+            dgvdata.AllowUserToAddRows = false; 
         }
 
         private void btnbuscar_Click(object sender, EventArgs e)
@@ -139,7 +141,7 @@ namespace Paneles_solares
             // Verificar si el producto ya existe en el DataGridView
             foreach (DataGridViewRow fila in dgvdata.Rows)
             {
-                if (fila.Cells["IdProducto"].Value.ToString() == txtidproducto.Text)
+                if (fila.Cells["idProducto"].Value != null && fila.Cells["idProducto"].Value.ToString() == txtidproducto.Text)
                 {
                     producto_existe = true;
                     break;
@@ -162,13 +164,16 @@ namespace Paneles_solares
             }
 
         }
-        private void calculartotal()
+       private void calculartotal()
         {
             decimal total = 0;
             if (dgvdata.Rows.Count > 0)
             {
                 foreach (DataGridViewRow row in dgvdata.Rows)
-                    total += Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString());
+                {
+                    if (row.Cells["SubTotal"].Value != null)
+                        total += Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString());
+                }
             }
             txttotalpagar.Text = total.ToString("0.00");
         }
@@ -183,7 +188,7 @@ namespace Paneles_solares
             txtcantidad.Value = 1;
         }
 
-        private void dvgdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             /*
                         if (e.RowIndex < 0)
@@ -203,7 +208,7 @@ namespace Paneles_solares
                         } */
         }
 
-        private void dvgdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvdata.Columns[e.ColumnIndex].Name == "btneliminar")
             {
