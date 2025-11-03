@@ -56,18 +56,18 @@ namespace Paneles_solares
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(300, 884);
+            this.panelMenu.Size = new System.Drawing.Size(225, 718);
             this.panelMenu.TabIndex = 0;
             // 
             // lblusuario
             // 
             this.lblusuario.AutoSize = true;
             this.lblusuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblusuario.Location = new System.Drawing.Point(92, 670);
+            this.lblusuario.Location = new System.Drawing.Point(69, 544);
+            this.lblusuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblusuario.Name = "lblusuario";
-            this.lblusuario.Size = new System.Drawing.Size(65, 16);
+            this.lblusuario.Size = new System.Drawing.Size(51, 13);
             this.lblusuario.TabIndex = 8;
             this.lblusuario.Text = "lblusuario";
             this.lblusuario.Click += new System.EventHandler(this.lblusuario_Click);
@@ -81,10 +81,9 @@ namespace Paneles_solares
             this.btnReportes.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnReportes.Image = global::Paneles_solares.Properties.Resources.grafico_de_barras;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 388);
-            this.btnReportes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReportes.Location = new System.Drawing.Point(0, 316);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(300, 97);
+            this.btnReportes.Size = new System.Drawing.Size(225, 79);
             this.btnReportes.TabIndex = 5;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -101,10 +100,9 @@ namespace Paneles_solares
             this.btnVentas.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnVentas.Image = global::Paneles_solares.Properties.Resources.carrito_de_compras;
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 291);
-            this.btnVentas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVentas.Location = new System.Drawing.Point(0, 237);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(300, 97);
+            this.btnVentas.Size = new System.Drawing.Size(225, 79);
             this.btnVentas.TabIndex = 4;
             this.btnVentas.Text = "Ventas";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -121,10 +119,9 @@ namespace Paneles_solares
             this.btnUsuarios.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnUsuarios.Image = global::Paneles_solares.Properties.Resources.avatar;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 194);
-            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 158);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(300, 97);
+            this.btnUsuarios.Size = new System.Drawing.Size(225, 79);
             this.btnUsuarios.TabIndex = 3;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -141,10 +138,9 @@ namespace Paneles_solares
             this.btnClientes.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnClientes.Image = global::Paneles_solares.Properties.Resources.agregar_usuario;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 97);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClientes.Location = new System.Drawing.Point(0, 79);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(300, 97);
+            this.btnClientes.Size = new System.Drawing.Size(225, 79);
             this.btnClientes.TabIndex = 2;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -162,9 +158,8 @@ namespace Paneles_solares
             this.btnProductos.Image = global::Paneles_solares.Properties.Resources.panel_solar;
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductos.Location = new System.Drawing.Point(0, 0);
-            this.btnProductos.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(300, 97);
+            this.btnProductos.Size = new System.Drawing.Size(225, 79);
             this.btnProductos.TabIndex = 1;
             this.btnProductos.Text = "Productos";
             this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -175,8 +170,9 @@ namespace Paneles_solares
             // panelLogo
             // 
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 100);
+            this.panelLogo.Size = new System.Drawing.Size(150, 81);
             this.panelLogo.TabIndex = 9;
             // 
             // pictureBox1
@@ -193,19 +189,19 @@ namespace Paneles_solares
             // 
             this.contenedor.BackgroundImage = global::Paneles_solares.Properties.Resources.logo2;
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedor.Location = new System.Drawing.Point(300, 0);
+            this.contenedor.Location = new System.Drawing.Point(225, 0);
+            this.contenedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1351, 884);
+            this.contenedor.Size = new System.Drawing.Size(1013, 718);
             this.contenedor.TabIndex = 1;
             // 
             // inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1651, 884);
+            this.ClientSize = new System.Drawing.Size(1238, 718);
             this.Controls.Add(this.contenedor);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "inicio";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Inicio_Load);
