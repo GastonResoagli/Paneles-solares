@@ -31,15 +31,17 @@ namespace Paneles_solares
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.lblusuario = new System.Windows.Forms.Label();
+            this.Logut = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
+            this.lblusuario = new System.Windows.Forms.Label();
+            this.btnVentasD = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contenedor = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -47,8 +49,10 @@ namespace Paneles_solares
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(75)))));
-            this.panelMenu.Controls.Add(this.lblusuario);
+            this.panelMenu.Controls.Add(this.Logut);
             this.panelMenu.Controls.Add(this.btnReportes);
+            this.panelMenu.Controls.Add(this.lblusuario);
+            this.panelMenu.Controls.Add(this.btnVentasD);
             this.panelMenu.Controls.Add(this.btnVentas);
             this.panelMenu.Controls.Add(this.btnUsuarios);
             this.panelMenu.Controls.Add(this.btnClientes);
@@ -60,17 +64,24 @@ namespace Paneles_solares
             this.panelMenu.Size = new System.Drawing.Size(225, 718);
             this.panelMenu.TabIndex = 0;
             // 
-            // lblusuario
+            // Logut
             // 
-            this.lblusuario.AutoSize = true;
-            this.lblusuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblusuario.Location = new System.Drawing.Point(69, 544);
-            this.lblusuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblusuario.Name = "lblusuario";
-            this.lblusuario.Size = new System.Drawing.Size(51, 13);
-            this.lblusuario.TabIndex = 8;
-            this.lblusuario.Text = "lblusuario";
-            this.lblusuario.Click += new System.EventHandler(this.lblusuario_Click);
+            this.Logut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Logut.FlatAppearance.BorderSize = 0;
+            this.Logut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Logut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logut.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Logut.Image = global::Paneles_solares.Properties.Resources.WhatsApp_Image_2025_11_03_at_14_33_59;
+            this.Logut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Logut.Location = new System.Drawing.Point(0, 474);
+            this.Logut.Name = "Logut";
+            this.Logut.Size = new System.Drawing.Size(225, 79);
+            this.Logut.TabIndex = 11;
+            this.Logut.Text = "Logout";
+            this.Logut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Logut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Logut.UseVisualStyleBackColor = true;
+            this.Logut.Click += new System.EventHandler(this.Logut_Click);
             // 
             // btnReportes
             // 
@@ -81,15 +92,46 @@ namespace Paneles_solares
             this.btnReportes.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnReportes.Image = global::Paneles_solares.Properties.Resources.grafico_de_barras;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 316);
+            this.btnReportes.Location = new System.Drawing.Point(0, 395);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(225, 79);
-            this.btnReportes.TabIndex = 5;
+            this.btnReportes.TabIndex = 10;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReportes.UseVisualStyleBackColor = true;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click_1);
+            // 
+            // lblusuario
+            // 
+            this.lblusuario.AutoSize = true;
+            this.lblusuario.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblusuario.Location = new System.Drawing.Point(69, 611);
+            this.lblusuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblusuario.Name = "lblusuario";
+            this.lblusuario.Size = new System.Drawing.Size(51, 13);
+            this.lblusuario.TabIndex = 8;
+            this.lblusuario.Text = "lblusuario";
+            this.lblusuario.Click += new System.EventHandler(this.lblusuario_Click);
+            // 
+            // btnVentasD
+            // 
+            this.btnVentasD.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVentasD.FlatAppearance.BorderSize = 0;
+            this.btnVentasD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentasD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentasD.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnVentasD.Image = global::Paneles_solares.Properties.Resources.WhatsApp_Image_2025_11_03_at_14_34_00;
+            this.btnVentasD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentasD.Location = new System.Drawing.Point(0, 316);
+            this.btnVentasD.Name = "btnVentasD";
+            this.btnVentasD.Size = new System.Drawing.Size(225, 79);
+            this.btnVentasD.TabIndex = 5;
+            this.btnVentasD.Text = "Ventas Detales";
+            this.btnVentasD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentasD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVentasD.UseVisualStyleBackColor = true;
+            this.btnVentasD.Click += new System.EventHandler(this.btnVentasD_Click);
             // 
             // btnVentas
             // 
@@ -104,7 +146,7 @@ namespace Paneles_solares
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(225, 79);
             this.btnVentas.TabIndex = 4;
-            this.btnVentas.Text = "Ventas";
+            this.btnVentas.Text = " Ventas";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVentas.UseVisualStyleBackColor = true;
@@ -170,10 +212,20 @@ namespace Paneles_solares
             // panelLogo
             // 
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(150, 81);
             this.panelLogo.TabIndex = 9;
+            // 
+            // contenedor
+            // 
+            this.contenedor.BackgroundImage = global::Paneles_solares.Properties.Resources.logo2;
+            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contenedor.Location = new System.Drawing.Point(225, 0);
+            this.contenedor.Margin = new System.Windows.Forms.Padding(2);
+            this.contenedor.Name = "contenedor";
+            this.contenedor.Size = new System.Drawing.Size(1013, 718);
+            this.contenedor.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -184,16 +236,6 @@ namespace Paneles_solares
             this.pictureBox1.Size = new System.Drawing.Size(345, 86);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // contenedor
-            // 
-            this.contenedor.BackgroundImage = global::Paneles_solares.Properties.Resources.logo2;
-            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedor.Location = new System.Drawing.Point(225, 0);
-            this.contenedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1013, 718);
-            this.contenedor.TabIndex = 1;
             // 
             // inicio
             // 
@@ -216,7 +258,7 @@ namespace Paneles_solares
 
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Button btnReportes;
+        private System.Windows.Forms.Button btnVentasD;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnClientes;
@@ -225,6 +267,8 @@ namespace Paneles_solares
         private System.Windows.Forms.Label lblusuario;
         private readonly PaintEventHandler panelLogo_Paint;
         private Panel contenedor;
+        private Button Logut;
+        private Button btnReportes;
     }
 }
 

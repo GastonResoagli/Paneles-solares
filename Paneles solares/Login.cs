@@ -22,8 +22,7 @@ namespace Paneles_solares
         //evento boton ingresar
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-        
-            // Validar que los campos no esten vacios
+            // Validar que los campos no estén vacíos
             if (string.IsNullOrWhiteSpace(txtDocumento.Text))
             {
                 MessageBox.Show("Por favor ingrese su documento", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -38,8 +37,7 @@ namespace Paneles_solares
                 return;
             }
 
-            // Validar condiciones personalizadas
-            // Por ejemplo: que el documento tenga al menos 7 dígitos
+            // Validaciones personalizadas
             if (txtDocumento.Text.Length < 7)
             {
                 MessageBox.Show("El documento debe tener al menos 7 números", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -47,7 +45,6 @@ namespace Paneles_solares
                 return;
             }
 
-            // Que la clave tenga al menos 4 caracteres
             if (txtClave.Text.Length < 4)
             {
                 MessageBox.Show("La clave debe tener al menos 4 caracteres", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -55,18 +52,25 @@ namespace Paneles_solares
                 return;
             }
 
-            // Si paso las validaciones, recién ahi consulta la base de datos
+            // Consultar base de datos
             Usuario ousuario = new CN_Usuario().Listar()
                                 .Where(u => u.DNI == txtDocumento.Text && u.Clave == txtClave.Text)
                                 .FirstOrDefault();
 
             if (ousuario != null)
             {
-                inicio form = new inicio(ousuario);
+                // Verificar si el usuario está activo (Estado == true)
+                if (!ousuario.Estado) // si Estado es false, significa que está dado de baja
+                {
+                    MessageBox.Show("El usuario no se encuentra activo. Comuníquese con el administrador.",
+                                    "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
 
+                // Si está activo, permitir el ingreso
+                inicio form = new inicio(ousuario);
                 form.Show();
                 this.Hide();
-
                 form.FormClosing += frm_clossing;
             }
             else
@@ -74,8 +78,8 @@ namespace Paneles_solares
                 MessageBox.Show("Usuario o clave incorrectos", "Error de acceso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-        
-        
+
+
 
         //evento que se ejecuta cuando se cierra el formulario principal
         private void frm_clossing(object sender, FormClosingEventArgs e)
