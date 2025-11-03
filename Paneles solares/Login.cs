@@ -16,6 +16,7 @@ namespace Paneles_solares
     {
         public Login()
         {
+            //aaa
             InitializeComponent();
         }
 
