@@ -163,11 +163,11 @@ namespace Paneles_solares
            
         }
 
-        private void btnReportes_Click(object sender, EventArgs e)
+        private void btnVentasD_Click(object sender, EventArgs e)
         {
-          
-            abrirFormulario(sender, new frmReportes());
-           
+            abrirFormulario(sender, new frmVentaD());
+
+
         }
 
         private void lblusuario_Click(object sender, EventArgs e)
@@ -178,6 +178,16 @@ namespace Paneles_solares
         private void contenedor_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Logut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnReportes_Click_1(object sender, EventArgs e)
+        {
+            abrirFormulario(sender, new frmReportes());
         }
     }
 }
