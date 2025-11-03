@@ -47,15 +47,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnexportar = new System.Windows.Forms.Button();
             this.dgvdata = new System.Windows.Forms.DataGridView();
-            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DocumentoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MontoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UsuarioRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrevioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -277,15 +278,16 @@
             this.dgvdata.ColumnHeadersHeight = 29;
             this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idUsuario,
-            this.DNI,
-            this.NombreCompleto,
-            this.Correo,
-            this.Clave,
-            this.idRol,
-            this.Rol,
-            this.Estado,
-            this.EstadoValor,
+            this.FechaRegistro,
+            this.TipoDocumento,
+            this.NumeroDocumento,
+            this.DocumentoCliente,
+            this.NombreCliente,
+            this.MontoTotal,
+            this.UsuarioRegistro,
+            this.CodigoProducto,
+            this.NombreProducto,
+            this.Categoria,
             this.PrevioVenta,
             this.Cantidad,
             this.SubTotal});
@@ -300,64 +302,66 @@
             this.dgvdata.Size = new System.Drawing.Size(867, 430);
             this.dgvdata.TabIndex = 71;
             // 
-            // idUsuario
+            // FechaRegistro
             // 
-            this.idUsuario.HeaderText = "Fecha Registro";
-            this.idUsuario.MinimumWidth = 6;
-            this.idUsuario.Name = "idUsuario";
+            this.FechaRegistro.HeaderText = "Fecha Registro";
+            this.FechaRegistro.MinimumWidth = 6;
+            this.FechaRegistro.Name = "FechaRegistro";
             // 
-            // DNI
+            // TipoDocumento
             // 
-            this.DNI.FillWeight = 99.72386F;
-            this.DNI.HeaderText = "Tipo Documento";
-            this.DNI.MinimumWidth = 6;
-            this.DNI.Name = "DNI";
+            this.TipoDocumento.FillWeight = 99.72386F;
+            this.TipoDocumento.HeaderText = "Tipo Documento";
+            this.TipoDocumento.MinimumWidth = 6;
+            this.TipoDocumento.Name = "TipoDocumento";
             // 
-            // NombreCompleto
+            // NumeroDocumento
             // 
-            this.NombreCompleto.FillWeight = 152.2842F;
-            this.NombreCompleto.HeaderText = "Numero Documento";
-            this.NombreCompleto.MinimumWidth = 6;
-            this.NombreCompleto.Name = "NombreCompleto";
+            this.NumeroDocumento.HeaderText = "Numero Documento";
+            this.NumeroDocumento.Name = "NumeroDocumento";
             // 
-            // Correo
+            // DocumentoCliente
             // 
-            this.Correo.FillWeight = 99.72386F;
-            this.Correo.HeaderText = "Monto Total";
-            this.Correo.MinimumWidth = 6;
-            this.Correo.Name = "Correo";
+            this.DocumentoCliente.HeaderText = "Numero Documento Cliente";
+            this.DocumentoCliente.Name = "DocumentoCliente";
             // 
-            // Clave
+            // NombreCliente
             // 
-            this.Clave.HeaderText = "Usuario Registro";
-            this.Clave.MinimumWidth = 6;
-            this.Clave.Name = "Clave";
+            this.NombreCliente.HeaderText = "Nombre Cliente";
+            this.NombreCliente.Name = "NombreCliente";
             // 
-            // idRol
+            // MontoTotal
             // 
-            this.idRol.HeaderText = "Codigo Producto";
-            this.idRol.MinimumWidth = 6;
-            this.idRol.Name = "idRol";
+            this.MontoTotal.FillWeight = 99.72386F;
+            this.MontoTotal.HeaderText = "Monto Total";
+            this.MontoTotal.MinimumWidth = 6;
+            this.MontoTotal.Name = "MontoTotal";
             // 
-            // Rol
+            // UsuarioRegistro
             // 
-            this.Rol.FillWeight = 99.72386F;
-            this.Rol.HeaderText = "Nombre Producto";
-            this.Rol.MinimumWidth = 6;
-            this.Rol.Name = "Rol";
+            this.UsuarioRegistro.HeaderText = "Usuario Registro";
+            this.UsuarioRegistro.MinimumWidth = 6;
+            this.UsuarioRegistro.Name = "UsuarioRegistro";
             // 
-            // Estado
+            // CodigoProducto
             // 
-            this.Estado.FillWeight = 99.72386F;
-            this.Estado.HeaderText = "Categoria";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
+            this.CodigoProducto.HeaderText = "Codigo Producto";
+            this.CodigoProducto.MinimumWidth = 6;
+            this.CodigoProducto.Name = "CodigoProducto";
             // 
-            // EstadoValor
+            // NombreProducto
             // 
-            this.EstadoValor.HeaderText = "Precio Compra";
-            this.EstadoValor.MinimumWidth = 6;
-            this.EstadoValor.Name = "EstadoValor";
+            this.NombreProducto.FillWeight = 99.72386F;
+            this.NombreProducto.HeaderText = "Nombre Producto";
+            this.NombreProducto.MinimumWidth = 6;
+            this.NombreProducto.Name = "NombreProducto";
+            // 
+            // Categoria
+            // 
+            this.Categoria.FillWeight = 99.72386F;
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.MinimumWidth = 6;
+            this.Categoria.Name = "Categoria";
             // 
             // PrevioVenta
             // 
@@ -429,15 +433,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnexportar;
         private System.Windows.Forms.DataGridView dgvdata;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idRol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DocumentoCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MontoTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrevioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
