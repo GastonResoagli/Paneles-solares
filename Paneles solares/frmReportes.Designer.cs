@@ -40,11 +40,6 @@
             this.txtfechafin = new System.Windows.Forms.DateTimePicker();
             this.txtfechainicio = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnlimpiarbuscador = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.txtbusqueda = new System.Windows.Forms.TextBox();
-            this.cbobusqueda2 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnexportar = new System.Windows.Forms.Button();
             this.dgvdata = new System.Windows.Forms.DataGridView();
             this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +55,11 @@
             this.PrevioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnlimpiarbuscador = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.txtbusqueda = new System.Windows.Forms.TextBox();
+            this.cbobusqueda2 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +70,7 @@
             this.label11.Location = new System.Drawing.Point(7, 16);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(862, 58);
+            this.label11.Size = new System.Drawing.Size(1060, 58);
             this.label11.TabIndex = 50;
             // 
             // label1
@@ -95,7 +95,7 @@
             this.btnbuscarreporte.IconColor = System.Drawing.Color.Black;
             this.btnbuscarreporte.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnbuscarreporte.IconSize = 20;
-            this.btnbuscarreporte.Location = new System.Drawing.Point(772, 35);
+            this.btnbuscarreporte.Location = new System.Drawing.Point(1014, 35);
             this.btnbuscarreporte.Margin = new System.Windows.Forms.Padding(2);
             this.btnbuscarreporte.Name = "btnbuscarreporte";
             this.btnbuscarreporte.Size = new System.Drawing.Size(37, 23);
@@ -107,7 +107,7 @@
             // 
             this.cbobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(608, 37);
+            this.cbobusqueda.Location = new System.Drawing.Point(837, 35);
             this.cbobusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.cbobusqueda.Name = "cbobusqueda";
             this.cbobusqueda.Size = new System.Drawing.Size(134, 21);
@@ -117,7 +117,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(513, 40);
+            this.label3.Location = new System.Drawing.Point(717, 38);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
@@ -171,79 +171,12 @@
             this.label5.Location = new System.Drawing.Point(7, 85);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(862, 428);
+            this.label5.Size = new System.Drawing.Size(1060, 537);
             this.label5.TabIndex = 63;
-            // 
-            // btnlimpiarbuscador
-            // 
-            this.btnlimpiarbuscador.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnlimpiarbuscador.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnlimpiarbuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnlimpiarbuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnlimpiarbuscador.ForeColor = System.Drawing.Color.White;
-            this.btnlimpiarbuscador.IconChar = FontAwesome.Sharp.IconChar.Bomb;
-            this.btnlimpiarbuscador.IconColor = System.Drawing.Color.Black;
-            this.btnlimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnlimpiarbuscador.IconSize = 20;
-            this.btnlimpiarbuscador.Location = new System.Drawing.Point(743, 95);
-            this.btnlimpiarbuscador.Margin = new System.Windows.Forms.Padding(2);
-            this.btnlimpiarbuscador.Name = "btnlimpiarbuscador";
-            this.btnlimpiarbuscador.Size = new System.Drawing.Size(51, 28);
-            this.btnlimpiarbuscador.TabIndex = 69;
-            this.btnlimpiarbuscador.UseVisualStyleBackColor = false;
-            this.btnlimpiarbuscador.Click += new System.EventHandler(this.btnlimpiarbuscador_Click);
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 20;
-            this.iconButton1.Location = new System.Drawing.Point(673, 96);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(51, 28);
-            this.iconButton1.TabIndex = 68;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // txtbusqueda
-            // 
-            this.txtbusqueda.Location = new System.Drawing.Point(506, 100);
-            this.txtbusqueda.Margin = new System.Windows.Forms.Padding(2);
-            this.txtbusqueda.Name = "txtbusqueda";
-            this.txtbusqueda.Size = new System.Drawing.Size(134, 20);
-            this.txtbusqueda.TabIndex = 67;
-            // 
-            // cbobusqueda2
-            // 
-            this.cbobusqueda2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbobusqueda2.FormattingEnabled = true;
-            this.cbobusqueda2.Location = new System.Drawing.Point(328, 98);
-            this.cbobusqueda2.Margin = new System.Windows.Forms.Padding(2);
-            this.cbobusqueda2.Name = "cbobusqueda2";
-            this.cbobusqueda2.Size = new System.Drawing.Size(134, 21);
-            this.cbobusqueda2.TabIndex = 66;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(236, 98);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 13);
-            this.label6.TabIndex = 65;
-            this.label6.Text = "Buscar por:";
             // 
             // btnexportar
             // 
-            this.btnexportar.Location = new System.Drawing.Point(11, 89);
+            this.btnexportar.Location = new System.Drawing.Point(50, 98);
             this.btnexportar.Margin = new System.Windows.Forms.Padding(2);
             this.btnexportar.Name = "btnexportar";
             this.btnexportar.Size = new System.Drawing.Size(112, 24);
@@ -290,7 +223,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvdata.RowTemplate.Height = 28;
-            this.dgvdata.Size = new System.Drawing.Size(831, 376);
+            this.dgvdata.Size = new System.Drawing.Size(1045, 486);
             this.dgvdata.TabIndex = 71;
             // 
             // FechaRegistro
@@ -372,11 +305,78 @@
             this.SubTotal.MinimumWidth = 6;
             this.SubTotal.Name = "SubTotal";
             // 
+            // btnlimpiarbuscador
+            // 
+            this.btnlimpiarbuscador.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnlimpiarbuscador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnlimpiarbuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnlimpiarbuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlimpiarbuscador.ForeColor = System.Drawing.Color.White;
+            this.btnlimpiarbuscador.IconChar = FontAwesome.Sharp.IconChar.Bomb;
+            this.btnlimpiarbuscador.IconColor = System.Drawing.Color.Black;
+            this.btnlimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnlimpiarbuscador.IconSize = 20;
+            this.btnlimpiarbuscador.Location = new System.Drawing.Point(978, 96);
+            this.btnlimpiarbuscador.Margin = new System.Windows.Forms.Padding(2);
+            this.btnlimpiarbuscador.Name = "btnlimpiarbuscador";
+            this.btnlimpiarbuscador.Size = new System.Drawing.Size(51, 28);
+            this.btnlimpiarbuscador.TabIndex = 69;
+            this.btnlimpiarbuscador.UseVisualStyleBackColor = false;
+            this.btnlimpiarbuscador.Click += new System.EventHandler(this.btnlimpiarbuscador_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 20;
+            this.iconButton1.Location = new System.Drawing.Point(890, 96);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(51, 28);
+            this.iconButton1.TabIndex = 68;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // txtbusqueda
+            // 
+            this.txtbusqueda.Location = new System.Drawing.Point(720, 98);
+            this.txtbusqueda.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbusqueda.Name = "txtbusqueda";
+            this.txtbusqueda.Size = new System.Drawing.Size(134, 20);
+            this.txtbusqueda.TabIndex = 67;
+            // 
+            // cbobusqueda2
+            // 
+            this.cbobusqueda2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbobusqueda2.FormattingEnabled = true;
+            this.cbobusqueda2.Location = new System.Drawing.Point(532, 98);
+            this.cbobusqueda2.Margin = new System.Windows.Forms.Padding(2);
+            this.cbobusqueda2.Name = "cbobusqueda2";
+            this.cbobusqueda2.Size = new System.Drawing.Size(134, 21);
+            this.cbobusqueda2.TabIndex = 66;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(413, 101);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 65;
+            this.label6.Text = "Buscar por:";
+            // 
             // frmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 521);
+            this.ClientSize = new System.Drawing.Size(1078, 631);
             this.Controls.Add(this.dgvdata);
             this.Controls.Add(this.btnexportar);
             this.Controls.Add(this.btnlimpiarbuscador);
@@ -417,11 +417,6 @@
         private System.Windows.Forms.DateTimePicker txtfechafin;
         private System.Windows.Forms.DateTimePicker txtfechainicio;
         private System.Windows.Forms.Label label5;
-        private FontAwesome.Sharp.IconButton btnlimpiarbuscador;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.TextBox txtbusqueda;
-        private System.Windows.Forms.ComboBox cbobusqueda2;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnexportar;
         private System.Windows.Forms.DataGridView dgvdata;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaRegistro;
@@ -437,5 +432,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrevioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
+        private FontAwesome.Sharp.IconButton btnlimpiarbuscador;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.TextBox txtbusqueda;
+        private System.Windows.Forms.ComboBox cbobusqueda2;
+        private System.Windows.Forms.Label label6;
     }
 }

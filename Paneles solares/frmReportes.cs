@@ -32,6 +32,9 @@ namespace Paneles_solares
                 cbobusqueda.ValueMember = "Valor";
                 cbobusqueda.SelectedIndex = 0;
             }
+            dgvdata.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvdata.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void btnbuscar_Click(object sender, EventArgs e)
