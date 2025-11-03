@@ -39,12 +39,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtpagocon = new System.Windows.Forms.TextBox();
             this.dgvdata = new System.Windows.Forms.DataGridView();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btneliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtidproducto = new System.Windows.Forms.TextBox();
             this.txtcantidad = new System.Windows.Forms.NumericUpDown();
@@ -70,6 +64,12 @@
             this.cbotipodocumento = new System.Windows.Forms.ComboBox();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btneliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -138,7 +138,7 @@
             this.label15.Location = new System.Drawing.Point(16, 170);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(74, 13);
+            this.label15.Size = new System.Drawing.Size(83, 15);
             this.label15.TabIndex = 44;
             this.label15.Text = "Total a Pagar:";
             // 
@@ -165,7 +165,7 @@
             this.label14.Location = new System.Drawing.Point(16, 332);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(45, 13);
+            this.label14.Size = new System.Drawing.Size(53, 15);
             this.label14.TabIndex = 48;
             this.label14.Text = "Cambio:";
             // 
@@ -176,7 +176,7 @@
             this.label13.Location = new System.Drawing.Point(16, 246);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 13);
+            this.label13.Size = new System.Drawing.Size(62, 15);
             this.label13.TabIndex = 46;
             this.label13.Text = "Paga con:";
             // 
@@ -199,7 +199,7 @@
             this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProducto,
             this.Producto,
-            this.Precio,
+            this.PrecioVenta,
             this.Cantidad,
             this.SubTotal,
             this.btneliminar});
@@ -211,48 +211,6 @@
             this.dgvdata.TabIndex = 55;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
-            // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "";
-            this.idProducto.MinimumWidth = 6;
-            this.idProducto.Name = "idProducto";
-            this.idProducto.Width = 125;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.MinimumWidth = 6;
-            this.Producto.Name = "Producto";
-            this.Producto.Width = 125;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.Width = 125;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 125;
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.HeaderText = "SubTotal";
-            this.SubTotal.MinimumWidth = 6;
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.Width = 125;
-            // 
-            // btneliminar
-            // 
-            this.btneliminar.HeaderText = "";
-            this.btneliminar.MinimumWidth = 6;
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Width = 125;
             // 
             // groupBox3
             // 
@@ -310,7 +268,7 @@
             this.label11.Location = new System.Drawing.Point(623, 74);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 13);
+            this.label11.Size = new System.Drawing.Size(59, 15);
             this.label11.TabIndex = 38;
             this.label11.Text = "Cantidad:";
             // 
@@ -320,7 +278,7 @@
             this.label10.Location = new System.Drawing.Point(285, 77);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.Size = new System.Drawing.Size(40, 15);
             this.label10.TabIndex = 37;
             this.label10.Text = "Stock:";
             // 
@@ -347,7 +305,7 @@
             this.label9.Location = new System.Drawing.Point(623, 31);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.Size = new System.Drawing.Size(45, 15);
             this.label9.TabIndex = 34;
             this.label9.Text = "Precio:";
             // 
@@ -357,7 +315,7 @@
             this.label8.Location = new System.Drawing.Point(285, 28);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.Size = new System.Drawing.Size(59, 15);
             this.label8.TabIndex = 33;
             this.label8.Text = "Producto:";
             // 
@@ -394,7 +352,7 @@
             this.label7.Location = new System.Drawing.Point(8, 48);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 13);
+            this.label7.Size = new System.Drawing.Size(87, 15);
             this.label7.TabIndex = 29;
             this.label7.Text = "Cod. Producto:";
             // 
@@ -460,7 +418,7 @@
             this.label5.Location = new System.Drawing.Point(272, 28);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 13);
+            this.label5.Size = new System.Drawing.Size(111, 15);
             this.label5.TabIndex = 28;
             this.label5.Text = "Nombre Completo:";
             // 
@@ -470,7 +428,7 @@
             this.label6.Location = new System.Drawing.Point(8, 30);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 13);
+            this.label6.Size = new System.Drawing.Size(122, 15);
             this.label6.TabIndex = 27;
             this.label6.Text = "Numero Documento:";
             // 
@@ -507,7 +465,7 @@
             this.label4.Location = new System.Drawing.Point(207, 30);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 13);
+            this.label4.Size = new System.Drawing.Size(98, 15);
             this.label4.TabIndex = 28;
             this.label4.Text = "Tipo Documento";
             // 
@@ -517,7 +475,7 @@
             this.label3.Location = new System.Drawing.Point(8, 30);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.Size = new System.Drawing.Size(44, 15);
             this.label3.TabIndex = 27;
             this.label3.Text = "Fecha:";
             // 
@@ -552,6 +510,48 @@
             this.label2.Size = new System.Drawing.Size(979, 87);
             this.label2.TabIndex = 51;
             this.label2.Text = "Ventas";
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "";
+            this.idProducto.MinimumWidth = 6;
+            this.idProducto.Name = "idProducto";
+            this.idProducto.Width = 125;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.MinimumWidth = 6;
+            this.Producto.Name = "Producto";
+            this.Producto.Width = 125;
+            // 
+            // PrecioVenta
+            // 
+            this.PrecioVenta.HeaderText = "Precio";
+            this.PrecioVenta.MinimumWidth = 6;
+            this.PrecioVenta.Name = "PrecioVenta";
+            this.PrecioVenta.Width = 125;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 125;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "SubTotal";
+            this.SubTotal.MinimumWidth = 6;
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.Width = 125;
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.HeaderText = "";
+            this.btneliminar.MinimumWidth = 6;
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Width = 125;
             // 
             // frmVentas
             // 
@@ -623,7 +623,7 @@
         private System.Windows.Forms.TextBox txtidproducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridViewButtonColumn btneliminar;
