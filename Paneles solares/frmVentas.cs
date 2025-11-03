@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClosedXML.Excel;
 
 namespace Paneles_solares
 {
@@ -384,8 +385,16 @@ namespace Paneles_solares
             Venta oVenta = new Venta()
             {
                 oUsuario = new Usuario() { idUsuario = _Usuario.idUsuario },
+
+                oCliente = new Cliente()
+                {
+                    idCliente = 1,
+                    DNI = txtDocumentocliente.Text,
+                    Nombre = nombreCliente.Text
+                },
+
                 TipoDocumento = ((OpcionCombo)cbotipodocumento.SelectedItem).Texto,
-                NumeroDocumento = numeroDocumento,
+                NumeroDocumento = Convert.ToInt32(numeroDocumento),
                 DocumentoCliente = txtDocumentocliente.Text,
                 NombreCliente = nombreCliente.Text,
                 MontoPago = Convert.ToDecimal(txtpagocon.Text),
