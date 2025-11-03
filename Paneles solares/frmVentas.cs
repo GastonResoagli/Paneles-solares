@@ -149,17 +149,27 @@ namespace Paneles_solares
             }
             if (!producto_existe)
             {
-                dgvdata.Rows.Add(new object[]
+
+                string mensaje = string.Empty;
+                bool respuesta = new CN_Venta().RestarStock(
+                    Convert.ToInt32(txtidproducto.Text),
+                    Convert.ToInt32(txtcantidad.Value.ToString())
+                    );
+
+                if (respuesta)
                 {
+                    dgvdata.Rows.Add(new object[]
+                                  {
                     txtidproducto.Text,
                     txtProducto.Text,
                     precio.ToString("0.00"),
                     txtcantidad.Value.ToString(),
                     (txtcantidad.Value * precio).ToString("0.00")
-                });
-                calculartotal();
-                LimpiarProducto();
-                txtCodigoproducto.Select();
+                                  });
+                    calculartotal();
+                    LimpiarProducto();
+                    txtCodigoproducto.Select();
+                }
 
             }
 
@@ -215,8 +225,16 @@ namespace Paneles_solares
                 int index = e.RowIndex;
                 if (index >= 0)
                 {
-                    dgvdata.Rows.RemoveAt(index);
-                    calculartotal();
+                    bool respuesta = new CN_Venta().SumarStock(
+                       Convert.ToInt32(dgvdata.Rows[index].Cells["idProducto"].Value.ToString()),
+                       Convert.ToInt32(dgvdata.Rows[index].Cells["Cantidad"].Value.ToString()));
+
+                    if (respuesta)
+                    {
+                        dgvdata.Rows.RemoveAt(index);
+                        calculartotal();
+                    }
+
                 }
             }
         }
@@ -312,6 +330,93 @@ namespace Paneles_solares
             {
                 calcularcambio();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(txtDocumentocliente.Text == "")
+            {
+                MessageBox.Show("Ingrese el documento del cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtDocumentocliente.Focus();
+                return;
+            }
+
+          if(nombreCliente.Text == "")
+            {
+                MessageBox.Show("Ingrese el nombre del cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                nombreCliente.Focus();
+                return;
+            }
+
+          if(dgvdata.Rows.Count < 1)
+            {
+                MessageBox.Show("Ingrese los productos a la venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return; 
+            }
+
+
+            DataTable detalle_venta = new DataTable();
+            
+            detalle_venta.Columns.Add("idProducto", typeof(string));
+            detalle_venta.Columns.Add("Precioventa", typeof(decimal));
+            detalle_venta.Columns.Add("Cantidad", typeof(int));
+            detalle_venta.Columns.Add("SubTotal", typeof(decimal));
+
+
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                detalle_venta.Rows.Add(
+                    new object[]
+                    {
+                        row.Cells["idProducto"].Value.ToString(),
+                        row.Cells["PrecioVenta"].Value.ToString(),
+                        row.Cells["Cantidad"].Value.ToString(),
+                        row.Cells["SubTotal"].Value.ToString(),
+                    }
+                    );
+            }
+
+            int idcorrelativo = new CN_Venta().ObtenerCorrelativo();
+            string numeroDocumento = string.Format("{0:00000}", idcorrelativo);
+            calcularcambio();
+
+
+            Venta oVenta = new Venta()
+            {
+                oUsuario = new Usuario() { idUsuario = _Usuario.idUsuario },
+                TipoDocumento = ((OpcionCombo)cbotipodocumento.SelectedItem).Texto,
+                NumeroDocumento = numeroDocumento,
+                DocumentoCliente = txtDocumentocliente.Text,
+                NombreCliente = nombreCliente.Text,
+                MontoPago = Convert.ToDecimal(txtpagocon.Text),
+                MontoCambio = Convert.ToDecimal(txtcambio.Text),
+                MontoTotal = Convert.ToDecimal(txttotalpagar.Text)
+            };
+
+            string mensaje = string.Empty;
+            bool respuesta = new CN_Venta().Registrar(oVenta, detalle_venta, out mensaje);
+
+            if (respuesta)
+            {
+                var result = MessageBox.Show("Número de venta generada:\n" + numeroDocumento + "\n\n¿Desea copiar al portapapeles?", "Mensaje",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    Clipboard.SetText(numeroDocumento);
+                }
+
+                // Limpiar los campos del formulario
+                txtDocumentocliente.Text = "";
+                nombreCliente.Text = "";
+                dgvdata.Rows.Clear();
+                calculartotal();
+                txtpagocon.Text = "";
+                txtcambio.Text = "";
+            } else
+            {  MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
         }
     }
 }
