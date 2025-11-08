@@ -90,6 +90,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmReportesAnaliticos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportesAnaliticos.Designer.cs">
+      <DependentUpon>frmReportesAnaliticos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVentaD.cs">
       <SubType>Form</SubType>
     </Compile>

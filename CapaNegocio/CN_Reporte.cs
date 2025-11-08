@@ -16,41 +16,22 @@ namespace CapaNegocio
 
         public List<ReporteVenta> Venta(string fechainicio, string fechafin)
         {
-            List<ReporteVenta> lista = new List<ReporteVenta>();
+            return objcd_reporte.Venta(fechainicio, fechafin);
+        }
 
-            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
-            {
-                SqlCommand cmd = new SqlCommand("SP_ReporteVentas", oconexion);
-                cmd.Parameters.AddWithValue("@fechainicio", fechainicio);
-                cmd.Parameters.AddWithValue("@fechafin", fechafin);
-                cmd.CommandType = CommandType.StoredProcedure;
+        public List<ReporteVendedor> VendedoresMayoresVentas(string fechainicio, string fechafin)
+        {
+            return objcd_reporte.VendedoresMayoresVentas(fechainicio, fechafin);
+        }
 
-                oconexion.Open();
+        public List<ReporteProducto> ProductosMasVendidos(string fechainicio, string fechafin)
+        {
+            return objcd_reporte.ProductosMasVendidos(fechainicio, fechafin);
+        }
 
-                using (SqlDataReader dr = cmd.ExecuteReader())
-                {
-                    while (dr.Read())
-                    {
-                        lista.Add(new ReporteVenta()
-                        {
-                            FechaRegistro = dr["FechaRegistro"].ToString(),
-                            TipoDocumento = dr["TipoDocumento"].ToString(),
-                            NumeroDocumento = dr["NumeroDocumento"].ToString(),
-                            DocumentoCliente = dr["DocumentoCliente"].ToString(),
-                            NombreCliente = dr["NombreCliente"].ToString(),
-                            MontoTotal = dr["MontoTotal"].ToString(),
-                            UsuarioRegistro = dr["UsuarioRegistro"].ToString(),
-                            CodigoProducto = dr["CodigoProducto"].ToString(),
-                            NombreProducto = dr["NombreProducto"].ToString(),
-                            Categoria = dr["Categoria"].ToString(),
-                            PrecioVenta = dr["PrecioVenta"].ToString(),
-                            Cantidad = dr["Cantidad"].ToString(),
-                            SubTotal = dr["SubTotal"].ToString(),
-                        });
-                    }
-                }
-            }
-            return lista;
+        public List<ReporteCliente> ClientesMayorCompra(string fechainicio, string fechafin)
+        {
+            return objcd_reporte.ClientesMayorCompra(fechainicio, fechafin);
         }
     }
 }

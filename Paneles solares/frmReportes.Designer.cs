@@ -73,7 +73,7 @@
             this.label11.Location = new System.Drawing.Point(7, 16);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(862, 58);
+            this.label11.Size = new System.Drawing.Size(1068, 109);
             this.label11.TabIndex = 50;
             // 
             // label1
@@ -177,7 +177,7 @@
             this.label5.Location = new System.Drawing.Point(7, 85);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(862, 428);
+            this.label5.Size = new System.Drawing.Size(1068, 479);
             this.label5.TabIndex = 63;
             // 
             // btnexportar
@@ -232,7 +232,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvdata.RowTemplate.Height = 28;
-            this.dgvdata.Size = new System.Drawing.Size(831, 376);
+            this.dgvdata.Size = new System.Drawing.Size(1037, 427);
             this.dgvdata.TabIndex = 71;
             // 
             // FechaRegistro
@@ -385,7 +385,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 521);
+            this.ClientSize = new System.Drawing.Size(1098, 572);
             this.Controls.Add(this.dgvdata);
             this.Controls.Add(this.btnexportar);
             this.Controls.Add(this.btnlimpiarbuscador);

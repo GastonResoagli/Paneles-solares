@@ -110,12 +110,18 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("IdUsuario", obj.oUsuario.idUsuario);
                     cmd.Parameters.AddWithValue("IdCliente", obj.oCliente.idCliente);
                     cmd.Parameters.AddWithValue("TipoDocumento", obj.TipoDocumento);
+                    cmd.Parameters.AddWithValue("NumeroDocumento", obj.NumeroDocumento);
                     cmd.Parameters.AddWithValue("DocumentoCliente", obj.oCliente.DNI);
                     cmd.Parameters.AddWithValue("NombreCliente", obj.oCliente.Nombre);
                     cmd.Parameters.AddWithValue("MontoPago", obj.MontoPago);
                     cmd.Parameters.AddWithValue("MontoCambio", obj.MontoCambio);
                     cmd.Parameters.AddWithValue("MontoTotal", obj.MontoTotal);
-                    cmd.Parameters.AddWithValue("DetalleVenta", DetalleVenta);
+
+                    // Parametro de tipo tabla estructurado
+                    SqlParameter parametroDetalle = new SqlParameter("@DetalleVenta", SqlDbType.Structured);
+                    parametroDetalle.TypeName = "DetalleVentaType";
+                    parametroDetalle.Value = DetalleVenta;
+                    cmd.Parameters.Add(parametroDetalle);
 
                     // Parametros de salida
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;

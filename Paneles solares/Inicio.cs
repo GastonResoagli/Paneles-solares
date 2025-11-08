@@ -189,5 +189,10 @@ namespace Paneles_solares
         {
             abrirFormulario(sender, new frmReportes());
         }
+
+        private void btnReportesAnaliticos_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(sender, new frmReportesAnaliticos());
+        }
     }
 }
