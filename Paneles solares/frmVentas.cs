@@ -62,6 +62,29 @@ namespace Paneles_solares
             }
         }
 
+        private void txtDocumentocliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                Cliente oCliente = new CN_Cliente()
+                    .Listar()
+                    .Where(c => c.DNI == txtDocumentocliente.Text && c.Estado == true)
+                    .FirstOrDefault();
+
+                if (oCliente != null)
+                {
+                    txtDocumentocliente.BackColor = Color.Honeydew;
+                    nombreCliente.Text = oCliente.Nombre;
+                    txtCodigoproducto.Select();
+                }
+                else
+                {
+                    txtDocumentocliente.BackColor = Color.MistyRose;
+                    nombreCliente.Text = "";
+                }
+            }
+        }
+
         private void iconButton1_Click(object sender, EventArgs e)
         {
             using (var modal = new mdProducto())
