@@ -29,7 +29,7 @@ namespace Paneles_solares
             if (oVenta.idVenta != 0)
             {
                 // Datos generales de la venta
-                txtnumerodocumento.Text = oVenta.DocumentoCliente;
+                txtnumerodocumento.Text = oVenta.NumeroDocumento.ToString();
                 txtfecha.Text = oVenta.FechaRegistro;
                 txttipodocumento.Text = oVenta.TipoDocumento;
                 txtusuario.Text = oVenta.oUsuario.NombreCompleto;
@@ -42,10 +42,12 @@ namespace Paneles_solares
                 {
                     dgvdata.Rows.Add(new object[]
                     {
-                dv.oProducto.Nombre,
-                dv.PrecioVenta.ToString("0.00"),
-                dv.Cantidad,
-                dv.SubTotal.ToString("0.00")
+                        "", // idProducto (columna oculta)
+                        dv.oProducto.Nombre, // Producto
+                        dv.PrecioVenta.ToString("0.00"), // PrecioVenta
+                        dv.Cantidad, // Cantidad
+                        dv.SubTotal.ToString("0.00"), // SubTotal
+                        "" // btneliminar
                     });
                 }
 
@@ -72,25 +74,25 @@ namespace Paneles_solares
             string Texto_Html = Properties.Resources.plantilla.ToString();
             Negocio odatos = new CN_Negocio().ObtenerDatos();
 
-            Texto_Html = Texto_Html.Replace("@nombrenegocio", odatos.Nombre.ToUpper());
-            Texto_Html = Texto_Html.Replace("@docnegocio", odatos.RUC);
-            Texto_Html = Texto_Html.Replace("@direcnegocio", odatos.Direccion);
+            string rutaLogo = Path.Combine(Application.StartupPath, @"..\..\Resources\logo.png");
+            rutaLogo = Path.GetFullPath(rutaLogo);
+
+            Texto_Html = Texto_Html.Replace("./logo.png", rutaLogo);
 
             Texto_Html = Texto_Html.Replace("@tipodocumento", txttipodocumento.Text.ToUpper());
             Texto_Html = Texto_Html.Replace("@numerodocumento", txtnumerodocumento.Text);
-
-
             Texto_Html = Texto_Html.Replace("@doccliente", txtdoccliente.Text);
             Texto_Html = Texto_Html.Replace("@nombrecliente", txtnombrecliente.Text);
             Texto_Html = Texto_Html.Replace("@fecharegistro", txtfecha.Text);
             Texto_Html = Texto_Html.Replace("@usuarioregistro", txtusuario.Text);
+
 
             string filas = string.Empty;
             foreach (DataGridViewRow row in dgvdata.Rows)
             {
                 filas += "<tr>";
                 filas += "<td>" + row.Cells["Producto"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["Precio"].Value.ToString() + "</td>";
+                filas += "<td>" + row.Cells["PrecioVenta"].Value.ToString() + "</td>";
                 filas += "<td>" + row.Cells["Cantidad"].Value.ToString() + "</td>";
                 filas += "<td>" + row.Cells["SubTotal"].Value.ToString() + "</td>";
                 filas += "</tr>";

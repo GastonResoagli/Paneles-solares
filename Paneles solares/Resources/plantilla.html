@@ -7,72 +7,81 @@
             border-collapse: collapse;
         }
 
-            table.border th {
-                text-align: center;
-                padding: 5px;
-                border: 1px solid black;
-            }
+        table.border th {
+            text-align: center;
+            padding: 5px;
+            border: 1px solid black;
+        }
 
-            table.border td {
-                text-align: center;
-                padding: 5px;
-                border: 1px solid black;
-            }
+        table.border td {
+            text-align: center;
+            padding: 5px;
+            border: 1px solid black;
+        }
     </style>
 </head>
 <body>
+    <!-- ENCABEZADO -->
     <table border="0" style="width:100%">
         <tr>
+            <!-- LOGO -->
+            <td style="width:100%; text-align:left;" valign="top">
+                <img src="./logo.png" alt="Logo" style="width:100px; height:auto;" />
+            </td>
 
-            <td style="width:15%" valign="top"></td>
-            <td style="width:60%" valign="top" align="center">
-
-                <label style="font-size:20px;font-weight:bold;margin-bottom:10px">@nombrenegocio</label><br />
+            <!-- INFORMACIÓN DEL NEGOCIO -->
+            <td style="width:60%;" valign="top" align="center">
+                <label style="font-size:20px; font-weight:bold; margin-bottom:10px;">Zenith</label><br />
                 <div style="height:12px !important"></div>
                 <label style="font-size:11px;">RUC: @docnegocio</label><br />
-                <label style="font-size:11px;">Dirección: @direcnegocio</label><br />
+                <label style="font-size:11px;">Dirección: Moreno 406</label><br />
             </td>
+
+            <!-- DATOS DEL DOCUMENTO -->
             <td style="width:25%;" align="right" valign="top">
                 <table style="width:100%" class="border">
                     <tr>
                         <td align="center" style="background-color:#CACACA">
-                            <label style="font-size:15px;font-weight:bold">@tipodocumento</label>
+                            <label style="font-size:15px; font-weight:bold;">@tipodocumento</label>
                         </td>
                     </tr>
                     <tr>
                         <td align="center">
-                            <label style="font-size:15px;font-weight:bold">@numerodocumento</label>
+                            <label style="font-size:15px; font-weight:bold;">@numerodocumento</label>
                         </td>
                     </tr>
                 </table>
             </td>
         </tr>
     </table>
+
     <div style="height:15px !important"></div>
     <hr />
 
+    <!-- DATOS DEL CLIENTE -->
     <table border="0" style="width:100%">
         <tr>
-            <td style="width:20%"><label style="font-size:12px;font-weight:bold">Documento Cliente:</label></td>
-            <td style="width:20%"><label style="font-size:12px;">@doccliente</label></td>
+            <td style="width:20%;"><label style="font-size:12px; font-weight:bold;">Documento Cliente:</label></td>
+            <td style="width:20%;"><label style="font-size:12px;">@doccliente</label></td>
         </tr>
         <tr>
-            <td style="width:20%"><label style="font-size:12px;font-weight:bold">Nombre Cliente:</label></td>
-            <td style="width:20%"><label style="font-size:12px;">@nombrecliente</label></td>
+            <td><label style="font-size:12px; font-weight:bold;">Nombre Cliente:</label></td>
+            <td><label style="font-size:12px;">@nombrecliente</label></td>
         </tr>
         <tr>
-            <td style="width:20%"><label style="font-size:12px;font-weight:bold">Fecha Registro:</label></td>
-            <td style="width:20%"><label style="font-size:12px;">@fecharegistro</label></td>
+            <td><label style="font-size:12px; font-weight:bold;">Fecha Registro:</label></td>
+            <td><label style="font-size:12px;">@fecharegistro</label></td>
         </tr>
         <tr>
-            <td style="width:20%"><label style="font-size:12px;font-weight:bold">Usuario Registro:</label></td>
-            <td style="width:20%"><label style="font-size:12px;">@usuarioregistro</label></td>
+            <td><label style="font-size:12px; font-weight:bold;">Usuario Registro:</label></td>
+            <td><label style="font-size:12px;">@usuarioregistro</label></td>
         </tr>
-
-
     </table>
+
     <div style="height:15px !important"></div>
-    <table style="width:100%;font-size:12px;" class="border">
+
+    <!-- TABLA DE DETALLE -->
+    <table style="width:100%; font-size:12px;" class="border">
         <thead>
             <tr style="background-color:#CACACA">
                 <th>Producto</th>
@@ -87,7 +96,9 @@
     </table>
 
     <div style="height:15px !important"></div>
-    <table style="width:35%;font-size:12px;" class="border">
+
+    <!-- TOTALES -->
+    <table style="width:35%; font-size:12px;" class="border">
         <thead>
             <tr style="background-color:#CACACA">
                 <th>Monto Total</th>

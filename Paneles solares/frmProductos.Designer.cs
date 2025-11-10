@@ -547,11 +547,12 @@
             this.Stock.ReadOnly = true;
             // 
             // PrecioCompra
-            // 
+            //
             this.PrecioCompra.HeaderText = "Precio Compra";
             this.PrecioCompra.MinimumWidth = 6;
             this.PrecioCompra.Name = "PrecioCompra";
             this.PrecioCompra.ReadOnly = true;
+            this.PrecioCompra.Visible = false;
             // 
             // PrecioVenta
             // 

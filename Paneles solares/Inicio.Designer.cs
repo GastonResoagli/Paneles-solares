@@ -31,8 +31,8 @@ namespace Paneles_solares
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnReportesAnaliticos = new System.Windows.Forms.Button();
             this.Logut = new System.Windows.Forms.Button();
+            this.btnReportesAnaliticos = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.lblusuario = new System.Windows.Forms.Label();
             this.btnVentasD = new System.Windows.Forms.Button();
@@ -50,8 +50,8 @@ namespace Paneles_solares
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(75)))));
-            this.panelMenu.Controls.Add(this.btnReportesAnaliticos);
             this.panelMenu.Controls.Add(this.Logut);
+            this.panelMenu.Controls.Add(this.btnReportesAnaliticos);
             this.panelMenu.Controls.Add(this.btnReportes);
             this.panelMenu.Controls.Add(this.lblusuario);
             this.panelMenu.Controls.Add(this.btnVentasD);
@@ -66,25 +66,6 @@ namespace Paneles_solares
             this.panelMenu.Size = new System.Drawing.Size(225, 718);
             this.panelMenu.TabIndex = 0;
             // 
-            // btnReportesAnaliticos
-            // 
-            this.btnReportesAnaliticos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportesAnaliticos.FlatAppearance.BorderSize = 0;
-            this.btnReportesAnaliticos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportesAnaliticos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportesAnaliticos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReportesAnaliticos.Image = global::Paneles_solares.Properties.Resources.WhatsApp_Image_2025_11_03_at_14_33_59;
-            this.btnReportesAnaliticos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportesAnaliticos.Location = new System.Drawing.Point(0, 553);
-            this.btnReportesAnaliticos.Name = "btnReportesAnaliticos";
-            this.btnReportesAnaliticos.Size = new System.Drawing.Size(225, 93);
-            this.btnReportesAnaliticos.TabIndex = 12;
-            this.btnReportesAnaliticos.Text = "Logut";
-            this.btnReportesAnaliticos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportesAnaliticos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReportesAnaliticos.UseVisualStyleBackColor = true;
-            this.btnReportesAnaliticos.Click += new System.EventHandler(this.btnReportesAnaliticos_Click);
-            // 
             // Logut
             // 
             this.Logut.Dock = System.Windows.Forms.DockStyle.Top;
@@ -92,17 +73,36 @@ namespace Paneles_solares
             this.Logut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Logut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Logut.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Logut.Image = global::Paneles_solares.Properties.Resources.grafico_de_barras;
+            this.Logut.Image = global::Paneles_solares.Properties.Resources.WhatsApp_Image_2025_11_03_at_14_33_59;
             this.Logut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Logut.Location = new System.Drawing.Point(0, 474);
+            this.Logut.Location = new System.Drawing.Point(0, 553);
             this.Logut.Name = "Logut";
-            this.Logut.Size = new System.Drawing.Size(225, 79);
-            this.Logut.TabIndex = 11;
-            this.Logut.Text = "Reportes Analíticos";
-            this.Logut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Logut.Size = new System.Drawing.Size(225, 93);
+            this.Logut.TabIndex = 12;
+            this.Logut.Text = "Logout";
+            this.Logut.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Logut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Logut.UseVisualStyleBackColor = true;
-            this.Logut.Click += new System.EventHandler(this.Logut_Click);
+            this.Logut.Click += new System.EventHandler(this.btnReportesAnaliticos_Click);
+            // 
+            // btnReportesAnaliticos
+            // 
+            this.btnReportesAnaliticos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportesAnaliticos.FlatAppearance.BorderSize = 0;
+            this.btnReportesAnaliticos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportesAnaliticos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportesAnaliticos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnReportesAnaliticos.Image = global::Paneles_solares.Properties.Resources.grafico_de_barras;
+            this.btnReportesAnaliticos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportesAnaliticos.Location = new System.Drawing.Point(0, 474);
+            this.btnReportesAnaliticos.Name = "btnReportesAnaliticos";
+            this.btnReportesAnaliticos.Size = new System.Drawing.Size(225, 79);
+            this.btnReportesAnaliticos.TabIndex = 11;
+            this.btnReportesAnaliticos.Text = "Reportes Analíticos";
+            this.btnReportesAnaliticos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportesAnaliticos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportesAnaliticos.UseVisualStyleBackColor = true;
+            this.btnReportesAnaliticos.Click += new System.EventHandler(this.Logut_Click);
             // 
             // btnReportes
             // 
@@ -288,9 +288,9 @@ namespace Paneles_solares
         private System.Windows.Forms.Label lblusuario;
         private readonly PaintEventHandler panelLogo_Paint;
         private Panel contenedor;
-        private Button Logut;
-        private Button btnReportes;
         private Button btnReportesAnaliticos;
+        private Button btnReportes;
+        private Button Logut;
     }
 }
 

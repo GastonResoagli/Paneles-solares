@@ -71,6 +71,7 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btneliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelDocumento.SuspendLayout();
             this.panelCliente.SuspendLayout();
             this.panelProducto.SuspendLayout();
@@ -227,6 +228,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelProducto.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelProducto.Controls.Add(this.label1);
             this.panelProducto.Controls.Add(this.iconButton1);
             this.panelProducto.Controls.Add(this.txtcantidad);
             this.panelProducto.Controls.Add(this.label11);
@@ -257,11 +259,11 @@
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 20;
-            this.iconButton1.Location = new System.Drawing.Point(733, 58);
+            this.iconButton1.Location = new System.Drawing.Point(11, 56);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(90, 35);
+            this.iconButton1.Size = new System.Drawing.Size(147, 35);
             this.iconButton1.TabIndex = 11;
-            this.iconButton1.Text = "Agregar";
+            this.iconButton1.Text = "Buscar Producto";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
@@ -269,7 +271,7 @@
             // txtcantidad
             // 
             this.txtcantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcantidad.Location = new System.Drawing.Point(668, 68);
+            this.txtcantidad.Location = new System.Drawing.Point(820, 61);
             this.txtcantidad.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -294,7 +296,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(668, 48);
+            this.label11.Location = new System.Drawing.Point(817, 41);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(68, 15);
             this.label11.TabIndex = 9;
@@ -303,7 +305,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(578, 68);
+            this.txtPrecio.Location = new System.Drawing.Point(730, 61);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.ReadOnly = true;
             this.txtPrecio.Size = new System.Drawing.Size(80, 21);
@@ -314,7 +316,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(578, 48);
+            this.label10.Location = new System.Drawing.Point(730, 41);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(52, 15);
             this.label10.TabIndex = 7;
@@ -323,7 +325,7 @@
             // txtStock
             // 
             this.txtStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStock.Location = new System.Drawing.Point(488, 68);
+            this.txtStock.Location = new System.Drawing.Point(640, 61);
             this.txtStock.Name = "txtStock";
             this.txtStock.ReadOnly = true;
             this.txtStock.Size = new System.Drawing.Size(80, 21);
@@ -334,7 +336,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(488, 48);
+            this.label9.Location = new System.Drawing.Point(640, 41);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 15);
             this.label9.TabIndex = 5;
@@ -343,7 +345,7 @@
             // txtProducto
             // 
             this.txtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProducto.Location = new System.Drawing.Point(168, 68);
+            this.txtProducto.Location = new System.Drawing.Point(320, 61);
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.ReadOnly = true;
             this.txtProducto.Size = new System.Drawing.Size(310, 21);
@@ -354,7 +356,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(168, 48);
+            this.label8.Location = new System.Drawing.Point(320, 41);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 15);
             this.label8.TabIndex = 3;
@@ -363,7 +365,7 @@
             // txtCodigoproducto
             // 
             this.txtCodigoproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoproducto.Location = new System.Drawing.Point(12, 68);
+            this.txtCodigoproducto.Location = new System.Drawing.Point(164, 60);
             this.txtCodigoproducto.Name = "txtCodigoproducto";
             this.txtCodigoproducto.Size = new System.Drawing.Size(140, 21);
             this.txtCodigoproducto.TabIndex = 2;
@@ -607,6 +609,17 @@
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(174, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Codigo:";
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -679,5 +692,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridViewButtonColumn btneliminar;
         private FontAwesome.Sharp.IconButton button1;
+        private System.Windows.Forms.Label label1;
     }
 }

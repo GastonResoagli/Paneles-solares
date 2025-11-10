@@ -182,7 +182,6 @@ namespace Paneles_solares
 
         private void Logut_Click(object sender, EventArgs e)
         {
-          
             abrirFormulario(sender, new frmReportesAnaliticos());
         }
 
@@ -193,7 +192,7 @@ namespace Paneles_solares
 
         private void btnReportesAnaliticos_Click(object sender, EventArgs e)
         {
-            this.Close();
+            abrirFormulario(sender, new frmLogout());
         }
     }
 }

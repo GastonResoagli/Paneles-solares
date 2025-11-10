@@ -157,12 +157,12 @@ namespace CapaDatos
                 {
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("SELECT v.idVenta, u.NombreCompleto AS Usuario,");
-                    query.AppendLine("c.Nombre AS Cliente, v.TipoDocumento, v.DocumentoCliente,");
+                    query.AppendLine("c.Nombre AS Cliente, v.TipoDocumento, v.NumeroDocumento, v.DocumentoCliente,");
                     query.AppendLine("v.NombreCliente, v.MontoPago, v.MontoCambio, v.MontoTotal, v.FechaRegistro");
                     query.AppendLine("FROM VENTA v");
                     query.AppendLine("INNER JOIN USUARIO u ON u.idUsuario = v.idUsuario");
                     query.AppendLine("INNER JOIN CLIENTE c ON c.idCliente = v.idCliente");
-                    query.AppendLine("WHERE v.idVenta = @numero");
+                    query.AppendLine("WHERE v.NumeroDocumento = @numero");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.Parameters.AddWithValue("@numero", Convert.ToInt32(numero));
@@ -180,6 +180,7 @@ namespace CapaDatos
                                 oUsuario = new Usuario() { NombreCompleto = dr["Usuario"].ToString() },
                                 oCliente = new Cliente() { Nombre = dr["Cliente"].ToString() },
                                 TipoDocumento = dr["TipoDocumento"].ToString(),
+                                NumeroDocumento = Convert.ToInt32(dr["NumeroDocumento"]),
                                 DocumentoCliente = dr["DocumentoCliente"].ToString(),
                                 NombreCliente = dr["NombreCliente"].ToString(),
                                 MontoPago = Convert.ToDecimal(dr["MontoPago"]),

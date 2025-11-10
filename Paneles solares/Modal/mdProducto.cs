@@ -48,7 +48,7 @@ namespace Paneles_solares.Modal
                     item.Nombre,
                     item.oCategoria.Descripcion,
                     item.Stock,
-                    item.PrecioCompra,
+                    "", // PrecioCompra (columna oculta)
                     item.PrecioVenta,
 
             });
@@ -68,7 +68,6 @@ namespace Paneles_solares.Modal
                     Codigo = dgvdata.Rows[iRow].Cells["Codigo"].Value.ToString(),
                     Nombre = dgvdata.Rows[iRow].Cells["Nombre"].Value.ToString(),
                     Stock = Convert.ToInt32(dgvdata.Rows[iRow].Cells["Stock"].Value.ToString()),
-                    PrecioCompra = Convert.ToDecimal(dgvdata.Rows[iRow].Cells["PrecioCompra"].Value.ToString()),
                     PrecioVenta = Convert.ToDecimal(dgvdata.Rows[iRow].Cells["PrecioVenta"].Value.ToString())
                 };
                 this.DialogResult = DialogResult.OK;

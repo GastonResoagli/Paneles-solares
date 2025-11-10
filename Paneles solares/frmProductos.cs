@@ -63,18 +63,18 @@ namespace Paneles_solares
 
             foreach (Producto item in lista)
             {
-                dgvdata.Rows.Add(new object[] { "", 
-                    item.idProducto, 
+                dgvdata.Rows.Add(new object[] { "",
+                    item.idProducto,
                     item.Codigo,
                     item.Nombre,
                     item.Descripcion,
                     item.oCategoria.idCategoria,
                     item.oCategoria.Descripcion,
                     item.Stock,
-                  //  item.PrecioCompra,
+                    "", // PrecioCompra (columna oculta)
                     item.PrecioVenta,
-                    item.Estado == true ? 1 : 0,
-                    item.Estado == true ? "Activo" : "No Activo"
+                    item.Estado == true ? "Activo" : "No Activo", // Estado (texto)
+                    item.Estado == true ? 1 : 0 // EstadoValor (número)
             });
             }
         }
@@ -103,8 +103,8 @@ namespace Paneles_solares
                 Nombre = txtnombre.Text,
                 Descripcion = txtdescripcion.Text,
                 oCategoria = new Categoria() { idCategoria = Convert.ToInt32(((OpcionCombo)cbocategoria.SelectedItem).Valor) },
-                Stock = Convert.ToInt32(txtstock.Text),
-                PrecioVenta = Convert.ToInt32(txtprecioventa.Text),
+                Stock = stock,
+                PrecioVenta = precioVenta,
                 Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
             };
 
@@ -124,9 +124,10 @@ namespace Paneles_solares
                 ((OpcionCombo)cbocategoria.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString(),
                 txtstock.Text,
+                "", // PrecioCompra (columna oculta)
                 txtprecioventa.Text,
-                ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
-                ((OpcionCombo)cboestado.SelectedItem).Texto.ToString(),
+                ((OpcionCombo)cboestado.SelectedItem).Texto.ToString(), // Estado (texto)
+                ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(), // EstadoValor (número)
             });
                     limpiar();
                 }
