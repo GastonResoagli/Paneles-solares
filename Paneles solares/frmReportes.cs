@@ -23,15 +23,23 @@ namespace Paneles_solares
 
         private void frmReportes_Load(object sender, EventArgs e)
         {
+            // Inicializar cbobusqueda con tipos de documento (Filtro superior)
+            cbobusqueda.Items.Add(new OpcionCombo() { Valor = "", Texto = "Todos" });
+            cbobusqueda.Items.Add(new OpcionCombo() { Valor = "Boleta", Texto = "Boleta" });
+            cbobusqueda.Items.Add(new OpcionCombo() { Valor = "Factura", Texto = "Factura" });
+            cbobusqueda.DisplayMember = "Texto";
+            cbobusqueda.ValueMember = "Valor";
+            cbobusqueda.SelectedIndex = 0;
+
+            // Inicializar cbobusqueda2 con las columnas del DataGridView (Buscar por)
+            foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
-                foreach (DataGridViewColumn columna in dgvdata.Columns)
-                {
-                    cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
-                }
-                cbobusqueda.DisplayMember = "Texto";
-                cbobusqueda.ValueMember = "Valor";
-                cbobusqueda.SelectedIndex = 0;
+                cbobusqueda2.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
             }
+            cbobusqueda2.DisplayMember = "Texto";
+            cbobusqueda2.ValueMember = "Valor";
+            cbobusqueda2.SelectedIndex = 0;
+
             dgvdata.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvdata.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -46,26 +54,31 @@ namespace Paneles_solares
                 txtfechafin.Value.ToString("dd/MM/yyyy")
                 );
 
+            string tipoDocumentoFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
 
             dgvdata.Rows.Clear();
 
             foreach (ReporteVenta rv in lista)
             {
-                dgvdata.Rows.Add(new object[] {
-                    rv.FechaRegistro,
-                    rv.TipoDocumento,
-                    rv.NumeroDocumento,
-                    rv.MontoTotal,
-                    rv.UsuarioRegistro,
-                    rv.DocumentoCliente,
-                    rv.NombreCliente,
-                    rv.CodigoProducto,
-                    rv.NombreProducto,
-                    rv.Categoria,
-                    rv.PrecioVenta,
-                    rv.Cantidad,
-                    rv.SubTotal
-                });
+                // Filtrar por tipo de documento si se seleccionó uno específico
+                if (string.IsNullOrEmpty(tipoDocumentoFiltro) || rv.TipoDocumento == tipoDocumentoFiltro)
+                {
+                    dgvdata.Rows.Add(new object[] {
+                        rv.FechaRegistro,
+                        rv.TipoDocumento,
+                        rv.NumeroDocumento,
+                        rv.MontoTotal,
+                        rv.UsuarioRegistro,
+                        rv.DocumentoCliente,
+                        rv.NombreCliente,
+                        rv.CodigoProducto,
+                        rv.NombreProducto,
+                        rv.Categoria,
+                        rv.PrecioVenta,
+                        rv.Cantidad,
+                        rv.SubTotal
+                    });
+                }
             }
         }
 
@@ -73,7 +86,7 @@ namespace Paneles_solares
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
+            string columnaFiltro = ((OpcionCombo)cbobusqueda2.SelectedItem).Valor.ToString();
 
             if (dgvdata.Rows.Count > 0)
             {
