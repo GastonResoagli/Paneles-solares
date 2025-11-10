@@ -339,7 +339,7 @@
             this.panelSuperior.Location = new System.Drawing.Point(270, 0);
             this.panelSuperior.Name = "panelSuperior";
             this.panelSuperior.Padding = new System.Windows.Forms.Padding(10);
-            this.panelSuperior.Size = new System.Drawing.Size(766, 70);
+            this.panelSuperior.Size = new System.Drawing.Size(965, 70);
             this.panelSuperior.TabIndex = 1;
             // 
             // btnlimpiarbuscador
@@ -354,7 +354,7 @@
             this.btnlimpiarbuscador.IconColor = System.Drawing.Color.White;
             this.btnlimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnlimpiarbuscador.IconSize = 20;
-            this.btnlimpiarbuscador.Location = new System.Drawing.Point(713, 25);
+            this.btnlimpiarbuscador.Location = new System.Drawing.Point(912, 25);
             this.btnlimpiarbuscador.Name = "btnlimpiarbuscador";
             this.btnlimpiarbuscador.Size = new System.Drawing.Size(40, 30);
             this.btnlimpiarbuscador.TabIndex = 5;
@@ -373,7 +373,7 @@
             this.btnbuscar.IconColor = System.Drawing.Color.White;
             this.btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnbuscar.IconSize = 20;
-            this.btnbuscar.Location = new System.Drawing.Point(663, 25);
+            this.btnbuscar.Location = new System.Drawing.Point(862, 25);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(40, 30);
             this.btnbuscar.TabIndex = 4;
@@ -384,7 +384,7 @@
             // 
             this.txtbusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbusqueda.Location = new System.Drawing.Point(473, 28);
+            this.txtbusqueda.Location = new System.Drawing.Point(672, 28);
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(180, 21);
             this.txtbusqueda.TabIndex = 3;
@@ -395,7 +395,7 @@
             this.cbobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbobusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(293, 28);
+            this.cbobusqueda.Location = new System.Drawing.Point(492, 28);
             this.cbobusqueda.Name = "cbobusqueda";
             this.cbobusqueda.Size = new System.Drawing.Size(170, 23);
             this.cbobusqueda.TabIndex = 2;
@@ -406,7 +406,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(213, 31);
+            this.label3.Location = new System.Drawing.Point(412, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 15);
             this.label3.TabIndex = 1;
@@ -431,7 +431,7 @@
             this.panelCentral.Location = new System.Drawing.Point(270, 70);
             this.panelCentral.Name = "panelCentral";
             this.panelCentral.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
-            this.panelCentral.Size = new System.Drawing.Size(766, 548);
+            this.panelCentral.Size = new System.Drawing.Size(965, 548);
             this.panelCentral.TabIndex = 2;
             // 
             // dgvdata
@@ -483,7 +483,7 @@
             this.dgvdata.RowHeadersWidth = 51;
             this.dgvdata.RowTemplate.Height = 28;
             this.dgvdata.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvdata.Size = new System.Drawing.Size(746, 533);
+            this.dgvdata.Size = new System.Drawing.Size(945, 533);
             this.dgvdata.TabIndex = 0;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
@@ -598,7 +598,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1036, 618);
+            this.ClientSize = new System.Drawing.Size(1235, 618);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.txtindice);
             this.Controls.Add(this.panelCentral);
