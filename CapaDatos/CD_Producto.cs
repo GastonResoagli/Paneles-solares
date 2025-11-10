@@ -35,23 +35,6 @@ namespace CapaDatos
 
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        /*while (dr.Read())
-                        {
-                            //se crea objetos Producto a partir de cada fila leida
-                            lista.Add(new Producto()
-                            {
-                                idProducto = Convert.ToInt32(dr["idProducto"]),
-                                Codigo = dr["Codigo"].ToString(),
-                                Nombre = dr["Nombre"].ToString(),
-                                Descripcion = dr["Descripcion"].ToString(),
-                                //oCategoria = new Categoria() { idCategoria = Convert.ToInt32(dr["idCategoria"]), Descripcion = dr["Categoria"].ToString() },
-                                Stock = Convert.ToInt32(dr["Stock"].ToString()),
-                                PrecioVenta = Convert.ToDecimal(dr["PrecioVenta"].ToString()),
-                                Estado = Convert.ToBoolean(dr["Estado"]),
-                            });
-                        }
-                        */
-
                         while (dr.Read())
                         {
                             lista.Add(new Producto()

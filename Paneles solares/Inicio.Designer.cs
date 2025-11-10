@@ -31,6 +31,7 @@ namespace Paneles_solares
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnReportesAnaliticos = new System.Windows.Forms.Button();
             this.Logut = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.lblusuario = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@ namespace Paneles_solares
             this.panelLogo = new System.Windows.Forms.Panel();
             this.contenedor = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnReportesAnaliticos = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +65,25 @@ namespace Paneles_solares
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(225, 718);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnReportesAnaliticos
+            // 
+            this.btnReportesAnaliticos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportesAnaliticos.FlatAppearance.BorderSize = 0;
+            this.btnReportesAnaliticos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportesAnaliticos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportesAnaliticos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnReportesAnaliticos.Image = global::Paneles_solares.Properties.Resources.grafico_de_barras;
+            this.btnReportesAnaliticos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportesAnaliticos.Location = new System.Drawing.Point(0, 553);
+            this.btnReportesAnaliticos.Name = "btnReportesAnaliticos";
+            this.btnReportesAnaliticos.Size = new System.Drawing.Size(225, 79);
+            this.btnReportesAnaliticos.TabIndex = 12;
+            this.btnReportesAnaliticos.Text = "Reportes Analíticos";
+            this.btnReportesAnaliticos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportesAnaliticos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportesAnaliticos.UseVisualStyleBackColor = true;
+            this.btnReportesAnaliticos.Click += new System.EventHandler(this.btnReportesAnaliticos_Click);
             // 
             // Logut
             // 
@@ -238,25 +257,6 @@ namespace Paneles_solares
             this.pictureBox1.Size = new System.Drawing.Size(345, 86);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnReportesAnaliticos
-            //
-            this.btnReportesAnaliticos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportesAnaliticos.FlatAppearance.BorderSize = 0;
-            this.btnReportesAnaliticos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportesAnaliticos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportesAnaliticos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReportesAnaliticos.Image = global::Paneles_solares.Properties.Resources.grafico_de_barras;
-            this.btnReportesAnaliticos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportesAnaliticos.Location = new System.Drawing.Point(0, 553);
-            this.btnReportesAnaliticos.Name = "btnReportesAnaliticos";
-            this.btnReportesAnaliticos.Size = new System.Drawing.Size(225, 79);
-            this.btnReportesAnaliticos.TabIndex = 12;
-            this.btnReportesAnaliticos.Text = "Reportes Analíticos";
-            this.btnReportesAnaliticos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportesAnaliticos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReportesAnaliticos.UseVisualStyleBackColor = true;
-            this.btnReportesAnaliticos.Click += new System.EventHandler(this.btnReportesAnaliticos_Click);
             // 
             // inicio
             // 
