@@ -202,26 +202,44 @@ namespace Paneles_solares.Properties {
         
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
-        ///&lt;!-- saved from url=(0035)http://127.0.0.1:5500/Plantlla.html --&gt;
-        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;head&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-        ///    &lt;title&gt;Title of the document&lt;/title&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;title&gt;Web Page Design&lt;/title&gt;
         ///    &lt;style&gt;
         ///        table.border {
         ///            border-collapse: collapse;
         ///        }
         ///
         ///        table.border th {
+        ///            text-align: center;
         ///            padding: 5px;
         ///            border: 1px solid black;
         ///        }
         ///
         ///        table.border td {
+        ///            text-align: center;
         ///            padding: 5px;
-        ///            border: 1px solid black [resto de la cadena truncado]&quot;;.
+        ///            border: 1px solid black;
+        ///        }
+        ///    &lt;/style&gt;
+        ///&lt;/head&gt;
+        ///&lt;body&gt;
+        ///    &lt;!-- ENCABEZADO --&gt;
+        ///    &lt;table border=&quot;0&quot; s [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string plantilla {
             get {
                 return ResourceManager.GetString("plantilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap remove {
+            get {
+                object obj = ResourceManager.GetObject("remove", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

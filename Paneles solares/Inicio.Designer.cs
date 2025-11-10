@@ -133,7 +133,6 @@ namespace Paneles_solares
             this.lblusuario.Size = new System.Drawing.Size(51, 13);
             this.lblusuario.TabIndex = 8;
             this.lblusuario.Text = "lblusuario";
-            this.lblusuario.Click += new System.EventHandler(this.lblusuario_Click);
             // 
             // btnVentasD
             // 

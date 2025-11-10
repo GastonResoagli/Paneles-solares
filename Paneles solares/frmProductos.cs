@@ -20,11 +20,6 @@ namespace Paneles_solares
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmProductos_Load(object sender, EventArgs e)
         {
             // Se cargan las opciones de ESTADO

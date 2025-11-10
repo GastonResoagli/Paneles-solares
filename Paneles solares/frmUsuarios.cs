@@ -20,12 +20,6 @@ namespace Paneles_solares
             InitializeComponent();
         }
 
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //evento para insertar y editar usuarios
         private void btnguardar_Click(object sender, EventArgs e)
         {
@@ -130,10 +124,7 @@ namespace Paneles_solares
                     cboestado.SelectedIndex = 0;
                 }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         //evento para cargar el formulario
         private void frmUsuarios_Load(object sender, EventArgs e)
@@ -178,11 +169,6 @@ namespace Paneles_solares
                     item.Estado == true ? "Activo" : "No Activo"
             });
             }
-
-        }
-
-        private void cboestado_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
 

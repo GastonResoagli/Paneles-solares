@@ -263,6 +263,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <None Include="Resources\remove.png" />
     <None Include="Resources\plantilla.html" />
     <None Include="Resources\WhatsApp_Image_2025-11-03_at_14.34.00.png" />
     <None Include="Resources\WhatsApp_Image_2025-11-03_at_14.33.59.png" />

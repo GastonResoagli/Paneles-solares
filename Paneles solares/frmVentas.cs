@@ -224,7 +224,7 @@ namespace Paneles_solares
 
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            /*
+            
                         if (e.RowIndex < 0)
                             return;
 
@@ -232,14 +232,14 @@ namespace Paneles_solares
                         {
                             e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                            var w = Properties.Resources.delete25.Width;
-                            var h = Properties.Resources.delete25.Height;
+                            var w = Properties.Resources.gg2.Width;
+                            var h = Properties.Resources.gg2.Height;
                             var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
                             var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
-                            e.Graphics.DrawImage(Properties.Resources.delete25, new Rectangle(x, y, w, h));
+                            e.Graphics.DrawImage(Properties.Resources.gg2, new Rectangle(x, y, w, h));
                             e.Handled = true;
-                        } */
+                        } 
         }
 
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)

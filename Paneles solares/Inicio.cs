@@ -167,17 +167,6 @@ namespace Paneles_solares
         {
             abrirFormulario(sender, new frmVentaD());
 
-
-        }
-
-        private void lblusuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contenedor_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void Logut_Click(object sender, EventArgs e)
