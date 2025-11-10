@@ -44,6 +44,7 @@
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,7 +152,8 @@
             this.Categoria,
             this.Stock,
             this.PrecioCompra,
-            this.PrecioVenta});
+            this.PrecioVenta,
+            this.Estado});
             this.dgvdata.Location = new System.Drawing.Point(16, 97);
             this.dgvdata.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvdata.MultiSelect = false;
@@ -216,13 +218,21 @@
             this.PrecioCompra.Visible = false;
             // 
             // PrecioVenta
-            // 
+            //
             this.PrecioVenta.HeaderText = "Precio Venta";
             this.PrecioVenta.MinimumWidth = 6;
             this.PrecioVenta.Name = "PrecioVenta";
             this.PrecioVenta.ReadOnly = true;
             this.PrecioVenta.Visible = false;
-            // 
+            //
+            // Estado
+            //
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
+            //
             // mdProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -260,5 +270,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

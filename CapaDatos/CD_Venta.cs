@@ -116,6 +116,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("MontoPago", obj.MontoPago);
                     cmd.Parameters.AddWithValue("MontoCambio", obj.MontoCambio);
                     cmd.Parameters.AddWithValue("MontoTotal", obj.MontoTotal);
+                    cmd.Parameters.AddWithValue("FechaRegistro", obj.FechaRegistro);
 
                     // Parametro de tipo tabla estructurado
                     SqlParameter parametroDetalle = new SqlParameter("@DetalleVenta", SqlDbType.Structured);

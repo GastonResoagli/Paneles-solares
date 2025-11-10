@@ -20,17 +20,17 @@ namespace Paneles_solares
             InitializeComponent();
         }
 
-
+        // Cuando se abre el formulario
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            // Se cargan las opciones de ESTADO
+            // Carga opciones de estado (Activo / No Activo)
             cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
             cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
             cboestado.DisplayMember = "Texto";
             cboestado.ValueMember = "Valor";
             cboestado.SelectedIndex = 0;
 
-            // Se cargan las columnas disponibles para busqueda
+            // Carga las columnas del DataGridView para usar en el buscador
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
                 if (columna.Visible == true && columna.Name != "btnseleccionar")
@@ -42,46 +42,134 @@ namespace Paneles_solares
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
 
-
-            //mostrar todos los clientes de la DB
+            // Muestra todos los clientes guardados
             List<Cliente> lista = new CN_Cliente().Listar();
 
             foreach (Cliente item in lista)
             {
-                dgvdata.Rows.Add(new object[] { "", item.idCliente,item.DNI,item.Nombre, item.Correo, item.Telefono,
-                    item.Estado == true ? 1 : 0,
-                    item.Estado == true ? "Activo" : "No Activo"
+                dgvdata.Rows.Add(new object[] {
+                "",
+                item.idCliente,
+                item.DNI,
+                item.Nombre,
+                item.Correo,
+                item.Telefono,
+                item.Estado == true ? 1 : 0,
+                item.Estado == true ? "Activo" : "No Activo"
             });
             }
-
         }
 
+        // Botón Guardar (agregar o editar cliente)
         private void btnguardar_Click(object sender, EventArgs e)
         {
             string mensaje = string.Empty;
 
+            // -------- VALIDACIONES --------
 
+            // DNI obligatorio
+            if (string.IsNullOrWhiteSpace(txtdni.Text))
+            {
+                MessageBox.Show("Debe ingresar el DNI del cliente");
+                txtdni.Focus();
+                return;
+            }
+
+            // DNI solo números
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtdni.Text, @"^\d+$"))
+            {
+                MessageBox.Show("El DNI debe contener solo números");
+                txtdni.Focus();
+                return;
+            }
+
+            // DNI con 7 u 8 dígitos
+            if (txtdni.Text.Length < 7 || txtdni.Text.Length > 8)
+            {
+                MessageBox.Show("El DNI debe tener entre 7 y 8 dígitos");
+                txtdni.Focus();
+                return;
+            }
+
+            // DNI duplicado
+            bool dniExiste = new CN_Cliente().Listar().Any(c =>
+                c.DNI == txtdni.Text && c.idCliente != Convert.ToInt32(txtid.Text));
+
+            if (dniExiste)
+            {
+                MessageBox.Show("Ya existe un cliente con ese DNI");
+                txtdni.Focus();
+                return;
+            }
+
+            // Nombre obligatorio
+            if (string.IsNullOrWhiteSpace(txtnombre.Text))
+            {
+                MessageBox.Show("Debe ingresar el nombre del cliente");
+                txtnombre.Focus();
+                return;
+            }
+
+            // Nombre solo letras
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtnombre.Text, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"))
+            {
+                MessageBox.Show("El nombre debe contener solo letras");
+                txtnombre.Focus();
+                return;
+            }
+
+            // Correo válido (si se ingresó)
+            if (!string.IsNullOrWhiteSpace(txtcorreo.Text))
+            {
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txtcorreo.Text,
+                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                {
+                    MessageBox.Show("El formato del correo electrónico no es válido");
+                    txtcorreo.Focus();
+                    return;
+                }
+            }
+
+            // Teléfono válido (si se ingresó)
+            if (!string.IsNullOrWhiteSpace(txttelefono.Text))
+            {
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txttelefono.Text, @"^[\d\s\-\+\(\)]+$"))
+                {
+                    MessageBox.Show("El teléfono solo puede contener números y signos comunes (+, -, (), espacio)");
+                    txttelefono.Focus();
+                    return;
+                }
+            }
+
+            // -------- CREAR OBJETO CLIENTE --------
             Cliente obj = new Cliente()
             {
                 idCliente = Convert.ToInt32(txtid.Text),
-                DNI = txtdni.Text,
-                Nombre = txtnombre.Text,
-                Correo = txtcorreo.Text,
-                Telefono = txttelefono.Text,
+                DNI = txtdni.Text.Trim(),
+                Nombre = txtnombre.Text.Trim(),
+                Correo = txtcorreo.Text.Trim(),
+                Telefono = txttelefono.Text.Trim(),
                 Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
             };
 
+            // -------- NUEVO CLIENTE --------
             if (obj.idCliente == 0)
             {
                 int idgenerado = new CN_Cliente().Registrar(obj, out mensaje);
 
                 if (idgenerado != 0)
                 {
-                    dgvdata.Rows.Add(new object[] { "", idgenerado, txtdni.Text, txtnombre.Text, txtcorreo.Text, txttelefono.Text,
-                        ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
-                        ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
+                    // Agrega nuevo cliente al DataGridView
+                    dgvdata.Rows.Add(new object[] {
+                    "",
+                    idgenerado,
+                    txtdni.Text,
+                    txtnombre.Text,
+                    txtcorreo.Text,
+                    txttelefono.Text,
+                    ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
+                    ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
                 });
-
                     limpiar();
                 }
                 else
@@ -89,18 +177,19 @@ namespace Paneles_solares
                     MessageBox.Show(mensaje);
                 }
             }
-
+            // -------- EDITAR CLIENTE --------
             else
             {
                 bool resultado = new CN_Cliente().Editar(obj, out mensaje);
 
                 if (resultado)
                 {
+                    // Actualiza la fila seleccionada
                     DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)];
                     row.Cells["idCliente"].Value = txtid.Text;
                     row.Cells["DNI"].Value = txtdni.Text;
                     row.Cells["Nombre"].Value = txtnombre.Text;
-                    row.Cells["Correo"].Value=txtcorreo.Text;
+                    row.Cells["Correo"].Value = txtcorreo.Text;
                     row.Cells["Telefono"].Value = txttelefono.Text;
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
                     row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
@@ -113,6 +202,8 @@ namespace Paneles_solares
                 }
             }
         }
+
+        // Limpia los campos del formulario
         private void limpiar()
         {
             txtindice.Text = "-1";
@@ -125,6 +216,7 @@ namespace Paneles_solares
             txtdni.Select();
         }
 
+        // Dibuja el ícono del botón seleccionar en la grilla
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -143,15 +235,14 @@ namespace Paneles_solares
             }
         }
 
+        // Cargar datos del cliente seleccionado
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvdata.Columns[e.ColumnIndex].Name == "btnseleccionar")
             {
                 int indice = e.RowIndex;
-
                 if (indice >= 0)
                 {
-                    // Se cargan los valores de la fila seleccionada en los campos de edicion
                     txtindice.Text = indice.ToString();
                     txtid.Text = dgvdata.Rows[indice].Cells["idCliente"].Value.ToString();
                     txtdni.Text = dgvdata.Rows[indice].Cells["DNI"].Value.ToString();
@@ -164,8 +255,7 @@ namespace Paneles_solares
                     {
                         if ((oc.Texto == dgvdata.Rows[indice].Cells["EstadoValor"].Value.ToString()))
                         {
-                            int indice_combo = cboestado.Items.IndexOf(oc);
-                            cboestado.SelectedIndex = indice_combo;
+                            cboestado.SelectedIndex = cboestado.Items.IndexOf(oc);
                             break;
                         }
                     }
@@ -173,6 +263,7 @@ namespace Paneles_solares
             }
         }
 
+        // Botón eliminar cliente
         private void btneliminar_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(txtid.Text) != 0)
@@ -180,10 +271,9 @@ namespace Paneles_solares
                 if (MessageBox.Show("¿Desea eliminar el cliente?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     string mensaje = string.Empty;
-                    Cliente obj = new Cliente()
-                    {
-                        idCliente = Convert.ToInt32(txtid.Text)
-                    };
+                    Cliente obj = new Cliente() { idCliente = Convert.ToInt32(txtid.Text) };
+
+                    // Elimina el cliente
                     bool respuesta = new CN_Cliente().Eliminar(obj, out mensaje);
                     if (respuesta)
                     {
@@ -198,6 +288,7 @@ namespace Paneles_solares
             }
         }
 
+        // Buscar cliente
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
@@ -213,6 +304,7 @@ namespace Paneles_solares
             }
         }
 
+        // Limpiar campo de búsqueda
         private void btnlimpiarbuscador_Click(object sender, EventArgs e)
         {
             txtbusqueda.Text = "";
@@ -222,6 +314,7 @@ namespace Paneles_solares
             }
         }
 
+        // Botón limpiar formulario
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
             limpiar();

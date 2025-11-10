@@ -1,0 +1,1106 @@
+================================================================================
+                    MANUAL DE USUARIO
+            SISTEMA DE GESTION DE PANELES SOLARES
+================================================================================
+
+GRUPO NUMERO 42
+
+INTEGRANTES:
+- LAGO MATIAS
+- RESOAGLI GASTON
+
+================================================================================
+TABLA DE CONTENIDOS
+================================================================================
+
+1. INTRODUCCION
+2. REQUISITOS DEL SISTEMA
+3. INICIO DE SESION
+4. INTERFAZ PRINCIPAL
+5. GESTION DE PRODUCTOS
+6. GESTION DE CLIENTES
+7. GESTION DE USUARIOS
+8. REGISTRO DE VENTAS
+9. CONSULTA DE VENTAS
+10. REPORTES DE VENTAS
+11. REPORTES ANALITICOS
+12. RESPALDO Y CIERRE DE SESION
+13. SOLUCIONES A PROBLEMAS COMUNES
+
+
+================================================================================
+1. INTRODUCCION
+================================================================================
+
+Bienvenido al Sistema de Gestion de Paneles Solares. Este sistema le permite
+gestionar de manera integral su negocio de venta de paneles solares, incluyendo:
+
+- Control de inventario de productos
+- Registro de clientes
+- Gestion de usuarios y permisos
+- Registro de ventas con control de stock
+- Generacion de reportes detallados
+- Analisis de rendimiento de ventas
+
+El sistema cuenta con un control de permisos basado en roles, lo que significa
+que cada usuario vera solo las opciones a las que tiene acceso segun su rol
+asignado.
+
+
+================================================================================
+2. REQUISITOS DEL SISTEMA
+================================================================================
+
+REQUISITOS MINIMOS:
+- Sistema Operativo: Windows 7 o superior
+- Procesador: Intel Core i3 o equivalente
+- Memoria RAM: 4 GB minimo
+- Espacio en disco: 500 MB
+- Resolucion de pantalla: 1024x768 o superior
+- SQL Server 2012 o superior
+
+SOFTWARE NECESARIO:
+- .NET Framework 4.5 o superior
+- SQL Server (instalado y configurado)
+- Conexion a la base de datos configurada
+
+
+================================================================================
+3. INICIO DE SESION
+================================================================================
+
+3.1 ACCEDER AL SISTEMA
+--------------------------------------
+1. Ejecute la aplicacion haciendo doble clic en el icono del sistema
+2. Se mostrara la ventana de inicio de sesion
+
+3.2 INGRESAR CREDENCIALES
+--------------------------------------
+NUMERO DE DOCUMENTO:
+- Ingrese su numero de DNI (minimo 7 digitos)
+- Solo se aceptan numeros
+- Ejemplo: 12345678
+
+CONTRASENA:
+- Ingrese su contrasena (minimo 4 caracteres)
+- La contrasena es sensible a mayusculas/minusculas
+
+3.3 INICIAR SESION
+--------------------------------------
+1. Complete ambos campos
+2. Presione el boton "Ingresar" o la tecla Enter
+3. El sistema validara sus credenciales
+
+MENSAJES DE ERROR COMUNES:
+- "Debe completar todos los campos": Falta ingresar documento o contrasena
+- "No se encontro el usuario": El numero de documento no esta registrado
+- "Usuario inactivo": Su cuenta ha sido desactivada, contacte al administrador
+- "Credenciales incorrectas": La contrasena no es correcta
+
+3.4 CANCELAR
+--------------------------------------
+- Presione el boton "Cancelar" para cerrar la aplicacion
+
+
+================================================================================
+4. INTERFAZ PRINCIPAL
+================================================================================
+
+4.1 DESCRIPCION DE LA PANTALLA
+--------------------------------------
+Una vez que inicie sesion correctamente, vera la pantalla principal del sistema
+con las siguientes areas:
+
+BARRA DE MENU LATERAL:
+Muestra todas las opciones disponibles segun su rol:
+- Productos
+- Clientes
+- Usuarios
+- Ventas
+- Detalles de Venta
+- Reportes
+- Reportes Analiticos
+- Cerrar Sesion
+
+AREA DE TRABAJO:
+Panel central donde se abriran los diferentes modulos
+
+INFORMACION DE USUARIO:
+Muestra su nombre completo en la parte superior
+
+4.2 NAVEGACION
+--------------------------------------
+- Haga clic en cualquier opcion del menu para abrir el modulo correspondiente
+- Solo vera las opciones para las que tiene permiso segun su rol
+- El boton seleccionado se resaltara visualmente
+- Solo puede tener un modulo abierto a la vez
+
+4.3 PERMISOS Y ROLES
+--------------------------------------
+El sistema maneja diferentes roles de usuario:
+- ADMINISTRADOR: Acceso completo a todos los modulos
+- VENDEDOR: Acceso a ventas, clientes y consulta de productos
+- GERENTE: Acceso a reportes y consultas
+
+Nota: Su administrador define que modulos puede utilizar segun su rol.
+
+
+================================================================================
+5. GESTION DE PRODUCTOS
+================================================================================
+
+El modulo de Productos permite administrar el catalogo de paneles solares y
+otros productos relacionados.
+
+5.1 ACCEDER AL MODULO
+--------------------------------------
+- Haga clic en el boton "Productos" en el menu lateral
+
+5.2 PANTALLA DE PRODUCTOS
+--------------------------------------
+PANEL IZQUIERDO: Formulario para agregar/editar productos
+PANEL DERECHO: Lista de todos los productos registrados
+
+5.3 REGISTRAR UN NUEVO PRODUCTO
+--------------------------------------
+1. Complete los siguientes campos:
+
+   CODIGO:
+   - Codigo unico del producto
+   - Ejemplo: PNL001
+
+   NOMBRE:
+   - Nombre descriptivo del producto
+   - Ejemplo: Panel Solar 300W Policristalino
+
+   DESCRIPCION:
+   - Detalles adicionales del producto
+   - Ejemplo: Panel solar de 300W con marco de aluminio
+
+   CATEGORIA:
+   - Seleccione de la lista desplegable
+   - Ejemplo: Paneles Solares, Inversores, Baterias
+
+   STOCK:
+   - Cantidad disponible en inventario
+   - Solo numeros enteros
+   - Ejemplo: 50
+
+   PRECIO VENTA:
+   - Precio de venta al publico
+   - Use punto decimal
+   - Ejemplo: 350.00
+
+   ESTADO:
+   - Activo: El producto aparecera disponible para ventas
+   - Inactivo: El producto no estara disponible
+
+2. Presione el boton "Guardar"
+3. El sistema validara la informacion
+4. Si todo es correcto, mostrara el mensaje "Producto registrado correctamente"
+5. El nuevo producto aparecera en la lista
+
+5.4 MODIFICAR UN PRODUCTO
+--------------------------------------
+1. Busque el producto en la lista de la derecha
+2. Haga clic en el icono de edicion (lapiz) en la fila del producto
+3. Los datos del producto se cargarán en el formulario
+4. Modifique los campos necesarios
+5. Presione "Guardar"
+6. Confirme con "Si" en el mensaje de confirmacion
+7. El sistema mostrara "Producto modificado correctamente"
+
+IMPORTANTE: No se puede modificar el codigo del producto una vez creado.
+
+5.5 ELIMINAR UN PRODUCTO
+--------------------------------------
+1. Busque el producto en la lista
+2. Haga clic en el icono de eliminar (tacho de basura)
+3. Confirme la eliminacion presionando "Si"
+4. El sistema mostrara "Producto eliminado correctamente"
+
+ADVERTENCIA: Esta accion no se puede deshacer. Se recomienda cambiar el estado
+a "Inactivo" en lugar de eliminar, para mantener el historial.
+
+5.6 BUSCAR PRODUCTOS
+--------------------------------------
+BUSCAR POR COLUMNA:
+1. Seleccione el criterio de busqueda en la lista desplegable:
+   - Codigo
+   - Nombre
+   - Descripcion
+   - Categoria
+   - Stock
+   - Precio Venta
+   - Estado
+
+2. Ingrese el texto a buscar en el campo de busqueda
+3. Presione el boton "Buscar" (icono de lupa)
+4. La lista se filtrara mostrando solo los resultados coincidentes
+
+LIMPIAR BUSQUEDA:
+- Presione el boton "Limpiar" para mostrar todos los productos nuevamente
+
+5.7 LIMPIAR FORMULARIO
+--------------------------------------
+- Presione el boton "Limpiar" en el panel izquierdo para vaciar todos los
+  campos del formulario y preparar el ingreso de un nuevo producto
+
+
+================================================================================
+6. GESTION DE CLIENTES
+================================================================================
+
+El modulo de Clientes permite registrar y gestionar la informacion de sus
+clientes.
+
+6.1 ACCEDER AL MODULO
+--------------------------------------
+- Haga clic en el boton "Clientes" en el menu lateral
+
+6.2 REGISTRAR UN NUEVO CLIENTE
+--------------------------------------
+1. Complete los siguientes campos:
+
+   DNI:
+   - Numero de documento del cliente
+   - Solo numeros
+   - Ejemplo: 45678912
+
+   NOMBRE COMPLETO:
+   - Apellidos y nombres del cliente
+   - Ejemplo: Rodriguez Martinez Juan Carlos
+
+   CORREO:
+   - Direccion de email del cliente
+   - Ejemplo: juan.rodriguez@email.com
+
+   TELEFONO:
+   - Numero telefonico de contacto
+   - Ejemplo: 987654321
+
+   ESTADO:
+   - Activo: El cliente aparecera disponible para ventas
+   - Inactivo: El cliente no estara disponible
+
+2. Presione el boton "Guardar"
+3. El sistema validara la informacion
+4. Aparecera el mensaje "Cliente registrado correctamente"
+
+6.3 MODIFICAR UN CLIENTE
+--------------------------------------
+1. Busque el cliente en la lista
+2. Haga clic en el icono de edicion
+3. Modifique los datos necesarios
+4. Presione "Guardar"
+5. Confirme la modificacion
+
+6.4 ELIMINAR UN CLIENTE
+--------------------------------------
+1. Busque el cliente en la lista
+2. Haga clic en el icono de eliminar
+3. Confirme la eliminacion
+4. El cliente sera eliminado del sistema
+
+NOTA: Si el cliente tiene ventas registradas, se recomienda cambiar su estado
+a "Inactivo" en lugar de eliminarlo.
+
+6.5 BUSCAR CLIENTES
+--------------------------------------
+Funciona igual que la busqueda de productos:
+1. Seleccione el criterio (DNI, Nombre, Correo, Telefono, Estado)
+2. Ingrese el texto a buscar
+3. Presione "Buscar"
+4. Use "Limpiar" para ver todos los clientes
+
+
+================================================================================
+7. GESTION DE USUARIOS
+================================================================================
+
+Este modulo permite administrar los usuarios del sistema y sus roles de acceso.
+
+IMPORTANTE: Solo los usuarios con rol de Administrador pueden acceder a este
+modulo.
+
+7.1 ACCEDER AL MODULO
+--------------------------------------
+- Haga clic en el boton "Usuarios" en el menu lateral
+
+7.2 REGISTRAR UN NUEVO USUARIO
+--------------------------------------
+1. Complete los siguientes campos:
+
+   DOCUMENTO:
+   - DNI del usuario (minimo 7 digitos)
+   - Solo numeros
+   - Ejemplo: 87654321
+
+   NOMBRE COMPLETO:
+   - Apellidos y nombres del usuario
+   - Ejemplo: Gomez Perez Maria Elena
+
+   CORREO:
+   - Email corporativo del usuario
+   - Debe contener @
+   - Ejemplo: maria.gomez@empresa.com
+
+   CONTRASENA:
+   - Minimo 4 caracteres
+   - Sera la que use el usuario para ingresar
+   - Ejemplo: Pass1234
+
+   CONFIRMAR CONTRASENA:
+   - Debe coincidir exactamente con la contrasena
+   - Ingrese la misma contrasena nuevamente
+
+   ROL:
+   - Seleccione el rol del usuario de la lista
+   - Define los permisos de acceso al sistema
+   - Ejemplo: Administrador, Vendedor, Gerente
+
+   ESTADO:
+   - Activo: El usuario puede iniciar sesion
+   - Inactivo: El usuario no puede acceder al sistema
+
+2. Presione el boton "Guardar"
+
+VALIDACIONES:
+- El sistema verificara que las contrasenas coincidan
+- El documento debe tener minimo 7 digitos
+- Todos los campos son obligatorios
+- La contrasena debe tener minimo 4 caracteres
+
+7.3 MODIFICAR UN USUARIO
+--------------------------------------
+1. Busque el usuario en la lista
+2. Haga clic en el icono de edicion
+3. Modifique los campos necesarios
+4. Si desea cambiar la contrasena, ingrese una nueva y confirmela
+5. Si no desea cambiar la contrasena, deje ambos campos vacios
+6. Presione "Guardar"
+
+7.4 DESACTIVAR UN USUARIO
+--------------------------------------
+En lugar de eliminar usuarios, se recomienda desactivarlos:
+1. Edite el usuario
+2. Cambie el Estado a "Inactivo"
+3. Guarde los cambios
+4. El usuario ya no podra iniciar sesion
+
+7.5 ROLES Y PERMISOS
+--------------------------------------
+Cada rol define que modulos puede ver y usar el usuario:
+
+ADMINISTRADOR:
+- Acceso completo a todos los modulos
+- Puede gestionar usuarios
+- Puede realizar respaldos
+
+VENDEDOR:
+- Registro de ventas
+- Gestion de clientes
+- Consulta de productos
+- Consulta de ventas
+
+GERENTE:
+- Acceso a todos los reportes
+- Consulta de ventas
+- Gestion de productos y clientes
+
+Nota: Los roles y permisos se configuran en la base de datos.
+
+
+================================================================================
+8. REGISTRO DE VENTAS
+================================================================================
+
+El modulo de Ventas es el punto de venta del sistema. Permite registrar
+transacciones de venta con control automatico de inventario.
+
+8.1 ACCEDER AL MODULO
+--------------------------------------
+- Haga clic en el boton "Ventas" en el menu lateral
+
+8.2 PANTALLA DE VENTAS
+--------------------------------------
+La pantalla esta dividida en varias secciones:
+
+INFORMACION GENERAL:
+- Fecha actual (se muestra automaticamente)
+- Tipo de documento (Boleta o Factura)
+
+INFORMACION DEL CLIENTE:
+- Documento del cliente
+- Nombre del cliente
+
+INFORMACION DEL PRODUCTO:
+- Codigo del producto
+- Nombre del producto
+- Precio
+- Stock disponible
+- Cantidad a vender
+
+CARRITO DE COMPRA:
+- Lista de productos agregados a la venta
+
+TOTALES:
+- Total a pagar
+- Monto pagado por el cliente
+- Cambio a devolver
+
+8.3 PROCESO DE VENTA PASO A PASO
+--------------------------------------
+
+PASO 1: SELECCIONAR TIPO DE DOCUMENTO
+1. Elija entre "Boleta" o "Factura" en la lista desplegable
+
+PASO 2: INGRESAR CLIENTE
+Tiene dos opciones:
+
+Opcion A - Buscar cliente existente:
+1. Presione el boton "Buscar" junto al campo Documento
+2. Se abrira una ventana con la lista de clientes activos
+3. Puede buscar por DNI o Nombre
+4. Haga doble clic sobre el cliente deseado
+5. Los datos del cliente se cargarán automaticamente
+
+Opcion B - Ingresar manualmente:
+1. Escriba el DNI del cliente en el campo Documento
+2. Escriba el nombre del cliente en el campo Nombre
+3. Continue con el siguiente paso
+
+PASO 3: AGREGAR PRODUCTOS A LA VENTA
+Para cada producto que desee vender:
+
+Opcion A - Buscar por codigo:
+1. Ingrese el codigo del producto en el campo "Codigo Producto"
+2. Presione la tecla ENTER
+3. Los datos del producto se cargarán automaticamente
+
+Opcion B - Buscar en catalogo:
+1. Presione el boton de busqueda (icono lupa) junto a Codigo Producto
+2. Se abrira una ventana con todos los productos
+3. Puede buscar por cualquier campo
+4. Haga doble clic sobre el producto deseado
+5. Los datos del producto se cargarán
+
+Luego de seleccionar el producto:
+1. El sistema mostrara: Nombre, Precio y Stock disponible
+2. Ingrese la CANTIDAD a vender
+3. Presione el boton "Agregar"
+4. El producto se agregara al carrito (tabla inferior)
+
+IMPORTANTE SOBRE EL STOCK:
+- El sistema reduce el stock automaticamente al agregar al carrito
+- No puede vender mas unidades que las disponibles en stock
+- Si elimina un producto del carrito, el stock se restaura
+- El stock se muestra en tiempo real
+
+PASO 4: REVISAR EL CARRITO
+En la tabla del carrito vera:
+- Todos los productos agregados
+- Codigo, Nombre, Precio, Cantidad y SubTotal de cada producto
+- Un boton para eliminar cada producto (icono basura)
+
+Para eliminar un producto del carrito:
+1. Haga clic en el icono de eliminar en la fila del producto
+2. El producto se quitara del carrito
+3. El stock se restaurara automaticamente
+
+PASO 5: VERIFICAR EL TOTAL
+- El sistema calcula automaticamente el total a pagar
+- El total se muestra en el campo "Total a Pagar"
+
+PASO 6: INGRESAR PAGO
+1. En el campo "Pago Con", ingrese el monto que paga el cliente
+2. El sistema calculara automaticamente el cambio
+3. El cambio se muestra en el campo "Cambio"
+
+PASO 7: REGISTRAR LA VENTA
+1. Verifique que toda la informacion este correcta
+2. Presione el boton "Registrar"
+3. El sistema validara la informacion
+4. Si todo esta correcto, procedera con la venta
+
+VALIDACIONES ANTES DE REGISTRAR:
+- Debe haber ingresado un cliente
+- Debe haber al menos un producto en el carrito
+- El monto pagado debe ser mayor o igual al total
+
+PASO 8: CONFIRMACION DE VENTA
+Una vez registrada la venta:
+1. Aparecera un mensaje con el numero de venta generado
+2. Podra copiar el numero de venta al portapapeles
+3. El stock de los productos se habra descontado permanentemente
+4. El formulario se limpiara para una nueva venta
+
+8.4 CASOS ESPECIALES
+--------------------------------------
+
+SI NO HAY STOCK SUFICIENTE:
+- El sistema mostrara un mensaje de error
+- No podra agregar el producto al carrito
+- Debera reducir la cantidad o seleccionar otro producto
+
+SI INGRESA UN CODIGO INCORRECTO:
+- El sistema mostrara "Producto no encontrado"
+- Verifique el codigo e intente nuevamente
+- Use la busqueda por catalogo si no recuerda el codigo
+
+SI EL CLIENTE NO ESTA REGISTRADO:
+- Puede ingresar manualmente DNI y Nombre para esta venta
+- Se recomienda registrar el cliente en el modulo de Clientes
+  para futuras ventas
+
+8.5 CONSEJOS PARA UN REGISTRO EFICIENTE
+--------------------------------------
+- Tenga los productos codificados y aprendase los codigos frecuentes
+- Registre todos sus clientes para agilizar futuras ventas
+- Verifique el stock antes de confirmar la venta con el cliente
+- Use la tecla ENTER para agilizar la busqueda por codigo
+- Revise siempre el carrito antes de registrar
+
+
+================================================================================
+9. CONSULTA DE VENTAS
+================================================================================
+
+El modulo de Detalles de Venta permite consultar ventas realizadas y generar
+comprobantes en PDF.
+
+9.1 ACCEDER AL MODULO
+--------------------------------------
+- Haga clic en el boton "Detalles de Venta" o "Ventas D" en el menu
+
+9.2 BUSCAR UNA VENTA
+--------------------------------------
+1. Ingrese el numero de documento de venta en el campo "Numero Documento"
+2. Presione el boton de busqueda (icono lupa)
+3. Si la venta existe, se mostrara toda su informacion
+
+9.3 INFORMACION MOSTRADA
+--------------------------------------
+DATOS GENERALES:
+- Numero de Documento
+- Fecha de la venta
+- Tipo de Documento (Boleta/Factura)
+- Usuario que realizo la venta
+
+DATOS DEL CLIENTE:
+- Documento del cliente
+- Nombre del cliente
+
+DETALLE DE PRODUCTOS:
+Tabla con todos los productos vendidos:
+- Codigo
+- Nombre del Producto
+- Precio
+- Cantidad
+- Sub Total
+
+TOTALES:
+- Monto Total de la venta
+- Monto con que Pago el cliente
+- Cambio entregado
+
+9.4 GENERAR PDF DE LA VENTA
+--------------------------------------
+1. Despues de buscar una venta
+2. Presione el boton "Descargar PDF" (icono PDF)
+3. Seleccione la carpeta donde desea guardar el archivo
+4. Ingrese un nombre para el archivo (opcional)
+5. Presione "Guardar"
+6. El sistema generara un PDF profesional con:
+   - Logo de la empresa
+   - Todos los datos de la venta
+   - Formato de factura/boleta
+   - Detalle completo de productos
+
+El PDF generado puede ser:
+- Impreso para entregar al cliente
+- Enviado por email
+- Archivado digitalmente
+
+9.5 LIMPIAR CONSULTA
+--------------------------------------
+- Presione el boton "Limpiar" para vaciar todos los campos y realizar una
+  nueva busqueda
+
+
+================================================================================
+10. REPORTES DE VENTAS
+================================================================================
+
+El modulo de Reportes permite generar informes detallados de ventas con
+multiples filtros y exportacion a Excel.
+
+10.1 ACCEDER AL MODULO
+--------------------------------------
+- Haga clic en el boton "Reportes" en el menu lateral
+
+10.2 GENERAR UN REPORTE
+--------------------------------------
+
+PASO 1: SELECCIONAR RANGO DE FECHAS
+1. Fecha Inicio: Seleccione la fecha inicial del periodo
+2. Fecha Fin: Seleccione la fecha final del periodo
+
+PASO 2: FILTRAR POR TIPO DE DOCUMENTO (Opcional)
+- Seleccione "Todos" para ver todas las ventas
+- Seleccione "Boleta" para ver solo boletas
+- Seleccione "Factura" para ver solo facturas
+
+PASO 3: GENERAR REPORTE
+1. Presione el boton "Buscar"
+2. El sistema generara el reporte con todos los registros del periodo
+3. Los resultados se mostraran en la tabla
+
+10.3 INFORMACION DEL REPORTE
+--------------------------------------
+El reporte muestra las siguientes columnas:
+
+- Fecha Registro: Fecha de la venta
+- Tipo Documento: Boleta o Factura
+- Numero Documento: Numero de la venta
+- Monto Total: Total de la venta
+- Usuario: Vendedor que realizo la venta
+- Documento Cliente: DNI del cliente
+- Nombre Cliente: Nombre del cliente
+- Codigo Producto: Codigo de cada producto vendido
+- Nombre Producto: Nombre de cada producto
+- Categoria: Categoria del producto
+- Precio Venta: Precio unitario
+- Cantidad: Cantidad vendida
+- Sub Total: Subtotal por producto
+
+NOTA: Si una venta tiene multiples productos, aparecera una fila por cada
+producto vendido.
+
+10.4 BUSCAR DENTRO DEL REPORTE
+--------------------------------------
+Una vez generado el reporte, puede filtrar los resultados:
+
+1. Seleccione la columna por la que desea buscar
+2. Ingrese el texto a buscar
+3. Presione el boton "Buscar"
+4. La tabla se filtrara mostrando solo coincidencias
+
+Para ver todos los resultados nuevamente:
+- Presione el boton "Limpiar Buscador"
+
+10.5 EXPORTAR A EXCEL
+--------------------------------------
+Para exportar el reporte a Excel:
+
+1. Genere el reporte (con o sin filtros)
+2. Presione el boton "Exportar Excel"
+3. Seleccione la carpeta de destino
+4. El sistema creara un archivo Excel con formato:
+   ReporteVentas_DDMMYYYYHHMMSS.xlsx
+
+El archivo Excel incluye:
+- Todas las columnas del reporte
+- Formato de tabla
+- Anchos de columna ajustados
+- Puede ser editado, filtrado y procesado en Excel
+
+USOS DEL REPORTE EXPORTADO:
+- Analisis en Excel
+- Graficos y tablas dinamicas
+- Reportes personalizados
+- Envio a contabilidad
+- Archivo de respaldo
+
+10.6 CASOS DE USO COMUNES
+--------------------------------------
+
+VENTAS DEL DIA:
+- Fecha Inicio: Fecha de hoy
+- Fecha Fin: Fecha de hoy
+- Tipo Documento: Todos
+
+VENTAS DEL MES:
+- Fecha Inicio: Primer dia del mes
+- Fecha Fin: Ultimo dia del mes o fecha actual
+- Tipo Documento: Todos
+
+FACTURAS DEL PERIODO:
+- Fecha Inicio: Inicio del periodo
+- Fecha Fin: Fin del periodo
+- Tipo Documento: Factura
+
+VENTAS POR VENDEDOR:
+1. Genere el reporte del periodo deseado
+2. Use el filtro de busqueda en la columna "Usuario"
+3. Ingrese el nombre del vendedor
+
+
+================================================================================
+11. REPORTES ANALITICOS
+================================================================================
+
+El modulo de Reportes Analiticos proporciona tres informes avanzados con
+metricas de rendimiento y analisis de negocio.
+
+11.1 ACCEDER AL MODULO
+--------------------------------------
+- Haga clic en el boton "Reportes Analiticos" en el menu lateral
+
+11.2 ESTRUCTURA DEL MODULO
+--------------------------------------
+El modulo contiene tres secciones independientes:
+1. Top Vendedores - Analisis de desempeno de vendedores
+2. Top Productos - Analisis de productos mas vendidos
+3. Top Clientes - Analisis de mejores clientes
+
+Cada seccion tiene:
+- Filtro de fechas independiente
+- Boton para generar reporte
+- Boton para exportar a Excel
+- Tabla con resultados
+- Etiquetas con totales resumidos
+
+11.3 REPORTE TOP VENDEDORES
+--------------------------------------
+
+PROPOSITO:
+Analizar el rendimiento de los vendedores en un periodo determinado.
+
+COMO GENERAR:
+1. Seleccione Fecha Inicio y Fecha Fin en la seccion "Top Vendedores"
+2. Presione el boton "Generar Reporte"
+3. Los resultados se mostraran en la tabla
+
+METRICAS MOSTRADAS:
+- DNI: Documento del vendedor
+- Vendedor: Nombre completo
+- Rol: Rol del usuario en el sistema
+- Numero de Ventas: Cantidad de transacciones realizadas
+- Monto Total: Total vendido en el periodo
+- Promedio: Valor promedio por venta
+- Maximo: Venta de mayor valor realizada
+- Minimo: Venta de menor valor realizada
+
+TOTALES RESUMIDOS:
+- Total Vendedores: Cantidad de vendedores con ventas
+- Total Ventas: Cantidad total de transacciones
+- Total Monto: Suma de todas las ventas
+
+INTERPRETACION:
+- Identifique sus mejores vendedores
+- Analice el rendimiento individual
+- Detecte vendedores que necesitan capacitacion
+- Establezca metas basadas en promedios
+
+EXPORTAR:
+- Presione "Exportar Excel" para guardar el reporte en Excel
+
+11.4 REPORTE TOP PRODUCTOS
+--------------------------------------
+
+PROPOSITO:
+Analizar que productos se venden mas y generan mas ingresos.
+
+COMO GENERAR:
+1. Seleccione Fecha Inicio y Fecha Fin en la seccion "Top Productos"
+2. Presione el boton "Generar Reporte"
+3. Los resultados se mostraran en la tabla
+
+METRICAS MOSTRADAS:
+- Categoria: Categoria del producto
+- Codigo: Codigo del producto
+- Producto: Nombre del producto
+- Veces Vendido: Numero de transacciones en que aparece
+- Cantidad Total: Total de unidades vendidas
+- Monto Total: Ingresos generados por el producto
+- Precio Promedio: Precio promedio de venta
+- Stock Actual: Stock disponible actualmente
+
+TOTALES RESUMIDOS:
+- Total Productos: Cantidad de productos vendidos
+- Total Cantidad: Suma de unidades vendidas
+- Total Monto: Ingresos totales generados
+
+INTERPRETACION:
+- Identifique sus productos estrella
+- Detecte productos de baja rotacion
+- Planifique compras de inventario
+- Analice rentabilidad por producto
+- Optimice el stock basado en demanda
+
+EXPORTAR:
+- Presione "Exportar Excel" para guardar el reporte en Excel
+
+11.5 REPORTE TOP CLIENTES
+--------------------------------------
+
+PROPOSITO:
+Identificar los clientes mas valiosos y analizar patrones de compra.
+
+COMO GENERAR:
+1. Seleccione Fecha Inicio y Fecha Fin en la seccion "Top Clientes"
+2. Presione el boton "Generar Reporte"
+3. Los resultados se mostraran en la tabla
+
+METRICAS MOSTRADAS:
+- Documento: DNI del cliente
+- Cliente: Nombre del cliente
+- Correo: Email del cliente
+- Telefono: Telefono de contacto
+- Numero de Compras: Cantidad de transacciones realizadas
+- Monto Total: Total gastado en el periodo
+- Promedio: Valor promedio por compra
+- Maximo: Compra de mayor valor
+- Minimo: Compra de menor valor
+- Ultima Compra: Fecha de la ultima transaccion
+
+TOTALES RESUMIDOS:
+- Total Clientes: Cantidad de clientes con compras
+- Total Compras: Cantidad total de transacciones
+- Total Monto: Suma de todas las compras
+
+INTERPRETACION:
+- Identifique sus mejores clientes
+- Implemente programas de fidelizacion
+- Priorice atencion a clientes VIP
+- Detecte clientes inactivos
+- Analice frecuencia de compra
+- Planifique estrategias de retencion
+
+EXPORTAR:
+- Presione "Exportar Excel" para guardar el reporte en Excel
+
+11.6 ANALISIS COMBINADO
+--------------------------------------
+Para obtener insights mas profundos:
+
+ANALISIS DE VENTAS:
+1. Compare Top Vendedores con Top Productos
+   - Que vendedores venden que productos
+   - Capacite vendedores en productos rentables
+
+2. Compare Top Productos con Top Clientes
+   - Que productos compran sus mejores clientes
+   - Enfoque marketing en productos populares
+
+3. Compare Top Vendedores con Top Clientes
+   - Que vendedores atienden mejores clientes
+   - Asigne cuentas clave a mejores vendedores
+
+PERIODO DE ANALISIS:
+- Analisis semanal: Para seguimiento operativo
+- Analisis mensual: Para evaluacion de desempeno
+- Analisis trimestral: Para planificacion estrategica
+- Analisis anual: Para evaluacion general
+
+
+================================================================================
+12. RESPALDO Y CIERRE DE SESION
+================================================================================
+
+El modulo de Logout permite realizar respaldos de la base de datos y cerrar
+sesion de forma segura.
+
+12.1 ACCEDER AL MODULO
+--------------------------------------
+- Haga clic en el boton "Cerrar Sesion" o "Logout" en el menu
+
+12.2 GENERAR RESPALDO DE BASE DE DATOS
+--------------------------------------
+
+IMPORTANTE: Se recomienda realizar respaldos periodicos de la base de datos
+para proteger su informacion.
+
+PROCEDIMIENTO:
+1. Presione el boton "Generar Backup"
+2. Seleccione la carpeta donde desea guardar el respaldo
+3. El sistema generara automaticamente un archivo con formato:
+   Backup_NOMBREBD_AAAAMMDD_HHMMSS.bak
+   Ejemplo: Backup_DBPanelesSolares_20251110_143052.bak
+
+4. Espere mientras se genera el respaldo (aparecera cursor de espera)
+5. El sistema mostrara un mensaje de confirmacion
+
+FRECUENCIA RECOMENDADA:
+- Respaldo diario: Si realiza muchas ventas
+- Respaldo semanal: Para operaciones moderadas
+- Respaldo mensual: Como minimo obligatorio
+
+ALMACENAMIENTO:
+- Guarde los respaldos en una ubicacion segura
+- Use discos externos o almacenamiento en la nube
+- Mantenga multiples versiones de respaldo
+- Etiquete claramente los archivos de respaldo
+
+EN CASO DE FALLAS:
+- Los respaldos permiten recuperar toda la informacion
+- Contacte a su administrador de sistemas para restaurar
+- Nunca elimine respaldos antiguos sin verificar nuevos
+
+12.3 CERRAR SESION
+--------------------------------------
+Para salir del sistema de forma segura:
+
+1. Presione el boton "Logout" o "Cerrar Sesion"
+2. Confirme que desea salir presionando "Si"
+3. El sistema cerrara y volvera a la pantalla de inicio de sesion
+
+NOTA: No cierre la aplicacion directamente con la X, use siempre la opcion
+de cerrar sesion para garantizar que todos los procesos finalicen correctamente.
+
+
+================================================================================
+13. SOLUCIONES A PROBLEMAS COMUNES
+================================================================================
+
+13.1 PROBLEMAS DE INICIO DE SESION
+--------------------------------------
+
+PROBLEMA: "No se encontro el usuario"
+SOLUCION:
+- Verifique que el numero de documento sea correcto
+- Contacte al administrador para verificar que su usuario este registrado
+
+PROBLEMA: "Usuario inactivo"
+SOLUCION:
+- Su cuenta ha sido desactivada
+- Contacte al administrador del sistema
+
+PROBLEMA: "Credenciales incorrectas"
+SOLUCION:
+- Verifique que la contrasena sea correcta
+- Recuerde que las contrasenas son sensibles a mayusculas/minusculas
+- Si olvido su contrasena, contacte al administrador
+
+13.2 PROBLEMAS CON PRODUCTOS
+--------------------------------------
+
+PROBLEMA: No puedo agregar un producto a la venta por falta de stock
+SOLUCION:
+- Verifique el stock disponible del producto
+- Actualice el stock en el modulo de Productos
+- Reduzca la cantidad solicitada
+
+PROBLEMA: El producto no aparece al buscar
+SOLUCION:
+- Verifique que el producto este en estado "Activo"
+- Verifique que el codigo sea correcto
+- Use la busqueda por catalogo
+
+13.3 PROBLEMAS CON VENTAS
+--------------------------------------
+
+PROBLEMA: No puedo registrar una venta
+SOLUCION:
+- Verifique que haya ingresado datos del cliente
+- Verifique que haya al menos un producto en el carrito
+- Verifique que el monto de pago sea suficiente
+
+PROBLEMA: El stock no se actualiza
+SOLUCION:
+- El stock se actualiza automaticamente al agregar al carrito
+- Si hay problemas, contacte al administrador de sistemas
+
+PROBLEMA: No encuentro el numero de venta
+SOLUCION:
+- El numero se muestra despues de registrar la venta
+- Puede buscarlo en el modulo de Detalles de Venta
+- Puede generar un reporte en el modulo de Reportes
+
+13.4 PROBLEMAS CON REPORTES
+--------------------------------------
+
+PROBLEMA: El reporte no muestra datos
+SOLUCION:
+- Verifique que el rango de fechas sea correcto
+- Verifique que existan ventas en ese periodo
+- Intente con un rango de fechas mas amplio
+
+PROBLEMA: No puedo exportar a Excel
+SOLUCION:
+- Verifique que tenga permisos de escritura en la carpeta destino
+- Cierre cualquier archivo Excel que pueda estar abierto
+- Intente guardar en otra ubicacion
+
+13.5 PROBLEMAS GENERALES
+--------------------------------------
+
+PROBLEMA: El sistema esta lento
+SOLUCION:
+- Cierre otros programas que consuman recursos
+- Contacte al administrador para verificar el servidor de base de datos
+- Verifique su conexion de red
+
+PROBLEMA: Aparece un error de conexion a la base de datos
+SOLUCION:
+- Verifique que el servidor SQL Server este en ejecucion
+- Contacte al administrador de sistemas
+- No intente modificar la conexion usted mismo
+
+PROBLEMA: Se cerro inesperadamente el programa
+SOLUCION:
+- Vuelva a abrir la aplicacion
+- Inicie sesion nuevamente
+- Si el problema persiste, contacte al administrador
+- Reporte que acciones estaba realizando cuando ocurrio el error
+
+13.6 SOPORTE TECNICO
+--------------------------------------
+
+Si experimenta problemas no listados aqui:
+
+1. Anote el mensaje de error exacto si aparece
+2. Anote que estaba haciendo cuando ocurrio el problema
+3. Intente cerrar y volver a abrir la aplicacion
+4. Si persiste, contacte a:
+
+   ADMINISTRADOR DEL SISTEMA
+   - Proporcione toda la informacion del error
+   - Describa los pasos para reproducir el problema
+   - Indique su usuario y rol en el sistema
+
+
+================================================================================
+APENDICES
+================================================================================
+
+APENDICE A: ATAJOS DE TECLADO
+--------------------------------------
+- ENTER: Confirmar accion / Buscar por codigo de producto
+- ESC: Cancelar / Cerrar ventana modal
+- TAB: Moverse al siguiente campo
+- SHIFT + TAB: Moverse al campo anterior
+
+APENDICE B: TIPOS DE DOCUMENTOS
+--------------------------------------
+BOLETA:
+- Documento tributario para consumidor final
+
+FACTURA:
+- Documento tributario para empresas
+
+APENDICE C: CONVENCIONES DEL SISTEMA
+--------------------------------------
+ICONOS COMUNES:
+- Lapiz: Editar
+- Tacho de basura: Eliminar
+- Lupa: Buscar
+- Escoba: Limpiar
+- Disquete: Guardar
+- PDF: Exportar/Descargar PDF
+- Excel: Exportar a Excel
+
+COLORES DE ESTADO:
+- Verde/Activo: Elemento disponible y funcional
+- Rojo/Inactivo: Elemento desactivado
+
+APENDICE D: GLOSARIO
+--------------------------------------
+DNI: Documento Nacional de Identidad
+CRUD: Create, Read, Update, Delete (Crear, Leer, Actualizar, Eliminar)
+Stock: Cantidad disponible en inventario
+Rol: Conjunto de permisos asignados a un tipo de usuario
+Backup: Copia de respaldo de la base de datos
+PDF: Portable Document Format - Formato de documento portable
+Excel: Formato de hoja de calculo (.xlsx)

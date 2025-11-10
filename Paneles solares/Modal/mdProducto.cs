@@ -37,8 +37,8 @@ namespace Paneles_solares.Modal
             cbobusqueda.SelectedIndex = 0;
 
 
-            //mostrar todos los usuarios de la DB
-            List<Producto> lista = new CN_Producto().Listar();
+            //mostrar todos los productos activos de la DB
+            List<Producto> lista = new CN_Producto().Listar().Where(p => p.Estado == true).ToList();
 
             foreach (Producto item in lista)
             {
@@ -50,6 +50,7 @@ namespace Paneles_solares.Modal
                     item.Stock,
                     "", // PrecioCompra (columna oculta)
                     item.PrecioVenta,
+                    item.Estado
 
             });
             }
@@ -68,7 +69,8 @@ namespace Paneles_solares.Modal
                     Codigo = dgvdata.Rows[iRow].Cells["Codigo"].Value.ToString(),
                     Nombre = dgvdata.Rows[iRow].Cells["Nombre"].Value.ToString(),
                     Stock = Convert.ToInt32(dgvdata.Rows[iRow].Cells["Stock"].Value.ToString()),
-                    PrecioVenta = Convert.ToDecimal(dgvdata.Rows[iRow].Cells["PrecioVenta"].Value.ToString())
+                    PrecioVenta = Convert.ToDecimal(dgvdata.Rows[iRow].Cells["PrecioVenta"].Value.ToString()),
+                    Estado = Convert.ToBoolean(dgvdata.Rows[iRow].Cells["Estado"].Value)
                 };
                 this.DialogResult = DialogResult.OK;
                 this.Close();

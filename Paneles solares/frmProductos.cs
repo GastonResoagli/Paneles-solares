@@ -20,17 +20,17 @@ namespace Paneles_solares
             InitializeComponent();
         }
 
+        // Al cargar el formulario
         private void frmProductos_Load(object sender, EventArgs e)
         {
-            // Se cargan las opciones de ESTADO
+            // Carga opciones del combo ESTADO
             cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
             cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
             cboestado.DisplayMember = "Texto";
             cboestado.ValueMember = "Valor";
             cboestado.SelectedIndex = 0;
 
-            // Se cargan los roles desde la capa de negocio
-            
+            // Carga las categorías desde la base de datos
             List<Categoria> listacategoria = new CN_Categoria().Listar();
             foreach (Categoria item in listacategoria)
             {
@@ -38,9 +38,8 @@ namespace Paneles_solares
             }
             cbocategoria.DisplayMember = "Texto";
             cbocategoria.ValueMember = "Valor";
-           
 
-            // Se cargan las columnas disponibles para busqueda
+            // Carga las columnas para la búsqueda
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
                 if (columna.Visible == true && columna.Name != "btnseleccionar")
@@ -51,36 +50,36 @@ namespace Paneles_solares
             cbobusqueda.DisplayMember = "Texto";
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
-            
 
-            //mostrar todos los usuarios de la DB
+            // Muestra todos los productos de la base de datos
             List<Producto> lista = new CN_Producto().Listar();
-
             foreach (Producto item in lista)
             {
-                dgvdata.Rows.Add(new object[] { "",
-                    item.idProducto,
-                    item.Codigo,
-                    item.Nombre,
-                    item.Descripcion,
-                    item.oCategoria.idCategoria,
-                    item.oCategoria.Descripcion,
-                    item.Stock,
-                    "", // PrecioCompra (columna oculta)
-                    item.PrecioVenta,
-                    item.Estado == true ? "Activo" : "No Activo", // Estado (texto)
-                    item.Estado == true ? 1 : 0 // EstadoValor (número)
+                dgvdata.Rows.Add(new object[] {
+                "",
+                item.idProducto,
+                item.Codigo,
+                item.Nombre,
+                item.Descripcion,
+                item.oCategoria.idCategoria,
+                item.oCategoria.Descripcion,
+                item.Stock,
+                "",
+                item.PrecioVenta,
+                item.Estado == true ? "Activo" : "No Activo",
+                item.Estado == true ? 1 : 0
             });
             }
         }
 
+        // Botón Guardar (Registrar o Editar producto)
         private void btnguardar_Click(object sender, EventArgs e)
         {
             string mensaje = string.Empty;
-
             int stock;
             decimal precioVenta;
 
+            // Validaciones simples
             if (!int.TryParse(txtstock.Text, out stock))
             {
                 MessageBox.Show("Stock inválido"); return;
@@ -90,7 +89,7 @@ namespace Paneles_solares
                 MessageBox.Show("Precio de venta inválido"); return;
             }
 
-            // Armar el objeto usuario
+            // Crea un objeto Producto con los datos del formulario
             Producto obj = new Producto()
             {
                 idProducto = Convert.ToInt32(txtid.Text),
@@ -103,27 +102,28 @@ namespace Paneles_solares
                 Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
             };
 
-            // 5. Insertar o editar segun corresponda
+            // Si es nuevo producto
             if (obj.idProducto == 0)
             {
                 int IdGenerado = new CN_Producto().Registrar(obj, out mensaje);
 
                 if (IdGenerado != 0)
                 {
+                    // Agrega el nuevo producto al DataGridView
                     dgvdata.Rows.Add(new object[] {
-                "",
-                IdGenerado,
-                txtcodigo.Text,
-                txtnombre.Text,
-                txtdescripcion.Text,
-                ((OpcionCombo)cbocategoria.SelectedItem).Valor.ToString(),
-                ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString(),
-                txtstock.Text,
-                "", // PrecioCompra (columna oculta)
-                txtprecioventa.Text,
-                ((OpcionCombo)cboestado.SelectedItem).Texto.ToString(), // Estado (texto)
-                ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(), // EstadoValor (número)
-            });
+                    "",
+                    IdGenerado,
+                    txtcodigo.Text,
+                    txtnombre.Text,
+                    txtdescripcion.Text,
+                    ((OpcionCombo)cbocategoria.SelectedItem).Valor.ToString(),
+                    ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString(),
+                    txtstock.Text,
+                    "",
+                    txtprecioventa.Text,
+                    ((OpcionCombo)cboestado.SelectedItem).Texto.ToString(),
+                    ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
+                });
                     limpiar();
                 }
                 else
@@ -133,35 +133,33 @@ namespace Paneles_solares
             }
             else
             {
+                // Si se está editando un producto existente
                 bool resultado = new CN_Producto().Editar(obj, out mensaje);
 
                 if (resultado)
                 {
+                    // Actualiza los datos en la grilla
                     DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)];
                     row.Cells["idProducto"].Value = txtid.Text;
                     row.Cells["Codigo"].Value = txtcodigo.Text;
                     row.Cells["Nombre"].Value = txtnombre.Text;
                     row.Cells["Descripcion"].Value = txtdescripcion.Text;
-
                     row.Cells["idCategoria"].Value = ((OpcionCombo)cbocategoria.SelectedItem).Valor.ToString();
                     row.Cells["Categoria"].Value = ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString();
-
                     row.Cells["Stock"].Value = txtstock.Text;
                     row.Cells["PrecioVenta"].Value = txtprecioventa.Text;
-
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
                     row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
-
-
                     limpiar();
                 }
-                
                 else
                 {
                     MessageBox.Show(mensaje);
                 }
             }
         }
+
+        // Limpia los campos del formulario
         private void limpiar()
         {
             txtindice.Text = "-1";
@@ -169,14 +167,13 @@ namespace Paneles_solares
             txtcodigo.Text = "";
             txtnombre.Text = "";
             txtdescripcion.Text = "";
-            
             txtstock.Clear();
             txtprecioventa.Clear();
-
             cbocategoria.SelectedIndex = 0;
-            cbocategoria.SelectedIndex = 0;
+            cboestado.SelectedIndex = 0;
         }
 
+        // Dibuja el icono en la primera columna (botón seleccionar)
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -195,6 +192,7 @@ namespace Paneles_solares
             }
         }
 
+        // Cargar los datos del producto seleccionado en los campos
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvdata.Columns[e.ColumnIndex].Name == "btnseleccionar")
@@ -203,7 +201,7 @@ namespace Paneles_solares
 
                 if (indice >= 0)
                 {
-                    // Se cargan los valores de la fila seleccionada en los campos de edicion
+                    // Carga los datos en los campos
                     txtindice.Text = indice.ToString();
                     txtid.Text = dgvdata.Rows[indice].Cells["idProducto"].Value.ToString();
                     txtcodigo.Text = dgvdata.Rows[indice].Cells["Codigo"].Value.ToString();
@@ -212,24 +210,22 @@ namespace Paneles_solares
                     txtstock.Text = dgvdata.Rows[indice].Cells["Stock"].Value.ToString();
                     txtprecioventa.Text = dgvdata.Rows[indice].Cells["PrecioVenta"].Value.ToString();
 
-
-                    // Selecciona el rol correcto en el combo
+                    // Selecciona la categoría correcta en el combo
                     foreach (OpcionCombo oc in cbocategoria.Items)
                     {
                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["idCategoria"].Value))
                         {
-                            int indice_combo = cbocategoria.Items.IndexOf(oc);
-                            cbocategoria.SelectedIndex = indice_combo;
+                            cbocategoria.SelectedIndex = cbocategoria.Items.IndexOf(oc);
                             break;
                         }
                     }
+
                     // Selecciona el estado correcto en el combo
                     foreach (OpcionCombo oc in cboestado.Items)
                     {
                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
                         {
-                            int indice_combo = cboestado.Items.IndexOf(oc);
-                            cboestado.SelectedIndex = indice_combo;
+                            cboestado.SelectedIndex = cboestado.Items.IndexOf(oc);
                             break;
                         }
                     }
@@ -237,6 +233,7 @@ namespace Paneles_solares
             }
         }
 
+        // Botón eliminar producto
         private void btneliminar_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(txtid.Text) != 0)
@@ -248,10 +245,12 @@ namespace Paneles_solares
                     {
                         idProducto = Convert.ToInt32(txtid.Text)
                     };
+
+                    // Elimina el producto
                     bool respuesta = new CN_Producto().Eliminar(obj, out mensaje);
                     if (respuesta)
                     {
-                        dgvdata.Rows.RemoveAt(dgvdata.CurrentRow.Index); //sin txtindice
+                        dgvdata.Rows.RemoveAt(dgvdata.CurrentRow.Index);
                         limpiar();
                     }
                     else
@@ -262,6 +261,7 @@ namespace Paneles_solares
             }
         }
 
+        // Buscar producto en la tabla
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
@@ -277,6 +277,7 @@ namespace Paneles_solares
             }
         }
 
+        // Limpia el campo de búsqueda
         private void btnlimpiarbuscador_Click(object sender, EventArgs e)
         {
             txtbusqueda.Text = "";
@@ -286,6 +287,7 @@ namespace Paneles_solares
             }
         }
 
+        // Botón limpiar formulario
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
             limpiar();

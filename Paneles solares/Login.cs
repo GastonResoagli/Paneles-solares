@@ -98,11 +98,13 @@ namespace Paneles_solares
             this.Close();
         }
 
+        // Evento que se ejecuta cuando se presiona una tecla en el campo Documento
         private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Solo permite escribir números (bloquea letras y símbolos)
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; 
+                e.Handled = true; // Cancela la tecla presionada si no es un número
             }
         }
     }
