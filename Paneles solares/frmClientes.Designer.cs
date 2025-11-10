@@ -69,9 +69,9 @@
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
-            //
+            // 
             // panelIzquierdo
-            //
+            // 
             this.panelIzquierdo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelIzquierdo.Controls.Add(this.btneliminar);
             this.panelIzquierdo.Controls.Add(this.btnlimpiar);
@@ -93,9 +93,9 @@
             this.panelIzquierdo.Padding = new System.Windows.Forms.Padding(10);
             this.panelIzquierdo.Size = new System.Drawing.Size(270, 687);
             this.panelIzquierdo.TabIndex = 0;
-            //
+            // 
             // btneliminar
-            //
+            // 
             this.btneliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btneliminar.BackColor = System.Drawing.Color.Firebrick;
             this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -116,9 +116,9 @@
             this.btneliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btneliminar.UseVisualStyleBackColor = false;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
-            //
+            // 
             // btnlimpiar
-            //
+            // 
             this.btnlimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnlimpiar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnlimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -139,9 +139,9 @@
             this.btnlimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnlimpiar.UseVisualStyleBackColor = false;
             this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
-            //
+            // 
             // btnguardar
-            //
+            // 
             this.btnguardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnguardar.BackColor = System.Drawing.Color.ForestGreen;
             this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -162,9 +162,9 @@
             this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnguardar.UseVisualStyleBackColor = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
-            //
+            // 
             // cboestado
-            //
+            // 
             this.cboestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboestado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboestado.FormattingEnabled = true;
@@ -172,9 +172,9 @@
             this.cboestado.Name = "cboestado";
             this.cboestado.Size = new System.Drawing.Size(230, 23);
             this.cboestado.TabIndex = 10;
-            //
+            // 
             // label9
-            //
+            // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -183,17 +183,17 @@
             this.label9.Size = new System.Drawing.Size(48, 15);
             this.label9.TabIndex = 9;
             this.label9.Text = "Estado:";
-            //
+            // 
             // txttelefono
-            //
+            // 
             this.txttelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttelefono.Location = new System.Drawing.Point(20, 240);
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(230, 21);
             this.txttelefono.TabIndex = 8;
-            //
+            // 
             // label6
-            //
+            // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -202,17 +202,17 @@
             this.label6.Size = new System.Drawing.Size(58, 15);
             this.label6.TabIndex = 7;
             this.label6.Text = "Teléfono:";
-            //
+            // 
             // txtcorreo
-            //
+            // 
             this.txtcorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcorreo.Location = new System.Drawing.Point(20, 185);
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(230, 21);
             this.txtcorreo.TabIndex = 6;
-            //
+            // 
             // label5
-            //
+            // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -221,47 +221,47 @@
             this.label5.Size = new System.Drawing.Size(47, 15);
             this.label5.TabIndex = 5;
             this.label5.Text = "Correo:";
-            //
+            // 
             // txtnombre
-            //
+            // 
             this.txtnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnombre.Location = new System.Drawing.Point(20, 130);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(230, 21);
             this.txtnombre.TabIndex = 4;
-            //
+            // 
             // label4
-            //
+            // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(20, 110);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 15);
+            this.label4.Size = new System.Drawing.Size(111, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "Nombre Completo:";
-            //
+            // 
             // txtdni
-            //
+            // 
             this.txtdni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdni.Location = new System.Drawing.Point(20, 75);
             this.txtdni.Name = "txtdni";
             this.txtdni.Size = new System.Drawing.Size(230, 21);
             this.txtdni.TabIndex = 2;
-            //
+            // 
             // label2
-            //
+            // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(20, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 15);
+            this.label2.Size = new System.Drawing.Size(97, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nro Documento:";
-            //
+            // 
             // label10
-            //
+            // 
             this.label10.BackColor = System.Drawing.Color.SteelBlue;
             this.label10.Dock = System.Windows.Forms.DockStyle.Top;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -273,9 +273,9 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Detalle Cliente";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // panelSuperior
-            //
+            // 
             this.panelSuperior.BackColor = System.Drawing.Color.White;
             this.panelSuperior.Controls.Add(this.btnlimpiarbuscador);
             this.panelSuperior.Controls.Add(this.btnbuscar);
@@ -289,9 +289,9 @@
             this.panelSuperior.Padding = new System.Windows.Forms.Padding(10);
             this.panelSuperior.Size = new System.Drawing.Size(1031, 70);
             this.panelSuperior.TabIndex = 1;
-            //
+            // 
             // btnlimpiarbuscador
-            //
+            // 
             this.btnlimpiarbuscador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnlimpiarbuscador.BackColor = System.Drawing.Color.DarkGray;
             this.btnlimpiarbuscador.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -308,9 +308,9 @@
             this.btnlimpiarbuscador.TabIndex = 5;
             this.btnlimpiarbuscador.UseVisualStyleBackColor = false;
             this.btnlimpiarbuscador.Click += new System.EventHandler(this.btnlimpiarbuscador_Click);
-            //
+            // 
             // btnbuscar
-            //
+            // 
             this.btnbuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnbuscar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -327,18 +327,18 @@
             this.btnbuscar.TabIndex = 4;
             this.btnbuscar.UseVisualStyleBackColor = false;
             this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
-            //
+            // 
             // txtbusqueda
-            //
+            // 
             this.txtbusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbusqueda.Location = new System.Drawing.Point(738, 28);
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(180, 21);
             this.txtbusqueda.TabIndex = 3;
-            //
+            // 
             // cbobusqueda
-            //
+            // 
             this.cbobusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbobusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -347,32 +347,32 @@
             this.cbobusqueda.Name = "cbobusqueda";
             this.cbobusqueda.Size = new System.Drawing.Size(170, 23);
             this.cbobusqueda.TabIndex = 2;
-            //
+            // 
             // label3
-            //
+            // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(478, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 15);
+            this.label3.Size = new System.Drawing.Size(69, 15);
             this.label3.TabIndex = 1;
             this.label3.Text = "Buscar por:";
-            //
+            // 
             // label11
-            //
+            // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.SteelBlue;
             this.label11.Location = new System.Drawing.Point(15, 22);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(186, 25);
+            this.label11.Size = new System.Drawing.Size(173, 25);
             this.label11.TabIndex = 0;
             this.label11.Text = "Lista de Clientes";
-            //
+            // 
             // panelCentral
-            //
+            // 
             this.panelCentral.BackColor = System.Drawing.Color.White;
             this.panelCentral.Controls.Add(this.dgvdata);
             this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -381,9 +381,9 @@
             this.panelCentral.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
             this.panelCentral.Size = new System.Drawing.Size(1031, 617);
             this.panelCentral.TabIndex = 2;
-            //
+            // 
             // dgvdata
-            //
+            // 
             this.dgvdata.AllowUserToAddRows = false;
             this.dgvdata.AllowUserToDeleteRows = false;
             this.dgvdata.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -431,86 +431,85 @@
             this.dgvdata.TabIndex = 0;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
-            //
+            // 
+            // btnseleccionar
+            // 
+            this.btnseleccionar.HeaderText = "";
+            this.btnseleccionar.MinimumWidth = 30;
+            this.btnseleccionar.Name = "btnseleccionar";
+            this.btnseleccionar.ReadOnly = true;
+            // 
+            // idCliente
+            // 
+            this.idCliente.HeaderText = "idCliente";
+            this.idCliente.MinimumWidth = 6;
+            this.idCliente.Name = "idCliente";
+            this.idCliente.ReadOnly = true;
+            this.idCliente.Visible = false;
+            // 
+            // DNI
+            // 
+            this.DNI.HeaderText = "Nro Documento";
+            this.DNI.MinimumWidth = 6;
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "Correo";
+            this.Correo.MinimumWidth = 6;
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Teléfono";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // EstadoValor
+            // 
+            this.EstadoValor.HeaderText = "EstadoValor";
+            this.EstadoValor.MinimumWidth = 6;
+            this.EstadoValor.Name = "EstadoValor";
+            this.EstadoValor.ReadOnly = true;
+            this.EstadoValor.Visible = false;
+            // 
             // txtindice
-            //
+            // 
             this.txtindice.Location = new System.Drawing.Point(276, 12);
             this.txtindice.Name = "txtindice";
             this.txtindice.Size = new System.Drawing.Size(23, 20);
             this.txtindice.TabIndex = 3;
             this.txtindice.Text = "0";
             this.txtindice.Visible = false;
-            //
+            // 
             // txtid
-            //
+            // 
             this.txtid.Location = new System.Drawing.Point(305, 12);
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(23, 20);
             this.txtid.TabIndex = 4;
             this.txtid.Text = "0";
             this.txtid.Visible = false;
-            //
-            // btnseleccionar
-            //
-            this.btnseleccionar.HeaderText = "";
-            this.btnseleccionar.MinimumWidth = 30;
-            this.btnseleccionar.Name = "btnseleccionar";
-            this.btnseleccionar.ReadOnly = true;
-            this.btnseleccionar.Width = 30;
-            //
-            // idCliente
-            //
-            this.idCliente.HeaderText = "idCliente";
-            this.idCliente.MinimumWidth = 6;
-            this.idCliente.Name = "idCliente";
-            this.idCliente.ReadOnly = true;
-            this.idCliente.Visible = false;
-            //
-            // DNI
-            //
-            this.DNI.HeaderText = "Nro Documento";
-            this.DNI.MinimumWidth = 6;
-            this.DNI.Name = "DNI";
-            this.DNI.ReadOnly = true;
-            //
-            // Nombre
-            //
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            //
-            // Correo
-            //
-            this.Correo.HeaderText = "Correo";
-            this.Correo.MinimumWidth = 6;
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            //
-            // Telefono
-            //
-            this.Telefono.HeaderText = "Teléfono";
-            this.Telefono.MinimumWidth = 6;
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            //
-            // Estado
-            //
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            //
-            // EstadoValor
-            //
-            this.EstadoValor.HeaderText = "EstadoValor";
-            this.EstadoValor.MinimumWidth = 6;
-            this.EstadoValor.Name = "EstadoValor";
-            this.EstadoValor.ReadOnly = true;
-            this.EstadoValor.Visible = false;
-            //
+            // 
             // frmClientes
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -520,6 +519,7 @@
             this.Controls.Add(this.panelCentral);
             this.Controls.Add(this.panelSuperior);
             this.Controls.Add(this.panelIzquierdo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmClientes";
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.frmClientes_Load);

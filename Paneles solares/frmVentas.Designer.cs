@@ -43,6 +43,7 @@
             this.txtDocumentocliente = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panelProducto = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.txtcantidad = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
@@ -71,7 +72,6 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btneliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelDocumento.SuspendLayout();
             this.panelCliente.SuspendLayout();
             this.panelProducto.SuspendLayout();
@@ -246,6 +246,17 @@
             this.panelProducto.Padding = new System.Windows.Forms.Padding(8);
             this.panelProducto.Size = new System.Drawing.Size(889, 110);
             this.panelProducto.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(174, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Codigo:";
             // 
             // iconButton1
             // 
@@ -609,17 +620,6 @@
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.ReadOnly = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(174, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 15);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Codigo:";
-            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -632,6 +632,7 @@
             this.Controls.Add(this.panelCliente);
             this.Controls.Add(this.panelDocumento);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmVentas";
             this.Text = "Ventas";
             this.Load += new System.EventHandler(this.frmVentas_Load);

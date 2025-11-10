@@ -44,7 +44,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(600, 60);
+            this.label1.Size = new System.Drawing.Size(1071, 60);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sistema de Gestión";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -62,7 +62,7 @@
             this.btnBackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBackup.IconSize = 60;
             this.btnBackup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBackup.Location = new System.Drawing.Point(330, 40);
+            this.btnBackup.Location = new System.Drawing.Point(641, 182);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Padding = new System.Windows.Forms.Padding(10);
             this.btnBackup.Size = new System.Drawing.Size(220, 180);
@@ -86,7 +86,7 @@
             this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogout.IconSize = 60;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLogout.Location = new System.Drawing.Point(50, 40);
+            this.btnLogout.Location = new System.Drawing.Point(282, 182);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(10);
             this.btnLogout.Size = new System.Drawing.Size(220, 180);
@@ -102,7 +102,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(177, 10);
+            this.label2.Location = new System.Drawing.Point(440, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(247, 17);
             this.label2.TabIndex = 3;
@@ -111,13 +111,16 @@
             // 
             // panelContenedor
             // 
+            this.panelContenedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor.BackColor = System.Drawing.Color.White;
             this.panelContenedor.Controls.Add(this.label2);
             this.panelContenedor.Controls.Add(this.btnLogout);
             this.panelContenedor.Controls.Add(this.btnBackup);
             this.panelContenedor.Location = new System.Drawing.Point(0, 60);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(600, 290);
+            this.panelContenedor.Size = new System.Drawing.Size(1071, 534);
             this.panelContenedor.TabIndex = 4;
             // 
             // frmLogout
@@ -125,10 +128,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(600, 350);
+            this.ClientSize = new System.Drawing.Size(1071, 593);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogout";

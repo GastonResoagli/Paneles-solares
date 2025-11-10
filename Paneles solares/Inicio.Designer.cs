@@ -266,7 +266,7 @@ namespace Paneles_solares
             this.Controls.Add(this.contenedor);
             this.Controls.Add(this.panelMenu);
             this.Name = "inicio";
-            this.Text = "Form1";
+            this.Text = "Inicio";
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();

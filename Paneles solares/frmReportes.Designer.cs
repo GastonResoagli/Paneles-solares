@@ -66,9 +66,9 @@ namespace Paneles_solares
             this.panelBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
-            //
+            // 
             // panelTitulo
-            //
+            // 
             this.panelTitulo.BackColor = System.Drawing.Color.SteelBlue;
             this.panelTitulo.Controls.Add(this.label1);
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -76,9 +76,9 @@ namespace Paneles_solares
             this.panelTitulo.Name = "panelTitulo";
             this.panelTitulo.Size = new System.Drawing.Size(1098, 50);
             this.panelTitulo.TabIndex = 0;
-            //
+            // 
             // label1
-            //
+            // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -88,10 +88,10 @@ namespace Paneles_solares
             this.label1.TabIndex = 0;
             this.label1.Text = "Reporte de Ventas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //
+            // 
             // panelFiltros
-            //
-            this.panelFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.panelFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFiltros.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelFiltros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -106,69 +106,9 @@ namespace Paneles_solares
             this.panelFiltros.Name = "panelFiltros";
             this.panelFiltros.Size = new System.Drawing.Size(1074, 60);
             this.panelFiltros.TabIndex = 1;
-            //
-            // label2
-            //
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Fecha Inicio:";
-            //
-            // txtfechainicio
-            //
-            this.txtfechainicio.CustomFormat = "dd/MM/yyyy";
-            this.txtfechainicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtfechainicio.Location = new System.Drawing.Point(95, 18);
-            this.txtfechainicio.Name = "txtfechainicio";
-            this.txtfechainicio.Size = new System.Drawing.Size(115, 21);
-            this.txtfechainicio.TabIndex = 1;
-            //
-            // label4
-            //
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(230, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Fecha Fin:";
-            //
-            // txtfechafin
-            //
-            this.txtfechafin.CustomFormat = "dd/MM/yyyy";
-            this.txtfechafin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtfechafin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtfechafin.Location = new System.Drawing.Point(301, 18);
-            this.txtfechafin.Name = "txtfechafin";
-            this.txtfechafin.Size = new System.Drawing.Size(115, 21);
-            this.txtfechafin.TabIndex = 3;
-            //
-            // label3
-            //
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(440, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Tipo de Documento:";
-            //
-            // cbobusqueda
-            //
-            this.cbobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbobusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(563, 17);
-            this.cbobusqueda.Name = "cbobusqueda";
-            this.cbobusqueda.Size = new System.Drawing.Size(200, 23);
-            this.cbobusqueda.TabIndex = 5;
-            //
+            // 
             // btnbuscarreporte
-            //
+            // 
             this.btnbuscarreporte.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnbuscarreporte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnbuscarreporte.FlatAppearance.BorderSize = 0;
@@ -190,10 +130,70 @@ namespace Paneles_solares
             this.btnbuscarreporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnbuscarreporte.UseVisualStyleBackColor = false;
             this.btnbuscarreporte.Click += new System.EventHandler(this.btnbuscar_Click);
-            //
+            // 
+            // cbobusqueda
+            // 
+            this.cbobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbobusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.cbobusqueda.FormattingEnabled = true;
+            this.cbobusqueda.Location = new System.Drawing.Point(563, 17);
+            this.cbobusqueda.Name = "cbobusqueda";
+            this.cbobusqueda.Size = new System.Drawing.Size(200, 23);
+            this.cbobusqueda.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(440, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(118, 15);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Tipo de Documento:";
+            // 
+            // txtfechafin
+            // 
+            this.txtfechafin.CustomFormat = "dd/MM/yyyy";
+            this.txtfechafin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.txtfechafin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtfechafin.Location = new System.Drawing.Point(301, 18);
+            this.txtfechafin.Name = "txtfechafin";
+            this.txtfechafin.Size = new System.Drawing.Size(115, 21);
+            this.txtfechafin.TabIndex = 3;
+            // 
+            // txtfechainicio
+            // 
+            this.txtfechainicio.CustomFormat = "dd/MM/yyyy";
+            this.txtfechainicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.txtfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtfechainicio.Location = new System.Drawing.Point(95, 18);
+            this.txtfechainicio.Name = "txtfechainicio";
+            this.txtfechainicio.Size = new System.Drawing.Size(115, 21);
+            this.txtfechainicio.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(230, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Fecha Fin:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Fecha Inicio:";
+            // 
             // panelBusqueda
-            //
-            this.panelBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.panelBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBusqueda.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -207,56 +207,26 @@ namespace Paneles_solares
             this.panelBusqueda.Name = "panelBusqueda";
             this.panelBusqueda.Size = new System.Drawing.Size(1074, 55);
             this.panelBusqueda.TabIndex = 2;
-            //
-            // label6
-            //
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 15);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Buscar por:";
-            //
-            // cbobusqueda2
-            //
-            this.cbobusqueda2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbobusqueda2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.cbobusqueda2.FormattingEnabled = true;
-            this.cbobusqueda2.Location = new System.Drawing.Point(90, 15);
-            this.cbobusqueda2.Name = "cbobusqueda2";
-            this.cbobusqueda2.Size = new System.Drawing.Size(180, 23);
-            this.cbobusqueda2.TabIndex = 1;
-            //
-            // txtbusqueda
-            //
-            this.txtbusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txtbusqueda.Location = new System.Drawing.Point(285, 16);
-            this.txtbusqueda.Name = "txtbusqueda";
-            this.txtbusqueda.Size = new System.Drawing.Size(200, 21);
-            this.txtbusqueda.TabIndex = 2;
-            //
-            // iconButton1
-            //
-            this.iconButton1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 18;
-            this.iconButton1.Location = new System.Drawing.Point(500, 12);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(35, 28);
-            this.iconButton1.TabIndex = 3;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            //
+            // 
+            // btnexportar
+            // 
+            this.btnexportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnexportar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnexportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnexportar.FlatAppearance.BorderSize = 0;
+            this.btnexportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexportar.ForeColor = System.Drawing.Color.White;
+            this.btnexportar.Location = new System.Drawing.Point(920, 12);
+            this.btnexportar.Name = "btnexportar";
+            this.btnexportar.Size = new System.Drawing.Size(135, 30);
+            this.btnexportar.TabIndex = 5;
+            this.btnexportar.Text = "Descargar Excel";
+            this.btnexportar.UseVisualStyleBackColor = false;
+            this.btnexportar.Click += new System.EventHandler(this.btnexportar_Click);
+            // 
             // btnlimpiarbuscador
-            //
+            // 
             this.btnlimpiarbuscador.BackColor = System.Drawing.Color.Crimson;
             this.btnlimpiarbuscador.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnlimpiarbuscador.FlatAppearance.BorderSize = 0;
@@ -273,30 +243,60 @@ namespace Paneles_solares
             this.btnlimpiarbuscador.TabIndex = 4;
             this.btnlimpiarbuscador.UseVisualStyleBackColor = false;
             this.btnlimpiarbuscador.Click += new System.EventHandler(this.btnlimpiarbuscador_Click);
-            //
-            // btnexportar
-            //
-            this.btnexportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnexportar.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnexportar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnexportar.FlatAppearance.BorderSize = 0;
-            this.btnexportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnexportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnexportar.ForeColor = System.Drawing.Color.White;
-            this.btnexportar.Location = new System.Drawing.Point(920, 12);
-            this.btnexportar.Name = "btnexportar";
-            this.btnexportar.Size = new System.Drawing.Size(135, 30);
-            this.btnexportar.TabIndex = 5;
-            this.btnexportar.Text = "Descargar Excel";
-            this.btnexportar.UseVisualStyleBackColor = false;
-            this.btnexportar.Click += new System.EventHandler(this.btnexportar_Click);
-            //
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 18;
+            this.iconButton1.Location = new System.Drawing.Point(500, 12);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(35, 28);
+            this.iconButton1.TabIndex = 3;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // txtbusqueda
+            // 
+            this.txtbusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.txtbusqueda.Location = new System.Drawing.Point(285, 16);
+            this.txtbusqueda.Name = "txtbusqueda";
+            this.txtbusqueda.Size = new System.Drawing.Size(200, 21);
+            this.txtbusqueda.TabIndex = 2;
+            // 
+            // cbobusqueda2
+            // 
+            this.cbobusqueda2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbobusqueda2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.cbobusqueda2.FormattingEnabled = true;
+            this.cbobusqueda2.Location = new System.Drawing.Point(90, 15);
+            this.cbobusqueda2.Name = "cbobusqueda2";
+            this.cbobusqueda2.Size = new System.Drawing.Size(180, 23);
+            this.cbobusqueda2.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 15);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Buscar por:";
+            // 
             // dgvdata
-            //
+            // 
             this.dgvdata.AllowUserToAddRows = false;
             this.dgvdata.AllowUserToDeleteRows = false;
-            this.dgvdata.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvdata.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvdata.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvdata.BackgroundColor = System.Drawing.Color.White;
@@ -339,101 +339,101 @@ namespace Paneles_solares
             this.dgvdata.RowTemplate.Height = 28;
             this.dgvdata.Size = new System.Drawing.Size(1074, 363);
             this.dgvdata.TabIndex = 3;
-            //
+            // 
             // FechaRegistro
-            //
+            // 
             this.FechaRegistro.HeaderText = "Fecha Registro";
             this.FechaRegistro.MinimumWidth = 6;
             this.FechaRegistro.Name = "FechaRegistro";
             this.FechaRegistro.ReadOnly = true;
-            //
+            // 
             // TipoDocumento
-            //
+            // 
             this.TipoDocumento.FillWeight = 99.72386F;
             this.TipoDocumento.HeaderText = "Tipo Documento";
             this.TipoDocumento.MinimumWidth = 6;
             this.TipoDocumento.Name = "TipoDocumento";
             this.TipoDocumento.ReadOnly = true;
-            //
+            // 
             // NumeroDocumento
-            //
+            // 
             this.NumeroDocumento.HeaderText = "Numero Documento";
             this.NumeroDocumento.Name = "NumeroDocumento";
             this.NumeroDocumento.ReadOnly = true;
-            //
+            // 
             // DocumentoCliente
-            //
+            // 
             this.DocumentoCliente.HeaderText = "Numero Documento Cliente";
             this.DocumentoCliente.Name = "DocumentoCliente";
             this.DocumentoCliente.ReadOnly = true;
-            //
+            // 
             // NombreCliente
-            //
+            // 
             this.NombreCliente.HeaderText = "Nombre Cliente";
             this.NombreCliente.Name = "NombreCliente";
             this.NombreCliente.ReadOnly = true;
-            //
+            // 
             // MontoTotal
-            //
+            // 
             this.MontoTotal.FillWeight = 99.72386F;
             this.MontoTotal.HeaderText = "Monto Total";
             this.MontoTotal.MinimumWidth = 6;
             this.MontoTotal.Name = "MontoTotal";
             this.MontoTotal.ReadOnly = true;
-            //
+            // 
             // UsuarioRegistro
-            //
+            // 
             this.UsuarioRegistro.HeaderText = "Usuario Registro";
             this.UsuarioRegistro.MinimumWidth = 6;
             this.UsuarioRegistro.Name = "UsuarioRegistro";
             this.UsuarioRegistro.ReadOnly = true;
-            //
+            // 
             // CodigoProducto
-            //
+            // 
             this.CodigoProducto.HeaderText = "Codigo Producto";
             this.CodigoProducto.MinimumWidth = 6;
             this.CodigoProducto.Name = "CodigoProducto";
             this.CodigoProducto.ReadOnly = true;
-            //
+            // 
             // NombreProducto
-            //
+            // 
             this.NombreProducto.FillWeight = 99.72386F;
             this.NombreProducto.HeaderText = "Nombre Producto";
             this.NombreProducto.MinimumWidth = 6;
             this.NombreProducto.Name = "NombreProducto";
             this.NombreProducto.ReadOnly = true;
-            //
+            // 
             // Categoria
-            //
+            // 
             this.Categoria.FillWeight = 99.72386F;
             this.Categoria.HeaderText = "Categoria";
             this.Categoria.MinimumWidth = 6;
             this.Categoria.Name = "Categoria";
             this.Categoria.ReadOnly = true;
-            //
+            // 
             // PrevioVenta
-            //
+            // 
             this.PrevioVenta.HeaderText = "PrecioVenta";
             this.PrevioVenta.MinimumWidth = 6;
             this.PrevioVenta.Name = "PrevioVenta";
             this.PrevioVenta.ReadOnly = true;
-            //
+            // 
             // Cantidad
-            //
+            // 
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.MinimumWidth = 6;
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
-            //
+            // 
             // SubTotal
-            //
+            // 
             this.SubTotal.HeaderText = "SubTotal";
             this.SubTotal.MinimumWidth = 6;
             this.SubTotal.Name = "SubTotal";
             this.SubTotal.ReadOnly = true;
-            //
+            // 
             // frmReportes
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -442,6 +442,7 @@ namespace Paneles_solares
             this.Controls.Add(this.panelBusqueda);
             this.Controls.Add(this.panelFiltros);
             this.Controls.Add(this.panelTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReportes";
             this.Text = "frmReportes";
             this.Load += new System.EventHandler(this.frmReportes_Load);

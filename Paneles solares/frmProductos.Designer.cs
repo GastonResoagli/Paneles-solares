@@ -547,7 +547,7 @@
             this.Stock.ReadOnly = true;
             // 
             // PrecioCompra
-            //
+            // 
             this.PrecioCompra.HeaderText = "Precio Compra";
             this.PrecioCompra.MinimumWidth = 6;
             this.PrecioCompra.Name = "PrecioCompra";
@@ -605,6 +605,7 @@
             this.Controls.Add(this.panelCentral);
             this.Controls.Add(this.panelSuperior);
             this.Controls.Add(this.panelIzquierdo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmProductos";
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.frmProductos_Load);

@@ -89,22 +89,22 @@ namespace Paneles_solares
             this.panelTotalesClientes.SuspendLayout();
             this.panelFiltrosClientes.SuspendLayout();
             this.SuspendLayout();
-            //
+            // 
             // label7
-            //
+            // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(15, 15);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(220, 26);
+            this.label7.Size = new System.Drawing.Size(219, 26);
             this.label7.TabIndex = 1;
             this.label7.Text = "Reportes Analíticos";
-            //
+            // 
             // tabControl1
-            //
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabVendedores);
             this.tabControl1.Controls.Add(this.tabProductos);
@@ -115,9 +115,9 @@ namespace Paneles_solares
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(970, 565);
             this.tabControl1.TabIndex = 0;
-            //
+            // 
             // tabVendedores
-            //
+            // 
             this.tabVendedores.BackColor = System.Drawing.Color.White;
             this.tabVendedores.Controls.Add(this.panelVendedores);
             this.tabVendedores.Controls.Add(this.panelTotalesVendedores);
@@ -128,9 +128,9 @@ namespace Paneles_solares
             this.tabVendedores.Size = new System.Drawing.Size(962, 536);
             this.tabVendedores.TabIndex = 0;
             this.tabVendedores.Text = "Vendedores con Mayores Ventas";
-            //
+            // 
             // panelVendedores
-            //
+            // 
             this.panelVendedores.Controls.Add(this.dgvVendedores);
             this.panelVendedores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelVendedores.Location = new System.Drawing.Point(3, 63);
@@ -138,9 +138,9 @@ namespace Paneles_solares
             this.panelVendedores.Padding = new System.Windows.Forms.Padding(10, 10, 10, 5);
             this.panelVendedores.Size = new System.Drawing.Size(956, 425);
             this.panelVendedores.TabIndex = 2;
-            //
+            // 
             // dgvVendedores
-            //
+            // 
             this.dgvVendedores.AllowUserToAddRows = false;
             this.dgvVendedores.AllowUserToDeleteRows = false;
             this.dgvVendedores.BackgroundColor = System.Drawing.Color.White;
@@ -173,9 +173,9 @@ namespace Paneles_solares
             this.dgvVendedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVendedores.Size = new System.Drawing.Size(936, 410);
             this.dgvVendedores.TabIndex = 4;
-            //
+            // 
             // panelTotalesVendedores
-            //
+            // 
             this.panelTotalesVendedores.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelTotalesVendedores.Controls.Add(this.lblTotalVendedores);
             this.panelTotalesVendedores.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -184,20 +184,20 @@ namespace Paneles_solares
             this.panelTotalesVendedores.Padding = new System.Windows.Forms.Padding(10);
             this.panelTotalesVendedores.Size = new System.Drawing.Size(956, 45);
             this.panelTotalesVendedores.TabIndex = 1;
-            //
+            // 
             // lblTotalVendedores
-            //
+            // 
             this.lblTotalVendedores.AutoSize = true;
             this.lblTotalVendedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalVendedores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblTotalVendedores.Location = new System.Drawing.Point(13, 13);
             this.lblTotalVendedores.Name = "lblTotalVendedores";
-            this.lblTotalVendedores.Size = new System.Drawing.Size(166, 17);
+            this.lblTotalVendedores.Size = new System.Drawing.Size(156, 17);
             this.lblTotalVendedores.TabIndex = 7;
             this.lblTotalVendedores.Text = "Total Vendedores: 0";
-            //
+            // 
             // panelFiltrosVendedores
-            //
+            // 
             this.panelFiltrosVendedores.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelFiltrosVendedores.Controls.Add(this.btnExportarVendedores);
             this.panelFiltrosVendedores.Controls.Add(this.btnBuscarVendedores);
@@ -211,9 +211,9 @@ namespace Paneles_solares
             this.panelFiltrosVendedores.Padding = new System.Windows.Forms.Padding(10);
             this.panelFiltrosVendedores.Size = new System.Drawing.Size(956, 60);
             this.panelFiltrosVendedores.TabIndex = 0;
-            //
+            // 
             // btnExportarVendedores
-            //
+            // 
             this.btnExportarVendedores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportarVendedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.btnExportarVendedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -225,9 +225,9 @@ namespace Paneles_solares
             this.btnExportarVendedores.Text = "Exportar a Excel";
             this.btnExportarVendedores.UseVisualStyleBackColor = false;
             this.btnExportarVendedores.Click += new System.EventHandler(this.btnExportarVendedores_Click);
-            //
+            // 
             // btnBuscarVendedores
-            //
+            // 
             this.btnBuscarVendedores.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnBuscarVendedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarVendedores.ForeColor = System.Drawing.Color.White;
@@ -238,45 +238,45 @@ namespace Paneles_solares
             this.btnBuscarVendedores.Text = "Buscar";
             this.btnBuscarVendedores.UseVisualStyleBackColor = false;
             this.btnBuscarVendedores.Click += new System.EventHandler(this.btnBuscarVendedores_Click);
-            //
+            // 
             // dtpFechaFin1
-            //
+            // 
             this.dtpFechaFin1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaFin1.Location = new System.Drawing.Point(310, 21);
             this.dtpFechaFin1.Name = "dtpFechaFin1";
             this.dtpFechaFin1.Size = new System.Drawing.Size(140, 22);
             this.dtpFechaFin1.TabIndex = 3;
-            //
+            // 
             // dtpFechaInicio1
-            //
+            // 
             this.dtpFechaInicio1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaInicio1.Location = new System.Drawing.Point(100, 21);
             this.dtpFechaInicio1.Name = "dtpFechaInicio1";
             this.dtpFechaInicio1.Size = new System.Drawing.Size(140, 22);
             this.dtpFechaInicio1.TabIndex = 2;
-            //
+            // 
             // label2
-            //
+            // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(257, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 15);
+            this.label2.Size = new System.Drawing.Size(42, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Hasta:";
-            //
+            // 
             // label1
-            //
+            // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 15);
+            this.label1.Size = new System.Drawing.Size(76, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha Inicio:";
-            //
+            // 
             // tabProductos
-            //
+            // 
             this.tabProductos.BackColor = System.Drawing.Color.White;
             this.tabProductos.Controls.Add(this.panelProductos);
             this.tabProductos.Controls.Add(this.panelTotalesProductos);
@@ -287,9 +287,9 @@ namespace Paneles_solares
             this.tabProductos.Size = new System.Drawing.Size(962, 536);
             this.tabProductos.TabIndex = 1;
             this.tabProductos.Text = "Productos Más Vendidos";
-            //
+            // 
             // panelProductos
-            //
+            // 
             this.panelProductos.Controls.Add(this.dgvProductos);
             this.panelProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelProductos.Location = new System.Drawing.Point(3, 63);
@@ -297,9 +297,9 @@ namespace Paneles_solares
             this.panelProductos.Padding = new System.Windows.Forms.Padding(10, 10, 10, 5);
             this.panelProductos.Size = new System.Drawing.Size(956, 425);
             this.panelProductos.TabIndex = 5;
-            //
+            // 
             // dgvProductos
-            //
+            // 
             this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.BackgroundColor = System.Drawing.Color.White;
@@ -332,9 +332,9 @@ namespace Paneles_solares
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(936, 410);
             this.dgvProductos.TabIndex = 12;
-            //
+            // 
             // panelTotalesProductos
-            //
+            // 
             this.panelTotalesProductos.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelTotalesProductos.Controls.Add(this.lblTotalProductos);
             this.panelTotalesProductos.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -343,20 +343,20 @@ namespace Paneles_solares
             this.panelTotalesProductos.Padding = new System.Windows.Forms.Padding(10);
             this.panelTotalesProductos.Size = new System.Drawing.Size(956, 45);
             this.panelTotalesProductos.TabIndex = 4;
-            //
+            // 
             // lblTotalProductos
-            //
+            // 
             this.lblTotalProductos.AutoSize = true;
             this.lblTotalProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblTotalProductos.Location = new System.Drawing.Point(13, 13);
             this.lblTotalProductos.Name = "lblTotalProductos";
-            this.lblTotalProductos.Size = new System.Drawing.Size(155, 17);
+            this.lblTotalProductos.Size = new System.Drawing.Size(142, 17);
             this.lblTotalProductos.TabIndex = 15;
             this.lblTotalProductos.Text = "Total Productos: 0";
-            //
+            // 
             // panelFiltrosProductos
-            //
+            // 
             this.panelFiltrosProductos.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelFiltrosProductos.Controls.Add(this.btnExportarProductos);
             this.panelFiltrosProductos.Controls.Add(this.btnBuscarProductos);
@@ -370,9 +370,9 @@ namespace Paneles_solares
             this.panelFiltrosProductos.Padding = new System.Windows.Forms.Padding(10);
             this.panelFiltrosProductos.Size = new System.Drawing.Size(956, 60);
             this.panelFiltrosProductos.TabIndex = 3;
-            //
+            // 
             // btnExportarProductos
-            //
+            // 
             this.btnExportarProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportarProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.btnExportarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -384,9 +384,9 @@ namespace Paneles_solares
             this.btnExportarProductos.Text = "Exportar a Excel";
             this.btnExportarProductos.UseVisualStyleBackColor = false;
             this.btnExportarProductos.Click += new System.EventHandler(this.btnExportarProductos_Click);
-            //
+            // 
             // btnBuscarProductos
-            //
+            // 
             this.btnBuscarProductos.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnBuscarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarProductos.ForeColor = System.Drawing.Color.White;
@@ -397,45 +397,45 @@ namespace Paneles_solares
             this.btnBuscarProductos.Text = "Buscar";
             this.btnBuscarProductos.UseVisualStyleBackColor = false;
             this.btnBuscarProductos.Click += new System.EventHandler(this.btnBuscarProductos_Click);
-            //
+            // 
             // dtpFechaFin2
-            //
+            // 
             this.dtpFechaFin2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaFin2.Location = new System.Drawing.Point(310, 21);
             this.dtpFechaFin2.Name = "dtpFechaFin2";
             this.dtpFechaFin2.Size = new System.Drawing.Size(140, 22);
             this.dtpFechaFin2.TabIndex = 11;
-            //
+            // 
             // dtpFechaInicio2
-            //
+            // 
             this.dtpFechaInicio2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaInicio2.Location = new System.Drawing.Point(100, 21);
             this.dtpFechaInicio2.Name = "dtpFechaInicio2";
             this.dtpFechaInicio2.Size = new System.Drawing.Size(140, 22);
             this.dtpFechaInicio2.TabIndex = 10;
-            //
+            // 
             // label3
-            //
+            // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(257, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 15);
+            this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 9;
             this.label3.Text = "Hasta:";
-            //
+            // 
             // label4
-            //
+            // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(13, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 15);
+            this.label4.Size = new System.Drawing.Size(76, 15);
             this.label4.TabIndex = 8;
             this.label4.Text = "Fecha Inicio:";
-            //
+            // 
             // tabClientes
-            //
+            // 
             this.tabClientes.BackColor = System.Drawing.Color.White;
             this.tabClientes.Controls.Add(this.panelClientes);
             this.tabClientes.Controls.Add(this.panelTotalesClientes);
@@ -445,9 +445,9 @@ namespace Paneles_solares
             this.tabClientes.Size = new System.Drawing.Size(962, 536);
             this.tabClientes.TabIndex = 2;
             this.tabClientes.Text = "Clientes con Mayor Compra";
-            //
+            // 
             // panelClientes
-            //
+            // 
             this.panelClientes.Controls.Add(this.dgvClientes);
             this.panelClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelClientes.Location = new System.Drawing.Point(0, 60);
@@ -455,9 +455,9 @@ namespace Paneles_solares
             this.panelClientes.Padding = new System.Windows.Forms.Padding(10, 10, 10, 5);
             this.panelClientes.Size = new System.Drawing.Size(962, 431);
             this.panelClientes.TabIndex = 8;
-            //
+            // 
             // dgvClientes
-            //
+            // 
             this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AllowUserToDeleteRows = false;
             this.dgvClientes.BackgroundColor = System.Drawing.Color.White;
@@ -490,9 +490,9 @@ namespace Paneles_solares
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(942, 416);
             this.dgvClientes.TabIndex = 20;
-            //
+            // 
             // panelTotalesClientes
-            //
+            // 
             this.panelTotalesClientes.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelTotalesClientes.Controls.Add(this.lblTotalClientes);
             this.panelTotalesClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -501,20 +501,20 @@ namespace Paneles_solares
             this.panelTotalesClientes.Padding = new System.Windows.Forms.Padding(10);
             this.panelTotalesClientes.Size = new System.Drawing.Size(962, 45);
             this.panelTotalesClientes.TabIndex = 7;
-            //
+            // 
             // lblTotalClientes
-            //
+            // 
             this.lblTotalClientes.AutoSize = true;
             this.lblTotalClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblTotalClientes.Location = new System.Drawing.Point(13, 13);
             this.lblTotalClientes.Name = "lblTotalClientes";
-            this.lblTotalClientes.Size = new System.Drawing.Size(138, 17);
+            this.lblTotalClientes.Size = new System.Drawing.Size(127, 17);
             this.lblTotalClientes.TabIndex = 23;
             this.lblTotalClientes.Text = "Total Clientes: 0";
-            //
+            // 
             // panelFiltrosClientes
-            //
+            // 
             this.panelFiltrosClientes.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelFiltrosClientes.Controls.Add(this.btnExportarClientes);
             this.panelFiltrosClientes.Controls.Add(this.btnBuscarClientes);
@@ -528,9 +528,9 @@ namespace Paneles_solares
             this.panelFiltrosClientes.Padding = new System.Windows.Forms.Padding(10);
             this.panelFiltrosClientes.Size = new System.Drawing.Size(962, 60);
             this.panelFiltrosClientes.TabIndex = 6;
-            //
+            // 
             // btnExportarClientes
-            //
+            // 
             this.btnExportarClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportarClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.btnExportarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -542,9 +542,9 @@ namespace Paneles_solares
             this.btnExportarClientes.Text = "Exportar a Excel";
             this.btnExportarClientes.UseVisualStyleBackColor = false;
             this.btnExportarClientes.Click += new System.EventHandler(this.btnExportarClientes_Click);
-            //
+            // 
             // btnBuscarClientes
-            //
+            // 
             this.btnBuscarClientes.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnBuscarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarClientes.ForeColor = System.Drawing.Color.White;
@@ -555,51 +555,52 @@ namespace Paneles_solares
             this.btnBuscarClientes.Text = "Buscar";
             this.btnBuscarClientes.UseVisualStyleBackColor = false;
             this.btnBuscarClientes.Click += new System.EventHandler(this.btnBuscarClientes_Click);
-            //
+            // 
             // dtpFechaFin3
-            //
+            // 
             this.dtpFechaFin3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaFin3.Location = new System.Drawing.Point(310, 21);
             this.dtpFechaFin3.Name = "dtpFechaFin3";
             this.dtpFechaFin3.Size = new System.Drawing.Size(140, 22);
             this.dtpFechaFin3.TabIndex = 19;
-            //
+            // 
             // dtpFechaInicio3
-            //
+            // 
             this.dtpFechaInicio3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaInicio3.Location = new System.Drawing.Point(100, 21);
             this.dtpFechaInicio3.Name = "dtpFechaInicio3";
             this.dtpFechaInicio3.Size = new System.Drawing.Size(140, 22);
             this.dtpFechaInicio3.TabIndex = 18;
-            //
+            // 
             // label5
-            //
+            // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(257, 24);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 15);
+            this.label5.Size = new System.Drawing.Size(42, 15);
             this.label5.TabIndex = 17;
             this.label5.Text = "Hasta:";
-            //
+            // 
             // label6
-            //
+            // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(13, 24);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 15);
+            this.label6.Size = new System.Drawing.Size(76, 15);
             this.label6.TabIndex = 16;
             this.label6.Text = "Fecha Inicio:";
-            //
+            // 
             // frmReportesAnaliticos
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1013, 632);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReportesAnaliticos";
             this.Text = "Reportes Analíticos";
             this.Load += new System.EventHandler(this.frmReportesAnaliticos_Load);
