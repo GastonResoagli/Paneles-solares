@@ -92,6 +92,16 @@ namespace Paneles_solares
                 var result = modal.ShowDialog();
                 if (result == DialogResult.OK)
                 {
+                    // ❗ Validación de baja lógica
+                    if (!modal._Producto.Estado)
+                    {
+                        MessageBox.Show("El producto está INACTIVO (baja lógica) y no puede venderse.",
+                                        "Producto inactivo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        LimpiarProducto();
+                        txtCodigoproducto.Select();
+                        return;
+                    }
+
                     txtidproducto.Text = modal._Producto.idProducto.ToString();
                     txtCodigoproducto.Text = modal._Producto.Codigo;
                     txtProducto.Text = modal._Producto.Nombre;
@@ -112,11 +122,19 @@ namespace Paneles_solares
             {
                 Producto oProducto = new CN_Producto()
                     .Listar()
-                    .Where(p => p.Codigo == txtCodigoproducto.Text && p.Estado == true)
-                    .FirstOrDefault();
+                    .FirstOrDefault(p => p.Codigo == txtCodigoproducto.Text);
 
                 if (oProducto != null)
                 {
+                    if (!oProducto.Estado)
+                    {
+                        txtCodigoproducto.BackColor = Color.MistyRose;
+                        MessageBox.Show("El producto está INACTIVO (baja lógica) y no puede venderse.",
+                                        "Producto inactivo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        LimpiarProducto();
+                        return;
+                    }
+
                     txtCodigoproducto.BackColor = Color.Honeydew;
                     txtidproducto.Text = oProducto.idProducto.ToString();
                     txtProducto.Text = oProducto.Nombre;
@@ -127,11 +145,7 @@ namespace Paneles_solares
                 else
                 {
                     txtCodigoproducto.BackColor = Color.MistyRose;
-                    txtidproducto.Text = "0";
-                    txtProducto.Text = "";
-                    txtPrecio.Text = "";
-                    txtStock.Text = "";
-                    txtcantidad.Value = 1;
+                    LimpiarProducto();
                 }
             }
         }
@@ -141,14 +155,22 @@ namespace Paneles_solares
             decimal precio = 0;
             bool producto_existe = false;
 
-            // Verificar si se seleccionó un producto
             if (int.Parse(txtidproducto.Text) == 0)
             {
                 MessageBox.Show("Debe seleccionar un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            // Validar formato del precio
+            // ❗ Revalidar estado contra la base por si cambió
+            int idProd = Convert.ToInt32(txtidproducto.Text);
+            var prod = new CN_Producto().Listar().FirstOrDefault(p => p.idProducto == idProd);
+            if (prod == null || !prod.Estado)
+            {
+                MessageBox.Show("El producto está INACTIVO (baja lógica) y no puede venderse.",
+                                "Producto inactivo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             if (!decimal.TryParse(txtPrecio.Text, out precio))
             {
                 MessageBox.Show("Precio - Formato de moneda incorrecto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -156,13 +178,12 @@ namespace Paneles_solares
                 return;
             }
 
-            if (Convert.ToInt32(txtStock.Text) < Convert.ToInt32(txtcantidad.Value.ToString()))
+            if (Convert.ToInt32(txtStock.Text) < Convert.ToInt32(txtcantidad.Value))
             {
                 MessageBox.Show("La cantidad no puede ser mayor al stock", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            // Verificar si el producto ya existe en el DataGridView
             foreach (DataGridViewRow fila in dgvdata.Rows)
             {
                 if (fila.Cells["idProducto"].Value != null && fila.Cells["idProducto"].Value.ToString() == txtidproducto.Text)
@@ -173,28 +194,26 @@ namespace Paneles_solares
             }
             if (!producto_existe)
             {
-
                 string mensaje = string.Empty;
                 bool respuesta = new CN_Venta().RestarStock(
                     Convert.ToInt32(txtidproducto.Text),
-                    Convert.ToInt32(txtcantidad.Value.ToString())
-                    );
+                    Convert.ToInt32(txtcantidad.Value)
+                );
 
                 if (respuesta)
                 {
                     dgvdata.Rows.Add(new object[]
-                                  {
-                    txtidproducto.Text,
-                    txtProducto.Text,
-                    precio.ToString("0.00"),
-                    txtcantidad.Value.ToString(),
-                    (txtcantidad.Value * precio).ToString("0.00")
-                                  });
+                    {
+                txtidproducto.Text,
+                txtProducto.Text,
+                precio.ToString("0.00"),
+                txtcantidad.Value.ToString(),
+                (txtcantidad.Value * precio).ToString("0.00")
+                    });
                     calculartotal();
                     LimpiarProducto();
                     txtCodigoproducto.Select();
                 }
-
             }
 
         }

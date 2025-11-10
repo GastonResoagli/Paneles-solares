@@ -98,27 +98,12 @@ namespace Paneles_solares
             this.Close();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true; 
             }
-        }
-
-        private void txtDocumento_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

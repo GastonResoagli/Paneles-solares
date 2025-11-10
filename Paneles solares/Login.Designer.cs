@@ -76,7 +76,6 @@
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(154, 24);
             this.txtDocumento.TabIndex = 3;
-            this.txtDocumento.TextChanged += new System.EventHandler(this.txtDocumento_TextChanged);
             this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
             // 
             // txtClave
@@ -103,7 +102,7 @@
             this.iconPictureBox1.Size = new System.Drawing.Size(136, 143);
             this.iconPictureBox1.TabIndex = 7;
             this.iconPictureBox1.TabStop = false;
-            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
+
             // 
             // btnCancelar
             // 
@@ -162,7 +161,6 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
